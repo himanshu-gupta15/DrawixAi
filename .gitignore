@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local model cache, generated audio scratch, env
+/.models
+!.env.example
+/data/generated/tmp
+/.next-*

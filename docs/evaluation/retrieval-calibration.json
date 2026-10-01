@@ -1,0 +1,355 @@
+{
+  "summary": {
+    "inScope": 29,
+    "top1Hit": 29,
+    "hitAndGrounded": 29,
+    "falseRefusals": 0,
+    "outOfScope": 10,
+    "wronglyGrounded": 0
+  },
+  "rows": [
+    {
+      "set": "in",
+      "q": "What does the Gold plan cover?",
+      "top": "Gold Plan",
+      "hit": true,
+      "dense": 0.857,
+      "rerank": 6.92,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "How long is the waiting period for diabetes?",
+      "top": "Pre-existing disease (PED)",
+      "hit": true,
+      "dense": 0.904,
+      "rerank": 7.74,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "Can my 72 year old mother be covered?",
+      "top": "Family members",
+      "hit": true,
+      "dense": 0.912,
+      "rerank": 7.12,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "How do I make a cashless claim?",
+      "top": "How do I make a cashless claim?",
+      "hit": true,
+      "dense": 0.881,
+      "rerank": 9.18,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "It's too expensive for me",
+      "top": "Objection – \"It is too expensive\"",
+      "hit": true,
+      "dense": 0.883,
+      "rerank": 6.18,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "I already have insurance from my company",
+      "top": "Objection – \"I already have insurance from my employer\"",
+      "hit": true,
+      "dense": 0.867,
+      "rerank": 6.74,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "Can I pay monthly?",
+      "top": "Can I pay the premium monthly?",
+      "hit": true,
+      "dense": 0.926,
+      "rerank": 8.72,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "What tax benefit do I get?",
+      "top": "Can I get tax benefits?",
+      "hit": true,
+      "dense": 0.907,
+      "rerank": 7.73,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "How much is the premium for a 40 year old on Silver?",
+      "top": "Silver plan premium rates",
+      "hit": true,
+      "dense": 0.9,
+      "rerank": 4.99,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "What support do branch partners get?",
+      "top": "Branch Partnership Benefits",
+      "hit": true,
+      "dense": 0.884,
+      "rerank": 8.96,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "Is cosmetic surgery covered?",
+      "top": "What is not covered?",
+      "hit": true,
+      "dense": 0.879,
+      "rerank": 6.94,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "Do I need a medical test?",
+      "top": "Do I need a medical test?",
+      "hit": true,
+      "dense": 0.891,
+      "rerank": 8.2,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "What happens if I miss a payment?",
+      "top": "What is the grace period if I miss a payment?",
+      "hit": true,
+      "dense": 0.862,
+      "rerank": 6.01,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "Insurance companies never pay claims",
+      "top": "Objection – \"Insurance companies reject claims\"",
+      "hit": true,
+      "dense": 0.856,
+      "rerank": 3.81,
+      "grounded": true
+    },
+    {
+      "set": "in",
+      "q": "Is maternity covered?",
+      "top": "Waiting periods",
+      "hit": true,
+      "dense": 0.859,
+      "rerank": 2.41,
+      "grounded": true
+    },
+    {
+      "set": "out",
+      "q": "Do you sell car insurance?",
+      "top": "Can I pay the premium monthly?",
+      "dense": 0.805,
+      "rerank": -7.74,
+      "grounded": false
+    },
+    {
+      "set": "out",
+      "q": "What's the weather in Mumbai today?",
+      "top": "Platinum Plan",
+      "dense": 0.76,
+      "rerank": -11.04,
+      "grounded": false
+    },
+    {
+      "set": "out",
+      "q": "Is IVF treatment covered?",
+      "top": "What is not covered?",
+      "dense": 0.84,
+      "rerank": -2.73,
+      "grounded": false
+    },
+    {
+      "set": "out",
+      "q": "What is your company's share price?",
+      "top": "Gold plan premium rates",
+      "dense": 0.838,
+      "rerank": 1.66,
+      "grounded": false
+    },
+    {
+      "set": "out",
+      "q": "Can you recommend a good mutual fund?",
+      "top": "Can I pay the premium monthly?",
+      "dense": 0.815,
+      "rerank": -11,
+      "grounded": false
+    },
+    {
+      "set": "out",
+      "q": "Who won the cricket match yesterday?",
+      "top": "Dravix Health Plans at a Glance",
+      "dense": 0.709,
+      "rerank": -10.91,
+      "grounded": false
+    },
+    {
+      "set": "out",
+      "q": "Do you cover my pet dog?",
+      "top": "What is not covered?",
+      "dense": 0.807,
+      "rerank": -8.78,
+      "grounded": false
+    },
+    {
+      "set": "out",
+      "q": "Can I get a home loan from you?",
+      "top": "Can I get tax benefits?",
+      "dense": 0.839,
+      "rerank": -7.46,
+      "grounded": false
+    },
+    {
+      "set": "dev-in",
+      "q": "What does the Gold plan include?",
+      "top": "Gold Plan",
+      "hit": true,
+      "dense": 0.851,
+      "rerank": 4.82,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "Does any plan cover hospital treatment abroad?",
+      "top": "What is not covered?",
+      "hit": true,
+      "dense": 0.876,
+      "rerank": 3.16,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "What is the waiting period for pre-existing diseases like diabetes?",
+      "top": "Pre-existing disease (PED)",
+      "hit": true,
+      "dense": 0.908,
+      "rerank": 7.68,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "What is the grace period if I pay late?",
+      "top": "What is the grace period if I miss a payment?",
+      "hit": true,
+      "dense": 0.89,
+      "rerank": 7.74,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "Can I add my 72 year old father to the policy?",
+      "top": "Family members",
+      "hit": true,
+      "dense": 0.893,
+      "rerank": 6.51,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "I had a heart bypass last year, can I still get covered?",
+      "top": "Conditions that need underwriter review",
+      "hit": true,
+      "dense": 0.88,
+      "rerank": 2.55,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "I am 67, am I eligible to buy a policy?",
+      "top": "Proposer eligibility",
+      "hit": true,
+      "dense": 0.881,
+      "rerank": 2.11,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "How do I get cashless treatment at a hospital?",
+      "top": "How do I make a cashless claim?",
+      "hit": true,
+      "dense": 0.897,
+      "rerank": 5.51,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "Will I get a tax deduction on the premium?",
+      "top": "Can I get tax benefits?",
+      "hit": true,
+      "dense": 0.915,
+      "rerank": 8.77,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "Can I cancel the policy if I don't like it?",
+      "top": "What is the free-look period?",
+      "hit": true,
+      "dense": 0.894,
+      "rerank": 5.87,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "Honestly this is too costly for me.",
+      "top": "Objection – \"It is too expensive\"",
+      "hit": true,
+      "dense": 0.869,
+      "rerank": 4.32,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "My office already gives me health cover, why buy another?",
+      "top": "Objection – \"I already have insurance from my employer\"",
+      "hit": true,
+      "dense": 0.87,
+      "rerank": -1.86,
+      "grounded": true
+    },
+    {
+      "set": "dev-in",
+      "q": "I've heard insurers reject most claims.",
+      "top": "Objection – \"Insurance companies reject claims\"",
+      "hit": true,
+      "dense": 0.902,
+      "rerank": 5.24,
+      "grounded": true
+    },
+    {
+      "set": "dev-out",
+      "q": "Do you also sell car insurance?",
+      "top": "Can I pay the premium monthly?",
+      "hit": false,
+      "dense": 0.811,
+      "rerank": -8.53,
+      "grounded": false
+    },
+    {
+      "set": "dev-out",
+      "q": "Is IVF treatment covered?",
+      "top": "What is not covered?",
+      "hit": false,
+      "dense": 0.84,
+      "rerank": -2.73,
+      "grounded": false
+    },
+    {
+      "set": "dev-in",
+      "q": "What benefits do branch partners receive?",
+      "top": "Branch Partnership Benefits",
+      "hit": true,
+      "dense": 0.904,
+      "rerank": 9.22,
+      "grounded": true
+    }
+  ]
+}

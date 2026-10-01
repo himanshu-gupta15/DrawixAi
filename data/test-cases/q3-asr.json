@@ -1,0 +1,24 @@
+{
+  "PH": {
+    "language": "tagalog",
+    "voices": { "Samantha": "en_US voice (no Filipino voice installed)", "Damayanti": "id_ID voice reading Tagalog (closer vowel phonology)" },
+    "utterances": [
+      { "category": "tagalog", "text": "Opo, babayaran ko po bago mag-due date." },
+      { "category": "tagalog", "text": "Wala pa po akong pera ngayon, sa susunod na sahod pa." },
+      { "category": "taglish", "text": "Pwede ba akong magbayad thru GCash this Friday?" },
+      { "category": "taglish", "text": "Ano mangyayari sa coverage ko pag nag-lapse yung policy?" },
+      { "category": "english", "text": "Can I change the beneficiary of my policy?" }
+    ]
+  },
+  "ID": {
+    "language": "indonesian",
+    "voices": { "Damayanti": "id_ID native voice (standard Indonesian)", "Amira": "ms_MY Malay voice reading Indonesian – proxy for a non-Jakarta (Sumatra/Riau-like) accent, NOT a real regional speaker" },
+    "utterances": [
+      { "category": "formal", "text": "Baik, saya akan membayar angsuran sebelum tanggal lima belas Oktober." },
+      { "category": "casual", "text": "Waduh Mbak, gaji gue belum cair, nanti aja ya bayarnya." },
+      { "category": "loanwords", "text": "Kalau telat, late fee-nya berapa? Bisa reschedule nggak?" },
+      { "category": "regional_javanese_lexical", "text": "Durung ono duit, Mbak. Mengko tak bayar nggih." },
+      { "category": "regional_medan_lexical", "text": "Bah, kek mana lah, awak belum gajian, lae." }
+    ]
+  }
+}

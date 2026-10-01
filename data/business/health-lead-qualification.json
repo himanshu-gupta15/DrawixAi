@@ -1,0 +1,50 @@
+{
+  "_comment": "Voice-platform configuration for the Q1 use case: the call script (what the agent says) and the business rules (how it decides). Product knowledge, FAQs, objections and policies are NOT here - they are retrieved from the Q2 knowledge base at runtime.",
+  "useCase": "health_insurance_lead_qualification",
+  "agentName": "Asha",
+  "company": "Dravix Health",
+  "script": {
+    "greeting": "Hello, this is Asha, a virtual assistant calling from Dravix Health. This call is recorded for quality and training. You recently asked for a health insurance quote. Is this a good time to talk for about three minutes?",
+    "consent_retry": "Sorry, I didn't catch that. Is now a good time for a quick three-minute chat, yes or no?",
+    "ask_callback_time": "No problem. When would be a better time for us to call you back?",
+    "callback_confirmed": "Thank you. I've scheduled a callback for {time}. Have a great day!",
+    "not_interested": "I understand. I won't take more of your time. Thank you, and have a good day.",
+    "slots": {
+      "name": { "ask": "Great, thank you. May I know your full name?", "reprompt": "Could you tell me your name, please? For example, 'My name is Priya Sharma'." },
+      "age": { "ask": "Thanks {name}. How old are you?", "reprompt": "Sorry, I need your age in years to check eligibility. How old are you?" },
+      "members": { "ask": "Who would you like to cover: just yourself, or also your spouse, children or parents?", "reprompt": "Please tell me who should be covered, for example 'me and my wife' or 'myself and my parents'." },
+      "parent_age": { "ask": "How old is the elder of your parents?", "reprompt": "What is the age of your older parent, in years?" },
+      "city": { "ask": "Which city do you live in?", "reprompt": "Could you tell me the city you live in?" },
+      "health": { "ask": "Does anyone you want to cover have an existing health condition, like diabetes, blood pressure, thyroid or a heart problem?", "reprompt": "Please answer yes or no: does anyone to be covered have an existing health condition? If yes, which one?" },
+      "smoker": { "ask": "Does anyone to be covered smoke or use tobacco?", "reprompt": "Is anyone to be covered a smoker or tobacco user, yes or no?" },
+      "budget": { "ask": "Roughly what premium budget do you have in mind, per month or per year?", "reprompt": "An approximate number is fine, for example 'around 1,000 rupees a month' or '12,000 a year'." }
+    },
+    "ask_next_step": "Would you like a licensed advisor to send you a detailed quote and call you back? If yes, what time suits you?",
+    "closing": "Thank you {name}. A licensed advisor will call you {time} with your detailed quote. Have a great day!",
+    "closing_no_callback": "Thank you {name}. We'll email your quote summary. Have a great day!",
+    "resume": "Coming back to my question: ",
+    "unavailable_followup": "I can note this question for a licensed advisor to answer when they call you.",
+    "out_of_domain": "I can only help with Dravix Health's health insurance plans, so I don't have information on {topic}.",
+    "escalation": "Of course. I'm connecting you to a licensed human advisor now. I've shared the details you gave me so you won't need to repeat them.",
+    "escalation_after_hours": "I've raised a request for a licensed human advisor to call you back as soon as possible.",
+    "conflict": "Just to confirm, earlier you said {old}, and now {new}. Which one is correct?",
+    "give_up_slot": "No problem, the advisor can confirm that with you later."
+  },
+  "rules": {
+    "proposerAge": { "min": 18, "max": 65 },
+    "parentMaxEntryAge": 75,
+    "plansAllowingParents": ["Gold", "Platinum"],
+    "coPayFromAge": 61,
+    "medicalCheckFromAge": 46,
+    "minAnnualBudget": 6000,
+    "smokerLoadingPct": 10,
+    "underwritingConditions": ["cancer", "chemotherapy", "tumour", "tumor", "dialysis", "kidney failure", "heart surgery", "bypass", "angioplasty", "stent", "transplant"],
+    "acceptedConditions": ["diabetes", "sugar", "blood pressure", "bp", "hypertension", "thyroid", "asthma", "cholesterol"],
+    "planBands": [
+      { "plan": "Silver", "fromAnnual": 0 },
+      { "plan": "Gold", "fromAnnual": 9800 },
+      { "plan": "Platinum", "fromAnnual": 16500 }
+    ],
+    "maxRepromptsPerSlot": 2
+  }
+}

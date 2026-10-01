@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ph_call1_taglish_cooperative",
+    "market": "PH",
+    "title": "PH – English-leaning Taglish, finance terms, cooperative",
+    "customerVoice": "Samantha",
+    "turns": [
+      "Yes, this is Maria.",
+      "Okay, pero magkano nga ulit yung premium ko?",
+      "Is there a grace period if I pay late?",
+      "Sige, I'll pay on Friday.",
+      "No, that's all. Thank you."
+    ]
+  },
+  {
+    "id": "ph_call2_tagalog_objection_escalation",
+    "market": "PH",
+    "title": "PH – Tagalog, can't-afford objection, human escalation",
+    "customerVoice": "Damayanti",
+    "turns": [
+      "Opo, ako po si Maria.",
+      {
+        "t": "Wala pa po akong pera ngayon, sa susunod na sahod pa.",
+        "alt": "Pasensya na po, gipit po ako ngayong buwan."
+      },
+      "Opo, gusto ko pong makausap ang advisor."
+    ]
+  },
+  {
+    "id": "id_call1_formal_loanwords",
+    "market": "ID",
+    "title": "ID – formal register, penalty question, loanwords",
+    "customerVoice": "Damayanti",
+    "turns": [
+      "Ya, benar, dengan saya sendiri.",
+      "Kalau saya telat bayar, dendanya berapa?",
+      "Baik, saya akan transfer lewat virtual account sebelum jatuh tempo.",
+      "Tidak ada, terima kasih."
+    ]
+  },
+  {
+    "id": "id_call2_accent_proxy_objection_escalation",
+    "market": "ID",
+    "title": "ID – non-Jakarta accent proxy (Malay voice), casual objection, escalation",
+    "customerVoice": "Amira",
+    "turns": [
+      "Iya, betul, saya Budi.",
+      "Waduh Mbak, gaji saya belum cair, belum bisa bayar.",
+      "Iya, sambungkan ke petugas saja."
+    ]
+  }
+]

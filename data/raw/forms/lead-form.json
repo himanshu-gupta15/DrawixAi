@@ -1,0 +1,16 @@
+{
+  "form_name": "Health Insurance Quote Request",
+  "form_version": "2026.2",
+  "fields": [
+    { "label": "Full Name", "type": "text", "required": true },
+    { "label": "DOB", "type": "date", "format": "dd/mm/yyyy", "required": true },
+    { "label": "Mobile No.", "type": "phone", "required": true },
+    { "label": "E-mail", "type": "email", "required": false },
+    { "label": "City/Town", "type": "text", "required": true },
+    { "label": "Members to cover", "type": "multi_select", "options": ["Self", "Spouse", "Kids", "Parents"], "required": true },
+    { "label": "PED (Y/N)", "type": "boolean", "required": true },
+    { "label": "Sum Insured (Rs.)", "type": "select", "options": ["3L", "5L", "10L", "25L", "50L"], "required": false },
+    { "label": "Smoker?", "type": "boolean", "required": true }
+  ],
+  "sample_submission": { "Full Name": "Priya Sharma", "DOB": "14/08/1990", "Mobile No.": "9811122233", "E-mail": "priya.s@example.com", "City/Town": "Bengaluru" }
+}

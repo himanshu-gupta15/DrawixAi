@@ -1,0 +1,267 @@
+{
+  "ranAt": "2026-10-01T16:53:17.711Z",
+  "summary": {
+    "total": 12,
+    "correct": 6,
+    "partiallyCorrect": 1,
+    "incorrect": 5,
+    "p50LatencyMs": 8.1,
+    "p95LatencyMs": 13.1,
+    "coldStartMs": 346
+  },
+  "results": [
+    {
+      "id": "H1",
+      "type": "product",
+      "question": "Which plan gives me a 100% restore benefit?",
+      "grounded": false,
+      "retrieved": {
+        "recordId": "kb_product_006",
+        "title": "Benefits Included in Every Plan",
+        "content": "Pre-hospitalisation expenses for 60 days and post-hospitalisation expenses for 90 days are covered.\nDay-care procedures that need less than 24 hours of hospitalisation are covered.\nRestore benefit: if the sum insured is exhausted during the year, it is restored once for unrelated illnesses (Gold restores 50%, Platinum restores 100%; Silver has no restore benefit).\nAmbulance charges are covered up to ₹2,000 per hospitalisation. Organ donor expenses are covered up to the sum insured.",
+        "category": "product"
+      },
+      "otherResults": [
+        "kb_product_003 Platinum Plan",
+        "kb_product_004 Plan comparison"
+      ],
+      "sourceReference": "product brochure PDF 2026 (v2026.1) — docs/product-brochure-2026.pdf#page=2",
+      "relevanceExplanation": "Platinum has 100% restore; the benefits page explains Gold 50% / Platinum 100%. Retrieved: dense=0.838, bm25=9.654, shared terms [plan, 100, restore, benefit].",
+      "answer": "I'm sorry, I don't have verified information about that, so I won't guess.",
+      "verdict": "incorrect",
+      "latencyMs": 13.1
+    },
+    {
+      "id": "H2",
+      "type": "product",
+      "question": "How much OPD cover does the Platinum plan have?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_pricing_003",
+        "title": "Platinum plan premium rates",
+        "content": "Platinum plan indicative annual premium for one adult (sum insured 10 lakh): age 18-35: ₹16,500 per year or ₹1,375 per month; age 36-45: ₹21,400 per year or ₹1,785 per month; age 46-55: ₹30,800 per year or ₹2,570 per month; age 56-65: ₹44,900 per year or ₹3,745 per month. Final premium depends on members, city, health declaration and underwriting.",
+        "category": "pricing"
+      },
+      "otherResults": [
+        "kb_pricing_001 Silver plan premium rates",
+        "kb_pricing_002 Gold plan premium rates"
+      ],
+      "sourceReference": "premium rate table 2026 (v2026.2) — tables/premium-rates.csv#plan=platinum",
+      "relevanceExplanation": "Platinum plan section: OPD consultations up to ₹10,000 per year. Retrieved: dense=0.883, bm25=12.023, shared terms [platinum, plan, premium, per, year, month], intent hint 'pricing'.",
+      "answer": "Platinum plan indicative annual premium for one adult (sum insured 10 lakh): age 18-35: ₹16,500 per year or ₹1,375 per month; age 36-45: ₹21,400 per year or ₹1,785 per month; age 46-55: ₹30,800 per year or ₹2,570 per month; age 56-65: ₹44,900 per year or ₹3,745 per month. Final premium depends on members, city, health declaration and underwriting.",
+      "verdict": "incorrect",
+      "latencyMs": 8.6
+    },
+    {
+      "id": "H3",
+      "type": "policy",
+      "question": "How soon must I inform you about an emergency hospital admission?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_claims_003",
+        "title": "Claim intimation",
+        "content": "Planned hospitalisation must be intimated 48 hours before admission. Emergency hospitalisation must be intimated within 24 hours of admission through the app, the toll-free number 1800-200-3344 or the hospital insurance desk.",
+        "category": "claims"
+      },
+      "otherResults": [
+        "kb_faq_003 How do I make a cashless claim?",
+        "kb_eligibility_004 Pre-existing disease (PED)"
+      ],
+      "sourceReference": "claims & waiting period policy v2.0 (v2.0) — docs/claims-policy-v2.txt#claim-intimation",
+      "relevanceExplanation": "Claims policy v2.0: emergency within 24 hours, planned 48 hours before. Retrieved: dense=0.897, bm25=13.356, shared terms [must, emergency, hospital, admission].",
+      "answer": "Planned hospitalisation must be intimated 48 hours before admission. Emergency hospitalisation must be intimated within 24 hours of admission through the app, the toll-free number 1800-200-3344 or the hospital insurance desk.",
+      "verdict": "correct",
+      "latencyMs": 8.1
+    },
+    {
+      "id": "H4",
+      "type": "policy",
+      "question": "When is cataract surgery covered?",
+      "grounded": false,
+      "retrieved": {
+        "recordId": "kb_policy_002",
+        "title": "Waiting periods",
+        "content": "Initial waiting period: 30 days from policy start, except accidents which are covered from day one.\nPre-existing disease: covered after 36 months of continuous coverage.\nSpecific illnesses (cataract, hernia, joint replacement, kidney stones): covered after 24 months.\nMaternity (Gold and Platinum only): covered after 24 months.",
+        "category": "policy"
+      },
+      "otherResults": [
+        "kb_faq_011 What is not covered?",
+        "kb_product_006 Benefits Included in Every Plan"
+      ],
+      "sourceReference": "claims & waiting period policy v2.0 (v2.0) — docs/claims-policy-v2.txt#waiting-periods",
+      "relevanceExplanation": "Specific illnesses including cataract are covered after 24 months (policy v2.0). Retrieved: dense=0.824, bm25=5.972, shared terms [cataract, covered].",
+      "answer": "I'm sorry, I don't have verified information about that, so I won't guess.",
+      "verdict": "incorrect",
+      "latencyMs": 6
+    },
+    {
+      "id": "H5",
+      "type": "qualification",
+      "question": "Do smokers pay more?",
+      "grounded": false,
+      "retrieved": {
+        "recordId": "kb_eligibility_006",
+        "title": "Medical check-up",
+        "content": "Members aged 46 years and above require a pre-policy medical check-up arranged at home free of cost. Smokers and tobacco users pay a 10% premium loading.",
+        "category": "eligibility"
+      },
+      "otherResults": [
+        "kb_process_002 Details needed for a health insurance quote",
+        "kb_faq_006 Can I get tax benefits?"
+      ],
+      "sourceReference": "underwriting & eligibility rules v2.0 (v2.0) — docs/eligibility-rules.md#medical-check-up",
+      "relevanceExplanation": "Eligibility rules: smokers/tobacco users pay a 10% loading (in the medical check-up section). Retrieved: dense=0.839, bm25=5.83, shared terms [smoker, pay].",
+      "answer": "I'm sorry, I don't have verified information about that, so I won't guess.",
+      "verdict": "incorrect",
+      "latencyMs": 6.5
+    },
+    {
+      "id": "H6",
+      "type": "qualification",
+      "question": "Up to what age can my children stay on the family policy?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_eligibility_003",
+        "title": "Family members",
+        "content": "A family floater can cover the proposer, spouse, up to 3 dependent children aged 91 days to 25 years, and parents. Parents can be added only under Gold or Platinum, with a maximum entry age of 75 years. Members who are 61 years or older at entry have a 20% co-payment on every claim.",
+        "category": "eligibility"
+      },
+      "otherResults": [
+        "kb_eligibility_001 Who can buy?",
+        "kb_eligibility_002 Proposer eligibility"
+      ],
+      "sourceReference": "underwriting & eligibility rules v2.0 (v2.0) — docs/eligibility-rules.md#family-members",
+      "relevanceExplanation": "Dependent children 91 days to 25 years. Retrieved: dense=0.91, bm25=23.188, shared terms [up, age, children, family, member, floater].",
+      "answer": "A family floater can cover the proposer, spouse, up to 3 dependent children aged 91 days to 25 years, and parents. Parents can be added only under Gold or Platinum, with a maximum entry age of 75 years.",
+      "verdict": "correct",
+      "latencyMs": 8.9
+    },
+    {
+      "id": "H7",
+      "type": "faq",
+      "question": "What documents do I need for a reimbursement claim?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_faq_005",
+        "title": "How do I get a reimbursement claim?",
+        "content": "If you are treated at a non-network hospital, pay the bill and submit the claim form, discharge summary, original bills and investigation reports within 30 days of discharge. Reimbursement claims are settled within 30 days of receiving all documents.",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_claims_004 Claim settlement",
+        "kb_objection_006 Objection – \"Why do you need my medical details?\""
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#how-do-i-get-a-reimbursement-claim",
+      "relevanceExplanation": "FAQ lists claim form, discharge summary, original bills, investigation reports within 30 days. Retrieved: dense=0.887, bm25=9.514, shared terms [document, reimbursement, claim].",
+      "answer": "If you are treated at a non-network hospital, pay the bill and submit the claim form, discharge summary, original bills and investigation reports within 30 days of discharge. Reimbursement claims are settled within 30 days of receiving all documents.",
+      "verdict": "correct",
+      "latencyMs": 7.7
+    },
+    {
+      "id": "H8",
+      "type": "faq",
+      "question": "Can I move my policy from another insurer without losing waiting period credit?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_objection_002",
+        "title": "Objection – \"I already have insurance from my employer\"",
+        "content": "Acknowledge that employer cover is useful. Explain that group cover usually ends when you leave or change jobs, often has a lower sum insured, and may not cover parents. A personal policy keeps waiting-period credit building independently of employment. Customers can also move an existing individual policy to Dravix Health through portability.",
+        "category": "objection"
+      },
+      "otherResults": [
+        "kb_faq_009 Can I port my existing policy to Dravix Health?",
+        "kb_faq_002 Is there a waiting period when I first buy the policy?"
+      ],
+      "sourceReference": "sales objection playbook v1.3 (v1.3) — docs/objection-playbook.md#objection-i-already-have-insurance-from-my-employer",
+      "relevanceExplanation": "Portability FAQ: completed waiting periods credited; apply 45 days before renewal. Retrieved: dense=0.86, bm25=10.681, shared terms [move, policy, wait, period, credit].",
+      "answer": "A personal policy keeps waiting-period credit building independently of employment. You can also move an existing individual policy to Dravix Health through portability.",
+      "verdict": "partially correct",
+      "latencyMs": 6.8
+    },
+    {
+      "id": "H9",
+      "type": "objection",
+      "question": "I'm only 26 and perfectly healthy, why would I buy this now?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_objection_003",
+        "title": "Objection – \"I am young and healthy, I don't need it\"",
+        "content": "Explain that premiums are lowest when you buy young, that waiting periods (30 days initial, 24 months for specific illnesses, 36 months for pre-existing disease) start only after you buy, and that accidents are covered from day one.",
+        "category": "objection"
+      },
+      "otherResults": [
+        "kb_process_001 How to Buy and Next Steps",
+        "kb_eligibility_001 Who can buy?"
+      ],
+      "sourceReference": "sales objection playbook v1.3 (v1.3) — docs/objection-playbook.md#objection-i-am-young-and-healthy-i-don-t-need-it",
+      "relevanceExplanation": "Young-and-healthy objection in the playbook. Retrieved: dense=0.88, bm25=10.455, shared terms [only, healthy, buy].",
+      "answer": "Premiums are lowest when you buy young, waiting periods (30 days initial, 24 months for specific illnesses, 36 months for pre-existing disease) start only after you buy, and accidents are covered from day one.",
+      "verdict": "correct",
+      "latencyMs": 8.5
+    },
+    {
+      "id": "H10",
+      "type": "objection",
+      "question": "Why should I tell you about my medical history?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_objection_006",
+        "title": "Objection – \"Why do you need my medical details?\"",
+        "content": "Explain that declaring health conditions honestly protects the customer: non-disclosure can lead to claim rejection. Details are used only for underwriting and are protected under our privacy policy.",
+        "category": "objection"
+      },
+      "otherResults": [
+        "kb_faq_012 Do I need a medical test?",
+        "kb_eligibility_006 Medical check-up"
+      ],
+      "sourceReference": "sales objection playbook v1.3 (v1.3) — docs/objection-playbook.md#objection-why-do-you-need-my-medical-details",
+      "relevanceExplanation": "Medical-details objection: non-disclosure can lead to claim rejection. Retrieved: dense=0.879, bm25=3.25, shared terms [medical].",
+      "answer": "Declaring health conditions honestly protects you: non-disclosure can lead to claim rejection. Details are used only for underwriting and are protected under our privacy policy.",
+      "verdict": "correct",
+      "latencyMs": 6.3
+    },
+    {
+      "id": "H11",
+      "type": "out_of_scope",
+      "question": "Can you give me a personal loan to pay the premium?",
+      "grounded": false,
+      "retrieved": {
+        "recordId": "kb_pricing_001",
+        "title": "Silver plan premium rates",
+        "content": "Silver plan indicative annual premium for one adult (sum insured 3 lakh): age 18-35: ₹6,200 per year or ₹520 per month; age 36-45: ₹8,100 per year or ₹680 per month; age 46-55: ₹11,900 per year or ₹995 per month; age 56-65: ₹17,400 per year or ₹1,450 per month. Final premium depends on members, city, health declaration and underwriting.",
+        "category": "pricing"
+      },
+      "otherResults": [
+        "kb_pricing_003 Platinum plan premium rates",
+        "kb_faq_007 Can I pay the premium monthly?"
+      ],
+      "sourceReference": "premium rate table 2026 (v2026.2) — tables/premium-rates.csv#plan=silver",
+      "relevanceExplanation": "Correctly refused: out-of-domain topic: loans. Loans are out of domain.",
+      "answer": "I'm sorry, I don't have verified information about that, so I won't guess.",
+      "verdict": "correct",
+      "latencyMs": 6.9
+    },
+    {
+      "id": "H12",
+      "type": "out_of_scope",
+      "question": "Does the policy cover hair transplant?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_eligibility_005",
+        "title": "Conditions that need underwriter review",
+        "content": "The following cannot be approved by sales and must be referred to an underwriter: any cancer diagnosis or treatment within the last 5 years, kidney failure or dialysis, heart surgery or angioplasty within the last 2 years, and any organ transplant. Sales agents must not promise approval in these cases.",
+        "category": "eligibility"
+      },
+      "otherResults": [
+        "kb_objection_002 Objection – \"I already have insurance from my employer\"",
+        "kb_objection_004 Objection – \"Insurance companies reject claims\""
+      ],
+      "sourceReference": "underwriting & eligibility rules v2.0 (v2.0) — docs/eligibility-rules.md#conditions-that-need-underwriter-review",
+      "relevanceExplanation": "Retrieval wrongly marked grounded. Hair transplant is not mentioned (cosmetic exclusion is related but not explicit) – a careful answer would say it's not confirmed; strict grading expects 'unavailable'.",
+      "answer": "The following cannot be approved by sales and must be referred to an underwriter: any cancer diagnosis or treatment within the last 5 years, kidney failure or dialysis, heart surgery or angioplasty within the last 2 years, and any organ transplant. Sales agents must not promise approval in these cases.",
+      "verdict": "incorrect",
+      "latencyMs": 8.1
+    }
+  ],
+  "note": "Held-out set written after all retrieval tuning; run once, not tuned on."
+}

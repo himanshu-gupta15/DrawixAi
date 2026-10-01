@@ -1,0 +1,92 @@
+{
+  "id": "collections_frustration",
+  "durationMs": 58094,
+  "lines": [
+    {
+      "s": "agent",
+      "t": "Good afternoon, this is Priya from Dravix Finance. This call is recorded. Am I speaking with Mister Vikram Singh?",
+      "channel": 0,
+      "startMs": 400,
+      "endMs": 7094
+    },
+    {
+      "s": "customer",
+      "t": "Yes.",
+      "channel": 1,
+      "startMs": 7794,
+      "endMs": 8254
+    },
+    {
+      "s": "agent",
+      "t": "Sir, your loan instalment of eight thousand two hundred rupees was due on the fifth and is still pending.",
+      "channel": 0,
+      "startMs": 8954,
+      "endMs": 14276
+    },
+    {
+      "s": "customer",
+      "t": "I know. I already told your colleague yesterday that I will pay next week.",
+      "channel": 1,
+      "startMs": 14976,
+      "endMs": 19599
+    },
+    {
+      "s": "agent",
+      "t": "Sir, can you please confirm the exact date you will pay?",
+      "channel": 0,
+      "startMs": 20299,
+      "endMs": 23449
+    },
+    {
+      "s": "customer",
+      "t": "I told you already, next week. Why do you keep calling me every day?",
+      "channel": 1,
+      "startMs": 24149,
+      "endMs": 28772
+    },
+    {
+      "s": "agent",
+      "t": "Sir, I understand, but I need a confirmed date for our records.",
+      "channel": 0,
+      "startMs": 29472,
+      "endMs": 33257
+    },
+    {
+      "s": "customer",
+      "t": "This is the third time this week. This is ridiculous, I am really fed up with these calls.",
+      "label": "frustration",
+      "channel": 1,
+      "startMs": 33957,
+      "endMs": 39922
+    },
+    {
+      "s": "agent",
+      "t": "Sir, if the payment is late, a penalty will apply.",
+      "channel": 0,
+      "startMs": 40622,
+      "endMs": 43533
+    },
+    {
+      "s": "customer",
+      "t": "Look, I lost my job last month and money is tight. I am trying my best.",
+      "label": "payment_difficulty",
+      "channel": 1,
+      "startMs": 44233,
+      "endMs": 49620
+    },
+    {
+      "s": "agent",
+      "t": "I see. Can you pay at least part of the amount today?",
+      "channel": 0,
+      "startMs": 50320,
+      "endMs": 53636
+    },
+    {
+      "s": "customer",
+      "t": "No, I cannot afford it right now.",
+      "channel": 1,
+      "startMs": 54336,
+      "endMs": 56794
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// One raw input (web page, PDF, CSV, markdown, form definition) and its ingestion outcome.
+model SourceDocument {
+  id             String     @id
+  uri            String
+  sourceType     String // html | pdf | markdown | text | csv | form_json | url
+  title          String
+  family         String // documents of the same family supersede each other by version
+  version        String
+  effectiveDate  String?
+  status         String // ingested | failed | superseded
+  error          String?
+  contentHash    String?
+  extractedChars Int        @default(0)
+  removedLines   Int        @default(0)
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  records        KbRecord[]
+}
+
+/// One retrievable knowledge chunk. Content is stored PII-redacted only.
+model KbRecord {
+  recordId     String         @id // e.g. kb_policy_004
+  documentId   String
+  document     SourceDocument @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  title        String
+  content      String
+  category     String // product | pricing | eligibility | policy | claims | faq | objection | partnership | company | process
+  productLine  String         @default("all")
+  source       String // human readable, e.g. "website / plans page"
+  sourceRef    String // uri + section anchor / page number
+  version      String
+  containsPii  Boolean        @default(false)
+  piiTypes     String[]
+  status       String // active | duplicate | superseded
+  duplicateOf  String?
+  contentHash  String
+  wordCount    Int
+  metadata     Json
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  @@index([category])
+  @@index([status])
+}
+
+model IngestionRun {
+  id         String    @id @default(cuid())
+  startedAt  DateTime  @default(now())
+  finishedAt DateTime?
+  stats      Json
+  issues     Json
+}
+
+model RetrievalLog {
+  id        String   @id @default(cuid())
+  query     String
+  results   Json
+  grounded  Boolean
+  latencyMs Int
+  createdAt DateTime @default(now())
+}
+
+/// Q1/Q3 conversations (web calls and simulated test calls).
+model CallSession {
+  id            String       @id
+  channel       String // web | simulated
+  useCase       String
+  market        String       @default("IN")
+  status        String // active | completed | escalated
+  state         Json
+  transcript    Json
+  outcome       String?
+  recordingPath String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  actions       CrmAction[]
+}
+
+/// Business actions: lead creation, callback scheduling, escalation webhook, CRM summary.
+model CrmAction {
+  id        String      @id @default(cuid())
+  callId    String
+  call      CallSession @relation(fields: [callId], references: [id], onDelete: Cascade)
+  type      String // lead | callback | escalation | crm_summary
+  payload   Json
+  delivered Boolean     @default(false)
+  createdAt DateTime    @default(now())
+}
+
+/// Q4 live-insight sessions with nudges and latency samples.
+model InsightSession {
+  id        String    @id
+  mode      String // replay | mic
+  scenario  String?
+  startedAt DateTime  @default(now())
+  endedAt   DateTime?
+  summary   Json?
+}

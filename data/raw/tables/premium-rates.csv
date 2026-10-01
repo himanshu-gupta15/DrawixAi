@@ -1,0 +1,14 @@
+plan,age_band,sum_insured,annual_premium_inr,monthly_emi_inr
+Silver,18-35,3 lakh,6200,520
+Silver,36-45,3 lakh,8100,680
+Silver,46-55,3 lakh,11900,995
+Silver,56-65,3 lakh,17400,1450
+Gold,18-35,5 lakh,9800,820
+Gold,36-45,5 lakh,12600,1050
+Gold,46-55,5 lakh,18300,1525
+Gold,56-65,5 lakh,26900,2245
+Platinum,18-35,10 lakh,16500,1375
+Platinum,36-45,10 lakh,21400,1785
+Platinum,46-55,10 lakh,30800,2570
+Platinum,56-65,10 lakh,44900,3745
+Gold,18-35,5 lakh,9800,820

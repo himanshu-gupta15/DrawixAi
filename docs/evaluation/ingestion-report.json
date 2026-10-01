@@ -1,0 +1,79 @@
+{
+  "runId": "cmuppwvie00000quk2ugaqphi",
+  "durationMs": 1228,
+  "stats": {
+    "sources": 14,
+    "failedSources": 1,
+    "removedBoilerplateLines": 46,
+    "piiRedactions": 11,
+    "exactDuplicates": 1,
+    "nearDuplicates": 1,
+    "superseded": 1,
+    "conflictsFlagged": 1,
+    "invalidDates": 1,
+    "normalizations": 20,
+    "records": 52,
+    "activeRecords": 47,
+    "recordsAdded": 0,
+    "recordsChanged": 0,
+    "recordsUnchanged": 52,
+    "recordsRemoved": 0,
+    "recordsWithPii": 2
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "sourceId": "web_plans",
+      "type": "source_error_invalid_date",
+      "message": "Invalid date \"31/02/2026\" in section \"Plan comparison\" – flagged for content owner"
+    },
+    {
+      "severity": "info",
+      "sourceId": "doc_claims_v1",
+      "type": "superseded",
+      "message": "claims & waiting period policy v1.0 superseded by v2.0 of the same document family"
+    },
+    {
+      "severity": "info",
+      "sourceId": "tbl_premiums",
+      "type": "extraction_note",
+      "message": "Duplicate table row removed: Gold|18-35|5 lakh|9800|820"
+    },
+    {
+      "severity": "info",
+      "sourceId": "form_lead",
+      "type": "form_fields_standardised",
+      "message": "Form labels mapped to canonical fields: full_name, date_of_birth, phone, email, city, members_to_cover, has_pre_existing_disease, sum_insured_inr, is_smoker"
+    },
+    {
+      "severity": "info",
+      "sourceId": "form_lead",
+      "type": "extraction_note",
+      "message": "sample_submission dropped: contains personal data and is not knowledge"
+    },
+    {
+      "severity": "error",
+      "sourceId": "doc_scanned_form",
+      "type": "extraction_failed",
+      "message": "PDF parsing failed (Invalid PDF structure.). File may be corrupt or a scanned image; route to OCR/manual review."
+    },
+    {
+      "severity": "info",
+      "sourceId": "web_plans",
+      "type": "exact_duplicate",
+      "message": "\"Why choose Dravix Health?\" (website / plans page) duplicates \"Why choose Dravix Health?\" (website / home page)"
+    },
+    {
+      "severity": "info",
+      "sourceId": "web_faq",
+      "type": "near_duplicate",
+      "message": "\"How do I claim cashless treatment?\" (website / FAQ page) duplicates \"How do I make a cashless claim?\" (website / FAQ page) – bigram jaccard 0.64, cosine 0.996"
+    },
+    {
+      "severity": "warning",
+      "sourceId": "web_faq",
+      "type": "source_error_conflict",
+      "message": "ped_waiting_period_months: \"What is the waiting period for pre-existing disease?\" (website / FAQ page) says 48 but claims & waiting period policy v2.0 says 36. Lower-authority record flagged for review and excluded from answers."
+    }
+  ]
+}

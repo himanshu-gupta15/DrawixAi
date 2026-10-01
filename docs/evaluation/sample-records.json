@@ -1,0 +1,164 @@
+[
+  {
+    "record_id": "kb_partnership_001",
+    "title": "Branch Partnership Benefits",
+    "content": "Operational, marketing, and technology support is provided to branch partners. Partners get a co-branded point-of-sale app, monthly product training and a dedicated relationship manager.",
+    "category": "partnership",
+    "product_line": "all",
+    "source": "website / partners section",
+    "source_ref": "website/partners.html#branch-partnership-benefits",
+    "version": "2026.09",
+    "contains_pii": false,
+    "pii_types": [],
+    "status": "active",
+    "duplicate_of": null,
+    "content_hash": "72139feec5c4f6ad",
+    "metadata": {
+      "key": "web_partners:website/partners.html#branch-partnership-benefits:0",
+      "flags": [],
+      "topic": "partnership",
+      "aliases": [],
+      "revision": 1,
+      "authority": 1,
+      "effectiveDate": null,
+      "normalizations": []
+    }
+  },
+  {
+    "record_id": "kb_objection_001",
+    "title": "Objection – \"It is too expensive\"",
+    "content": "Acknowledge the concern. Explain that the Silver plan starts at about ₹6,200 a year (roughly ₹520 a month), that premiums can be paid in 12 monthly instalments at no extra cost, and that premiums qualify for tax deduction under Section 80D. Never offer discounts that are not in the approved price list.",
+    "category": "objection",
+    "product_line": "silver",
+    "source": "sales objection playbook v1.3",
+    "source_ref": "docs/objection-playbook.md#objection-it-is-too-expensive",
+    "version": "1.3",
+    "contains_pii": false,
+    "pii_types": [],
+    "status": "active",
+    "duplicate_of": null,
+    "content_hash": "67eae7ca97bc0d3a",
+    "metadata": {
+      "key": "doc_objections:docs/objection-playbook.md#objection-it-is-too-expensive:0",
+      "flags": [],
+      "topic": "pricing",
+      "aliases": [],
+      "revision": 1,
+      "authority": 3,
+      "effectiveDate": "2026-07-10",
+      "normalizations": [
+        "\"Rs \" -> \"₹\""
+      ]
+    }
+  },
+  {
+    "record_id": "kb_company_004",
+    "title": "What our customers say",
+    "content": "\"My father's knee replacement was approved cashless within an hour. The claims team called me back on [PHONE_REDACTED] the same day.\" – [PERSON_NAME_REDACTED], Pune, [EMAIL_REDACTED], Policy No. [POLICY_NUMBER_REDACTED]\n\"I moved from my employer cover to the Gold plan without losing my waiting period credit.\" – [PERSON_NAME_REDACTED], Chennai, [PHONE_REDACTED], PAN [PAN_REDACTED]",
+    "category": "company",
+    "product_line": "gold",
+    "source": "website / customer stories",
+    "source_ref": "website/testimonials.html#what-our-customers-say",
+    "version": "2026.09",
+    "contains_pii": true,
+    "pii_types": [
+      "EMAIL",
+      "PAN",
+      "POLICY_NUMBER",
+      "PHONE",
+      "PERSON_NAME"
+    ],
+    "status": "active",
+    "duplicate_of": null,
+    "content_hash": "a20ed03813746c52",
+    "metadata": {
+      "key": "web_testimonials:website/testimonials.html#what-our-customers-say:0",
+      "flags": [],
+      "topic": "company",
+      "aliases": [],
+      "revision": 1,
+      "authority": 1,
+      "effectiveDate": null,
+      "normalizations": []
+    }
+  },
+  {
+    "record_id": "kb_company_003",
+    "title": "Why choose Dravix Health?",
+    "content": "Dravix Health has a claim settlement ratio of 96.4% for FY 2025-26. Cashless pre-authorisation decisions are targeted within 1 hour for planned hospitalisation. Customers get a dedicated claims helpline that works 24x7.",
+    "category": "company",
+    "product_line": "all",
+    "source": "website / plans page",
+    "source_ref": "website/plans.html#why-choose-dravix-health",
+    "version": "2026.09",
+    "contains_pii": false,
+    "pii_types": [],
+    "status": "duplicate",
+    "duplicate_of": "kb_company_002",
+    "content_hash": "fca8df24a68c9dc3",
+    "metadata": {
+      "key": "web_plans:website/plans.html#why-choose-dravix-health:0",
+      "flags": [],
+      "topic": "company",
+      "aliases": [],
+      "revision": 1,
+      "authority": 1,
+      "effectiveDate": null,
+      "normalizations": []
+    }
+  },
+  {
+    "record_id": "kb_claims_002",
+    "title": "Claim intimation",
+    "content": "Planned hospitalisation must be intimated 48 hours before admission. Emergency hospitalisation must be intimated within 24 hours of admission.",
+    "category": "claims",
+    "product_line": "all",
+    "source": "claims & waiting period policy v1.0",
+    "source_ref": "docs/claims-policy-v1.txt#claim-intimation",
+    "version": "1.0",
+    "contains_pii": false,
+    "pii_types": [],
+    "status": "superseded",
+    "duplicate_of": null,
+    "content_hash": "ba3024cadb4f5905",
+    "metadata": {
+      "key": "doc_claims_v1:docs/claims-policy-v1.txt#claim-intimation:0",
+      "flags": [],
+      "topic": "claims",
+      "aliases": [],
+      "revision": 1,
+      "authority": 3,
+      "effectiveDate": "2024-01-15",
+      "normalizations": []
+    }
+  },
+  {
+    "record_id": "kb_faq_001",
+    "title": "What is the waiting period for pre-existing disease?",
+    "content": "Pre-existing disease (PED) declared at the time of buying the policy is covered after a waiting period of 4 years.",
+    "category": "faq",
+    "product_line": "all",
+    "source": "website / FAQ page",
+    "source_ref": "website/faq.html#what-is-the-waiting-period-for-pre-existing-illness",
+    "version": "2026.09",
+    "contains_pii": false,
+    "pii_types": [],
+    "status": "flagged",
+    "duplicate_of": null,
+    "content_hash": "92f996347cb2cdaf",
+    "metadata": {
+      "key": "web_faq:website/faq.html#what-is-the-waiting-period-for-pre-existing-illness:0",
+      "flags": [
+        "conflict:ped_waiting_period_months=48 vs 36 in claims & waiting period policy v2.0"
+      ],
+      "topic": "waiting_period",
+      "aliases": [],
+      "revision": 1,
+      "authority": 1,
+      "effectiveDate": null,
+      "normalizations": [
+        "\"Pre existing illness\" -> \"Pre-existing disease\""
+      ]
+    }
+  }
+]

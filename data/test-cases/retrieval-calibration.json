@@ -1,0 +1,29 @@
+{
+  "in_scope": [
+    { "q": "What does the Gold plan cover?", "expect": "Gold Plan" },
+    { "q": "How long is the waiting period for diabetes?", "expect": "Pre-existing disease (PED)|Waiting periods" },
+    { "q": "Can my 72 year old mother be covered?", "expect": "Family members" },
+    { "q": "How do I make a cashless claim?", "expect": "How do I make a cashless claim?" },
+    { "q": "It's too expensive for me", "expect": "Objection – \"It is too expensive\"" },
+    { "q": "I already have insurance from my company", "expect": "Objection – \"I already have insurance from my employer\"" },
+    { "q": "Can I pay monthly?", "expect": "Can I pay the premium monthly?" },
+    { "q": "What tax benefit do I get?", "expect": "Can I get tax benefits?" },
+    { "q": "How much is the premium for a 40 year old on Silver?", "expect": "Silver plan premium rates" },
+    { "q": "What support do branch partners get?", "expect": "Branch Partnership Benefits" },
+    { "q": "Is cosmetic surgery covered?", "expect": "What is not covered?" },
+    { "q": "Do I need a medical test?", "expect": "Do I need a medical test?|Medical check-up" },
+    { "q": "What happens if I miss a payment?", "expect": "What is the grace period if I miss a payment?" },
+    { "q": "Insurance companies never pay claims", "expect": "Objection – \"Insurance companies reject claims\"" },
+    { "q": "Is maternity covered?", "expect": "Gold Plan|Plan comparison|Waiting periods" }
+  ],
+  "out_of_scope": [
+    "Do you sell car insurance?",
+    "What's the weather in Mumbai today?",
+    "Is IVF treatment covered?",
+    "What is your company's share price?",
+    "Can you recommend a good mutual fund?",
+    "Who won the cricket match yesterday?",
+    "Do you cover my pet dog?",
+    "Can I get a home loan from you?"
+  ]
+}

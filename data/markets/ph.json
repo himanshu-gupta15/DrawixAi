@@ -1,0 +1,442 @@
+{
+  "market": "PH",
+  "sector": "Life insurance (bancassurance)",
+  "flow": "Premium reminder and lapse prevention for a life policy referred through a partner bank",
+  "botName": "Ana",
+  "languages": [
+    "en",
+    "tl",
+    "taglish"
+  ],
+  "defaultVariant": "taglish",
+  "asr": {
+    "browserLocale": "fil-PH",
+    "whisperLanguage": "tagalog"
+  },
+  "tts": {
+    "browserLocales": [
+      "fil-PH",
+      "en-PH",
+      "en-US"
+    ],
+    "note": "No Filipino neural voice is installed on macOS; see docs/evaluation/q3 for the measured compromise."
+  },
+  "customer": {
+    "name": "Maria Santos",
+    "address": "Ma'am Maria",
+    "policy": "LifeSecure",
+    "premium": 2450,
+    "dueDate": "2026-10-15",
+    "graceDays": 31,
+    "rider": "Accidental Death Benefit rider",
+    "bank": "your partner bank"
+  },
+  "variants": {
+    "greeting": {
+      "en": "Good afternoon! This is Ana, a virtual assistant from Dravix Life, the insurance partner of your bank. This call is recorded for quality purposes. Am I speaking with Ma'am Maria Santos?",
+      "tl": "Magandang hapon po! Si Ana po ito, virtual assistant ng Dravix Life, ang insurance partner ng inyong bangko. Naka-record po ang tawag na ito para sa quality. Si Ma'am Maria Santos po ba ang kausap ko?",
+      "taglish": "Good afternoon po! Si Ana po ito, virtual assistant ng Dravix Life, yung insurance partner ng bank ninyo. Recorded po ang call na ito for quality purposes. Si Ma'am Maria Santos po ba ito?"
+    },
+    "reminder": {
+      "en": "Thank you, Ma'am Maria. I'm calling to remind you that the monthly premium of your LifeSecure policy, {amount}, is due on {date_en}. Will you be able to pay on or before the due date?",
+      "tl": "Salamat po, Ma'am Maria. Tumatawag po ako para ipaalala na ang buwanang premium ng inyong LifeSecure policy na {amount} ay dapat mabayaran sa {date_tl}. Makakabayad po ba kayo sa o bago ang due date?",
+      "taglish": "Thank you po, Ma'am Maria. Tumatawag lang po ako para i-remind na yung monthly premium ng LifeSecure policy n'yo na {amount} ay due na sa {date_en}. Makakapagbayad po ba kayo on or before the due date?"
+    },
+    "wrong_person": {
+      "en": "I'm sorry for the trouble. Thank you for your time.",
+      "tl": "Pasensya na po sa abala. Salamat po sa oras ninyo.",
+      "taglish": "Sorry po sa abala. Thank you po sa time ninyo."
+    },
+    "fallback": {
+      "en": "Sorry, I didn't quite catch that. Could you say it again?",
+      "tl": "Pasensya na po, hindi ko po masyadong naintindihan. Pakiulit po?",
+      "taglish": "Sorry po, hindi ko masyadong na-gets. Pakiulit lang po?"
+    },
+    "out_of_scope": {
+      "en": "I'm sorry, I don't have information about that. I can have a licensed advisor call you about it if you'd like.",
+      "tl": "Pasensya na po, wala po akong impormasyon tungkol diyan. Kung gusto ninyo, puwede ko po kayong ipatawag sa isang licensed advisor.",
+      "taglish": "Sorry po, wala po akong info tungkol diyan. Kung gusto n'yo po, pwede ko kayong ipa-call back sa licensed advisor namin."
+    },
+    "anything_else": {
+      "en": "Is there anything else I can help you with?",
+      "tl": "May iba pa po ba akong maitutulong?",
+      "taglish": "May iba pa po ba kayong tanong?"
+    },
+    "closing": {
+      "en": "Thank you for your time, Ma'am Maria. Take care!",
+      "tl": "Maraming salamat po sa oras ninyo, Ma'am Maria. Ingat po kayo!",
+      "taglish": "Thank you po sa time, Ma'am Maria. Ingat po!"
+    }
+  },
+  "intents": {
+    "will_pay": {
+      "examples": [
+        "Yes, I'll pay before the due date",
+        "Sige po, magbabayad ako bago mag-15",
+        "Oo, babayaran ko na bukas",
+        "Yes po, I'll pay on Friday",
+        "Opo, makakabayad ako",
+        "Sure, ibabayad ko na lang sa sahod",
+        "Okay po, magbabayad na ako this week",
+        "Kaya ko naman, babayaran ko"
+      ],
+      "cues": [
+        "magbabayad",
+        "babayaran",
+        "ibabayad",
+        "i'll pay",
+        "will pay",
+        "makakabayad"
+      ],
+      "responses": {
+        "en": "Thank you! You can pay through auto-debit from your bank account, at any partner bank branch, or via GCash or Maya using your policy number.",
+        "tl": "Salamat po! Puwede po kayong magbayad sa auto-debit ng inyong bank account, sa kahit anong branch ng partner bank, o sa GCash o Maya gamit ang inyong policy number.",
+        "taglish": "Ayos po, salamat! Pwede po kayong magbayad via auto-debit sa bank account n'yo, sa kahit anong branch, or sa GCash o Maya gamit yung policy number n'yo."
+      },
+      "then": "anything_else"
+    },
+    "already_paid": {
+      "examples": [
+        "I already paid",
+        "Nagbayad na ako kahapon",
+        "Bayad na po yan",
+        "Paid na ako last week",
+        "Nakapagbayad na po ako sa GCash"
+      ],
+      "cues": [
+        "nagbayad na",
+        "bayad na",
+        "already paid",
+        "paid na",
+        "nakapagbayad"
+      ],
+      "responses": {
+        "en": "Thank you! Payments can take up to two banking days to reflect. If it has been longer than that, I can ask our team to check your payment.",
+        "tl": "Salamat po! Inaabot po ng hanggang dalawang banking days bago mag-reflect ang bayad. Kung mas matagal na po, puwede ko pong ipa-check sa team namin.",
+        "taglish": "Thank you po! Minsan po umaabot ng two banking days bago mag-reflect ang payment. Kung mas matagal na po, pwede ko pong ipa-check sa team namin."
+      },
+      "then": "anything_else"
+    },
+    "ask_amount": {
+      "examples": [
+        "How much is my premium?",
+        "Magkano po ulit?",
+        "Magkano ang babayaran ko?",
+        "How much po yung due ko?",
+        "Ilan ang hulog ko ngayong buwan?"
+      ],
+      "cues": [
+        "magkano ang babayaran",
+        "magkano po ulit",
+        "magkano nga ulit",
+        "magkano yung premium",
+        "magkano ang premium",
+        "how much is my",
+        "ilan ang hulog"
+      ],
+      "responses": {
+        "en": "Your monthly premium is {amount}, due on {date_en}.",
+        "tl": "Ang buwanang premium po ninyo ay {amount}, at due po ito sa {date_tl}.",
+        "taglish": "Yung monthly premium n'yo po ay {amount}, due po sa {date_en}."
+      },
+      "then": "anything_else"
+    },
+    "ask_due_date": {
+      "examples": [
+        "When is the due date?",
+        "Kailan po ang due?",
+        "Hanggang kailan ako pwedeng magbayad?",
+        "Anong date po ang due?"
+      ],
+      "cues": [
+        "kailan ang due",
+        "kailan po ang due",
+        "due date",
+        "anong date",
+        "hanggang kailan"
+      ],
+      "responses": {
+        "en": "The due date is {date_en}, and you also have a {grace} day grace period until {grace_end_en}.",
+        "tl": "Ang due date po ay {date_tl}, at may {grace} araw pa po kayong palugit hanggang {grace_end_tl}.",
+        "taglish": "Due date po ay {date_en}, pero may {grace}-day grace period pa po kayo hanggang {grace_end_en}."
+      },
+      "then": "anything_else"
+    },
+    "ask_grace_period": {
+      "examples": [
+        "Is there a grace period?",
+        "May palugit ba?",
+        "Ano mangyayari kung late ako magbayad?",
+        "Pwede bang ma-late ng konti?",
+        "May grace period po ba?"
+      ],
+      "cues": [
+        "grace period",
+        "palugit",
+        "late"
+      ],
+      "responses": {
+        "en": "Yes. You have a {grace} day grace period, so your coverage stays active until {grace_end_en}. After that, the policy may lapse.",
+        "tl": "Opo, may {grace} araw na palugit, kaya active pa rin po ang coverage ninyo hanggang {grace_end_tl}. Pagkalampas po noon, puwedeng mag-lapse ang policy.",
+        "taglish": "Yes po, may {grace}-day grace period kayo, so active pa rin ang coverage n'yo hanggang {grace_end_en}. After that po, pwedeng mag-lapse ang policy."
+      },
+      "then": "anything_else"
+    },
+    "ask_payment_channels": {
+      "examples": [
+        "Where can I pay?",
+        "Saan po pwedeng magbayad?",
+        "Pwede ba sa GCash?",
+        "Can I pay through Maya?",
+        "Pwede ba sa branch magbayad?"
+      ],
+      "cues": [
+        "saan pwede magbayad",
+        "saan magbayad",
+        "saan po pwede",
+        "where can i pay",
+        "gcash",
+        "maya",
+        "sa branch"
+      ],
+      "responses": {
+        "en": "You can pay through auto-debit from your bank account, at any partner bank branch, or via GCash or Maya using your policy number.",
+        "tl": "Puwede po kayong magbayad sa auto-debit ng inyong bank account, sa kahit anong branch ng partner bank, o sa GCash o Maya gamit ang inyong policy number.",
+        "taglish": "Pwede po via auto-debit sa bank account n'yo, sa kahit anong partner bank branch, or sa GCash o Maya gamit yung policy number n'yo."
+      },
+      "then": "anything_else"
+    },
+    "objection_no_money": {
+      "examples": [
+        "Wala pa akong pera ngayon",
+        "Gipit ako ngayong buwan",
+        "Short ako this month eh",
+        "I don't have money right now",
+        "Sa susunod na sahod pa ako makakabayad",
+        "Hindi ko pa kaya magbayad ngayon",
+        "Medyo tight ang budget ko ngayon"
+      ],
+      "cues": [
+        "wala pa akong pera",
+        "walang pera",
+        "gipit",
+        "short ako",
+        "no money",
+        "don't have money",
+        "next sahod",
+        "susunod na sahod",
+        "hindi ko pa kaya",
+        "tight"
+      ],
+      "responses": {
+        "en": "I understand, it can be tight some months. To keep your family protected, you still have a {grace} day grace period until {grace_end_en}. If you need a different payment arrangement, I can refer you to a licensed advisor. Would you like that?",
+        "tl": "Naiintindihan ko po, mahirap talaga kapag gipit. Para hindi po mawala ang proteksyon ng pamilya ninyo, may {grace} araw pa po kayong palugit hanggang {grace_end_tl}. Kung kailangan ninyo ng ibang payment arrangement, puwede ko po kayong i-refer sa licensed advisor. Gusto n'yo po ba?",
+        "taglish": "Gets ko po, Ma'am, mahirap talaga pag gipit. Para tuloy-tuloy pa rin ang coverage ng family n'yo, may {grace}-day grace period pa po kayo hanggang {grace_end_en}. Kung kailangan n'yo ng ibang payment arrangement, pwede ko po kayong i-refer sa licensed advisor namin. Okay lang po ba?"
+      },
+      "then": "offer_advisor"
+    },
+    "objection_not_using": {
+      "examples": [
+        "Bakit pa ako magbabayad, di ko naman nagagamit",
+        "Sayang lang ang bayad",
+        "Why should I keep paying if I'm not using it?",
+        "Parang hindi ko naman kailangan yung insurance",
+        "Wala naman akong nakukuha dyan"
+      ],
+      "cues": [
+        "nagagamit",
+        "sayang",
+        "not using",
+        "hindi ko naman kailangan",
+        "nakukuha"
+      ],
+      "responses": {
+        "en": "I understand. Life insurance is there for your beneficiary when they need it most. If the policy lapses, your family loses the coverage and your {rider}, and reinstating it later may require a new health declaration.",
+        "tl": "Naiintindihan ko po. Ang life insurance po ay para sa inyong beneficiary sa panahong pinakakailangan nila. Kapag nag-lapse po ang policy, mawawala ang coverage pati ang inyong {rider}, at baka kailanganin ng bagong health declaration para ma-reinstate.",
+        "taglish": "Gets ko po. Yung life insurance po kasi ay para sa beneficiary n'yo, para pag kailangan nila, may maaasahan sila. Pag nag-lapse po ang policy, mawawala ang coverage pati yung {rider} n'yo, at baka kailangan pa ng bagong health declaration para ma-reinstate."
+      },
+      "then": "anything_else"
+    },
+    "objection_cancel": {
+      "examples": [
+        "Ipa-cancel ko na lang yung policy",
+        "I want to cancel my policy",
+        "Itigil ko na lang yung insurance",
+        "Ayoko na ituloy",
+        "Pwede bang i-surrender na lang?"
+      ],
+      "cues": [
+        "cancel",
+        "itigil",
+        "ayoko na",
+        "surrender",
+        "stop the policy"
+      ],
+      "responses": {
+        "en": "I can't process a cancellation on this call, but before you decide, a licensed advisor can explain your surrender value and options like adjusting your coverage. Would you like me to connect you?",
+        "tl": "Hindi ko po maipoproseso ang cancellation sa tawag na ito, pero bago po kayo magdesisyon, maipapaliwanag ng isang licensed advisor ang surrender value at ibang options, gaya ng pag-adjust ng coverage. Gusto n'yo po bang ikonekta ko kayo?",
+        "taglish": "Hindi ko po ma-process ang cancellation dito sa call, pero before po kayo mag-decide, ma-eexplain ng licensed advisor yung surrender value at ibang options, like pag-adjust ng coverage. Gusto n'yo po bang i-connect ko kayo?"
+      },
+      "then": "offer_advisor"
+    },
+    "ask_lapse": {
+      "examples": [
+        "What happens if my policy lapses?",
+        "Ano mangyayari kapag hindi ako nakabayad?",
+        "Paano kung mag-lapse?",
+        "Mawawala ba ang insurance ko pag di ako nagbayad?"
+      ],
+      "cues": [
+        "lapse",
+        "mag-lapse",
+        "hindi ako nakabayad",
+        "mawawala"
+      ],
+      "responses": {
+        "en": "If the premium is still unpaid after the grace period, the policy lapses and coverage stops. You can apply for reinstatement within 2 years by paying the missed premiums and submitting a health declaration.",
+        "tl": "Kapag hindi pa rin po nabayaran pagkatapos ng palugit, magla-lapse po ang policy at hihinto ang coverage. Puwede po kayong mag-apply ng reinstatement sa loob ng 2 taon sa pagbabayad ng mga hindi nabayarang premium at pagsumite ng health declaration.",
+        "taglish": "Kapag unpaid pa rin po after ng grace period, magla-lapse ang policy at titigil ang coverage. Pwede po kayong mag-apply for reinstatement within 2 years, babayaran lang yung missed premiums tapos magsa-submit ng health declaration."
+      },
+      "then": "anything_else"
+    },
+    "ask_beneficiary": {
+      "examples": [
+        "Can I change my beneficiary?",
+        "Paano magpalit ng beneficiary?",
+        "Gusto ko sanang palitan yung beneficiary ko",
+        "Pwede bang idagdag anak ko as beneficiary?"
+      ],
+      "cues": [
+        "beneficiary",
+        "palitan",
+        "magpalit"
+      ],
+      "responses": {
+        "en": "Yes. To change your beneficiary, fill out a change-of-beneficiary form at any partner bank branch or with your advisor, and bring a valid ID. It can't be changed over the phone.",
+        "tl": "Opo. Para mapalitan ang beneficiary, kailangan pong mag-fill out ng change of beneficiary form sa kahit anong branch ng partner bank o sa inyong advisor, at magdala po ng valid ID. Hindi po ito puwedeng gawin sa telepono.",
+        "taglish": "Yes po. Para magpalit ng beneficiary, kailangan pong mag-fill out ng change of beneficiary form sa partner bank branch o sa advisor n'yo, tapos dalhin lang po ang valid ID. Hindi po siya pwedeng gawin over the phone."
+      },
+      "then": "anything_else"
+    },
+    "ask_rider": {
+      "examples": [
+        "What is my rider?",
+        "Ano yung rider sa policy ko?",
+        "Covered ba pag naaksidente?",
+        "Does my policy cover accidents?"
+      ],
+      "cues": [
+        "rider",
+        "aksidente",
+        "naaksidente",
+        "accident"
+      ],
+      "responses": {
+        "en": "Your policy includes an {rider}, which pays an additional benefit to your beneficiary if death is caused by an accident, as long as the policy is active.",
+        "tl": "Kasama po sa policy ninyo ang {rider}, na nagbibigay ng dagdag na benepisyo sa inyong beneficiary kapag aksidente ang sanhi ng pagkamatay, basta active po ang policy.",
+        "taglish": "Kasama po sa policy n'yo yung {rider}. Nagbibigay po ito ng additional benefit sa beneficiary n'yo kung aksidente ang cause ng death, basta active po ang policy."
+      },
+      "then": "anything_else"
+    },
+    "ask_bank_referral": {
+      "examples": [
+        "Bakit kayo tumatawag, sa bangko ko kinuha to?",
+        "Is this from my bank?",
+        "Sino kayo, bangko ba kayo?",
+        "I got this policy from the bank, why is an insurance company calling?"
+      ],
+      "cues": [
+        "bangko",
+        "from my bank",
+        "sino kayo",
+        "insurance company ang tumatawag"
+      ],
+      "responses": {
+        "en": "Your policy was issued by Dravix Life and offered to you through your bank as our partner, a bank referral. We handle the policy servicing, while your bank handles your auto-debit.",
+        "tl": "Ang policy po ninyo ay inisyu ng Dravix Life at inalok sa inyo ng bangko ninyo bilang partner namin, sa pamamagitan ng bank referral. Kami po ang humahawak ng servicing ng policy, at ang bangko naman sa auto-debit.",
+        "taglish": "Yung policy n'yo po ay issued ng Dravix Life, pero inalok sa inyo ng bank n'yo kasi partner namin sila, bank referral po. Kami po ang naghahandle ng policy servicing, yung bank naman sa auto-debit."
+      },
+      "then": "anything_else"
+    },
+    "escalation": {
+      "examples": [
+        "Gusto kong makausap ang agent ko",
+        "Can I talk to a real person?",
+        "Pakikonekta ako sa tao",
+        "I want to speak to my advisor",
+        "Ayoko ng robot, tao na lang",
+        "Pwede bang tao ang kausap ko?"
+      ],
+      "cues": [
+        "makausap",
+        "real person",
+        "tao na lang",
+        "agent ko",
+        "robot",
+        "speak to someone",
+        "pakikonekta",
+        "tao ang kausap",
+        "pa-refer",
+        "real person",
+        "kausap ang",
+        "kausapin"
+      ],
+      "responses": {
+        "en": "Of course. I'll connect you with a licensed advisor now. Please stay on the line.",
+        "tl": "Sige po, ikokonekta ko po kayo sa isang licensed advisor namin. Sandali lang po.",
+        "taglish": "Sige po, ita-transfer ko na po kayo sa licensed advisor namin. Saglit lang po, stay on the line lang po."
+      },
+      "then": "escalated"
+    },
+    "callback": {
+      "examples": [
+        "Busy ako ngayon, tawag ka na lang mamaya",
+        "Can you call me back later?",
+        "Nagmamaneho ako, mamaya na lang",
+        "Tawagan mo na lang ako bukas"
+      ],
+      "cues": [
+        "mamaya",
+        "call me back",
+        "tawagan",
+        "busy",
+        "nagmamaneho"
+      ],
+      "responses": {
+        "en": "No problem. We'll call you back later today. Thank you, Ma'am Maria!",
+        "tl": "Sige po, tatawag na lang po kami ulit mamaya. Salamat po, Ma'am Maria!",
+        "taglish": "Sige po, call back na lang po kami later. Thank you po, Ma'am Maria!"
+      },
+      "then": "end"
+    },
+    "affirm": {
+      "examples": [
+        "Oo",
+        "Opo",
+        "Yes",
+        "Ako nga po",
+        "Yes, speaking",
+        "Siya nga po",
+        "Oo, ako yun",
+        "Yes po, ako si Maria"
+      ],
+      "cues": [],
+      "responses": {},
+      "then": "context"
+    },
+    "deny": {
+      "examples": [
+        "Hindi po",
+        "No",
+        "Wala na po",
+        "Hindi ako yan",
+        "Wrong number po",
+        "Hindi, salamat",
+        "No, that's all"
+      ],
+      "cues": [],
+      "responses": {},
+      "then": "context"
+    }
+  }
+}

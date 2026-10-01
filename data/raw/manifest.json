@@ -1,0 +1,19 @@
+{
+  "_comment": "Source registry. authority: 3 = approved policy document, 2 = official brochure/table, 1 = public website/marketing. Higher authority wins on conflicts. family+version drive supersession.",
+  "sources": [
+    { "id": "web_home", "path": "website/home.html", "type": "html", "family": "website_home", "version": "2026.09", "authority": 1, "source": "website / home page", "defaultCategory": "company" },
+    { "id": "web_plans", "path": "website/plans.html", "type": "html", "family": "website_plans", "version": "2026.09", "authority": 1, "source": "website / plans page", "defaultCategory": "product" },
+    { "id": "web_faq", "path": "website/faq.html", "type": "html", "family": "website_faq", "version": "2026.09", "authority": 1, "source": "website / FAQ page", "defaultCategory": "faq" },
+    { "id": "web_partners", "path": "website/partners.html", "type": "html", "family": "website_partners", "version": "2026.09", "authority": 1, "source": "website / partners section", "defaultCategory": "partnership" },
+    { "id": "web_testimonials", "path": "website/testimonials.html", "type": "html", "family": "website_testimonials", "version": "2026.09", "authority": 1, "source": "website / customer stories", "defaultCategory": "company" },
+    { "id": "web_contact", "path": "website/contact.html", "type": "html", "family": "website_contact", "version": "2026.09", "authority": 1, "source": "website / contact page", "defaultCategory": "company" },
+    { "id": "doc_brochure", "path": "docs/product-brochure-2026.pdf", "type": "pdf", "family": "brochure", "version": "2026.1", "authority": 2, "source": "product brochure PDF 2026", "defaultCategory": "product" },
+    { "id": "doc_eligibility", "path": "docs/eligibility-rules.md", "type": "markdown", "family": "eligibility_rules", "version": "2.0", "authority": 3, "source": "underwriting & eligibility rules v2.0", "defaultCategory": "eligibility" },
+    { "id": "doc_claims_v1", "path": "docs/claims-policy-v1.txt", "type": "text", "family": "claims_policy", "version": "1.0", "authority": 3, "source": "claims & waiting period policy v1.0", "defaultCategory": "policy" },
+    { "id": "doc_claims_v2", "path": "docs/claims-policy-v2.txt", "type": "text", "family": "claims_policy", "version": "2.0", "authority": 3, "source": "claims & waiting period policy v2.0", "defaultCategory": "policy" },
+    { "id": "doc_objections", "path": "docs/objection-playbook.md", "type": "markdown", "family": "objection_playbook", "version": "1.3", "authority": 3, "source": "sales objection playbook v1.3", "defaultCategory": "objection" },
+    { "id": "tbl_premiums", "path": "tables/premium-rates.csv", "type": "csv", "family": "premium_table", "version": "2026.2", "authority": 2, "source": "premium rate table 2026", "defaultCategory": "pricing" },
+    { "id": "form_lead", "path": "forms/lead-form.json", "type": "form_json", "family": "lead_form", "version": "2026.2", "authority": 2, "source": "quote request form", "defaultCategory": "process" },
+    { "id": "doc_scanned_form", "path": "docs/scanned-proposal-form.pdf", "type": "pdf", "family": "scanned_form", "version": "1.0", "authority": 1, "source": "scanned proposal form", "defaultCategory": "process" }
+  ]
+}

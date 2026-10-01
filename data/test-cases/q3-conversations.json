@@ -1,0 +1,52 @@
+[
+  { "id": "ph_cooperative_tagalog", "market": "PH", "title": "Cooperative customer (Tagalog)", "turns": [
+    { "text": "Opo, ako nga po.", "intent": ["identity_confirmed"], "variant": "tl" },
+    { "text": "Sige po, babayaran ko bago mag-due.", "intent": ["will_pay"], "variant": "tl" },
+    { "text": "Wala na po, salamat.", "intent": ["deny"], "ended": true } ] },
+  { "id": "ph_objection_taglish", "market": "PH", "title": "Sector objection – can't afford premium (Taglish)", "turns": [
+    { "text": "Yes po, si Maria ito.", "intent": ["identity_confirmed"], "variant": "taglish" },
+    { "text": "Medyo gipit kasi ako ngayon, next week pa yung sahod ko.", "intent": ["objection_no_money"], "variant": "taglish" },
+    { "text": "Oo sige, pa-refer na lang po.", "intent": ["escalation"], "ended": true, "escalated": true } ] },
+  { "id": "ph_finance_terms_english", "market": "PH", "title": "Mixed English / finance terms", "turns": [
+    { "text": "Yes, this is Maria speaking.", "intent": ["identity_confirmed"], "variant": "en" },
+    { "text": "If I miss the due date, will my policy lapse right away?", "intent": ["ask_grace_period", "ask_lapse"], "variant": "en" },
+    { "text": "What does my rider cover again?", "intent": ["ask_rider"], "variant": "en" },
+    { "text": "No, that's all, thanks.", "intent": ["deny"], "ended": true } ] },
+  { "id": "ph_colloquial", "market": "PH", "title": "Colloquial speech", "turns": [
+    { "text": "Oo, ako 'to.", "intent": ["identity_confirmed"], "variant": "tl" },
+    { "text": "Eh bakit pa ko magbabayad, wala naman akong napapala diyan.", "intent": ["objection_not_using"], "variant": "tl" },
+    { "text": "Ayoko na talaga, ipapa-cancel ko na lang yan.", "intent": ["objection_cancel"] } ] },
+  { "id": "ph_escalation", "market": "PH", "title": "Human escalation (Tagalog)", "turns": [
+    { "text": "Opo.", "intent": ["identity_confirmed"] },
+    { "text": "Pwede po bang tao na lang ang kausap ko?", "intent": ["escalation"], "variant": "tl", "ended": true, "escalated": true } ] },
+  { "id": "ph_out_of_scope", "market": "PH", "title": "Out-of-scope (hard negative with 'magkano')", "turns": [
+    { "text": "Opo, ako po.", "intent": ["identity_confirmed"] },
+    { "text": "Magkano po ba ang bigas ngayon sa palengke?", "intent": ["fallback"], "variant": "tl" } ] },
+  { "id": "id_cooperative_formal", "market": "ID", "title": "Cooperative customer (formal)", "turns": [
+    { "text": "Ya, benar, saya Budi Santoso.", "intent": ["identity_confirmed"], "variant": "formal" },
+    { "text": "Baik, saya akan membayar sebelum jatuh tempo.", "intent": ["will_pay"], "variant": "formal" },
+    { "text": "Tidak ada, terima kasih.", "intent": ["deny"], "ended": true } ] },
+  { "id": "id_objection_casual", "market": "ID", "title": "Sector objection – no money (casual)", "turns": [
+    { "text": "Iya, saya sendiri.", "intent": ["identity_confirmed"] },
+    { "text": "Aduh Mbak, bulan ini lagi bokek banget, belum bisa bayar.", "intent": ["objection_no_money"], "variant": "casual" },
+    { "text": "Gak usah, nanti saya usahain bayar.", "intent": ["deny", "will_pay"] } ] },
+  { "id": "id_loanwords", "market": "ID", "title": "English finance loanwords", "turns": [
+    { "text": "Betul.", "intent": ["identity_confirmed"] },
+    { "text": "Kalau payment-nya telat, late fee-nya dihitung per hari ya?", "intent": ["ask_penalty"] },
+    { "text": "Oke, bisa transfer lewat virtual account kan?", "intent": ["ask_payment_channels"] } ] },
+  { "id": "id_colloquial_jakarta", "market": "ID", "title": "Colloquial Jakarta speech", "turns": [
+    { "text": "Iya, gue Budi.", "intent": ["identity_confirmed"], "variant": "casual" },
+    { "text": "Udah gue bayar kemaren kok lewat aplikasi.", "intent": ["already_paid"], "variant": "casual" } ] },
+  { "id": "id_regional_javanese", "market": "ID", "title": "Regional: Javanese-influenced speech", "turns": [
+    { "text": "Nggih, leres, kulo Budi.", "intent": ["identity_confirmed"], "regional": "javanese" },
+    { "text": "Ngapunten Mbak, kulo dereng gajian, mangke nggih kulo bayar.", "intent": ["objection_no_money", "will_pay"], "regional": "javanese" } ] },
+  { "id": "id_regional_sundanese", "market": "ID", "title": "Regional: Sundanese-influenced speech", "turns": [
+    { "text": "Muhun, abdi Budi.", "intent": ["identity_confirmed"], "regional": "sundanese" },
+    { "text": "Punten Teh, artosna teu acan aya, kumaha atuh?", "intent": ["objection_no_money"], "regional": "sundanese" } ] },
+  { "id": "id_escalation", "market": "ID", "title": "Human escalation (formal)", "turns": [
+    { "text": "Iya, betul.", "intent": ["identity_confirmed"] },
+    { "text": "Saya mau bicara langsung dengan petugas saja.", "intent": ["escalation"], "variant": "formal", "ended": true, "escalated": true } ] },
+  { "id": "id_out_of_scope", "market": "ID", "title": "Out-of-scope (hard negative with 'di mana')", "turns": [
+    { "text": "Iya.", "intent": ["identity_confirmed"] },
+    { "text": "Mbak, motor saya mogok, bengkel terdekat di mana ya?", "intent": ["fallback"] } ] }
+]

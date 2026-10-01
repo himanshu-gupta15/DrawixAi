@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Alternate build dirs (NEXT_DIST_DIR) and the local model cache
+    ".next-*/**",
+    ".models/**",
   ]),
 ]);
 

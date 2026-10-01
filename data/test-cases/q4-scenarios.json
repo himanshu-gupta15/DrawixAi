@@ -1,0 +1,86 @@
+[
+  {
+    "id": "motor_cross_sell",
+    "title": "Motor renewal – missed multi-vehicle cross-sell",
+    "voices": { "agent": "Tara", "customer": "Rishi" },
+    "lines": [
+      { "s": "agent", "t": "Good morning, this is Neha from Dravix General Insurance. This call is recorded for quality and training purposes. Am I speaking with Mister Arjun Rao?" },
+      { "s": "customer", "t": "Yes, speaking." },
+      { "s": "agent", "t": "I'm calling about your car insurance renewal, which is due on the twentieth of this month." },
+      { "s": "customer", "t": "Okay. What will the premium be this year?" },
+      { "s": "agent", "t": "Your renewal premium for the Honda City is eleven thousand four hundred rupees, including your no claim bonus." },
+      { "s": "customer", "t": "That's fine. By the way, my wife also has a car, a Hyundai i20, and her insurance is with another company.", "label": "cross_sell" },
+      { "s": "agent", "t": "Okay, noted. Shall I send the renewal payment link to your registered mobile number?" },
+      { "s": "customer", "t": "Yes, please send it. How do I pay, can I use UPI?" },
+      { "s": "agent", "t": "Yes, the link supports UPI, cards and net banking." },
+      { "s": "customer", "t": "Great, sounds good. I will pay tonight." },
+      { "s": "agent", "t": "Thank you, Mister Rao. Have a nice day." }
+    ],
+    "expected": ["cross_sell"],
+    "acceptable": ["buying_signal"],
+    "mustNotFire": ["compliance_disclosure", "compliance_risky_statement", "frustration", "payment_difficulty"]
+  },
+  {
+    "id": "health_compliance",
+    "title": "Health sales – skipped recording disclosure and risky claim promise",
+    "voices": { "agent": "Tara", "customer": "Aman" },
+    "lines": [
+      { "s": "agent", "t": "Hello, this is Rahul from Dravix Health. You had enquired about health insurance for your family." },
+      { "s": "customer", "t": "Yes, I filled a form on your website last week." },
+      { "s": "agent", "t": "Great. For a family of four with five lakh cover, the Gold plan premium is around eighteen thousand rupees a year.", "label": "compliance_disclosure" },
+      { "s": "customer", "t": "Hmm. My father has diabetes. Will his claims be paid?" },
+      { "s": "agent", "t": "Don't worry sir, with us claims are always approved, it is guaranteed. No questions asked.", "label": "compliance_risky_statement" },
+      { "s": "customer", "t": "Really? Even for diabetes from day one?" },
+      { "s": "agent", "t": "Yes sir, one hundred percent, you have nothing to worry about." },
+      { "s": "customer", "t": "Okay. My parents also have no insurance right now, actually.", "label": "cross_sell" },
+      { "s": "agent", "t": "Okay. Shall I send you the proposal form?" },
+      { "s": "customer", "t": "Let me think about it. Please call me back tomorrow evening.", "label": "callback_need" }
+    ],
+    "expected": ["compliance_disclosure", "compliance_risky_statement", "cross_sell", "callback_need"],
+    "acceptable": [],
+    "mustNotFire": ["frustration", "payment_difficulty"]
+  },
+  {
+    "id": "collections_frustration",
+    "title": "Collections – rising frustration and payment difficulty",
+    "voices": { "agent": "Tara", "customer": "Rishi" },
+    "lines": [
+      { "s": "agent", "t": "Good afternoon, this is Priya from Dravix Finance. This call is recorded. Am I speaking with Mister Vikram Singh?" },
+      { "s": "customer", "t": "Yes." },
+      { "s": "agent", "t": "Sir, your loan instalment of eight thousand two hundred rupees was due on the fifth and is still pending." },
+      { "s": "customer", "t": "I know. I already told your colleague yesterday that I will pay next week." },
+      { "s": "agent", "t": "Sir, can you please confirm the exact date you will pay?" },
+      { "s": "customer", "t": "I told you already, next week. Why do you keep calling me every day?" },
+      { "s": "agent", "t": "Sir, I understand, but I need a confirmed date for our records." },
+      { "s": "customer", "t": "This is the third time this week. This is ridiculous, I am really fed up with these calls.", "label": "frustration" },
+      { "s": "agent", "t": "Sir, if the payment is late, a penalty will apply." },
+      { "s": "customer", "t": "Look, I lost my job last month and money is tight. I am trying my best.", "label": "payment_difficulty" },
+      { "s": "agent", "t": "I see. Can you pay at least part of the amount today?" },
+      { "s": "customer", "t": "No, I cannot afford it right now." }
+    ],
+    "expected": ["frustration", "payment_difficulty"],
+    "acceptable": [],
+    "mustNotFire": ["compliance_disclosure", "cross_sell", "compliance_risky_statement"]
+  },
+  {
+    "id": "noisy_ambiguous",
+    "title": "Noisy line with ambiguous phrases – no nudges expected",
+    "voices": { "agent": "Tara", "customer": "Aman" },
+    "noise": { "snrDb": 6 },
+    "lines": [
+      { "s": "agent", "t": "Hello, this is Kavya from Dravix Health, and this call is recorded for quality purposes. Is this a good time?" },
+      { "s": "customer", "t": "Yes, it's fine, no problem at all." },
+      { "s": "agent", "t": "I'm calling to confirm your policy renewal next month." },
+      { "s": "customer", "t": "Sure. Sorry about the noise, the traffic here is really frustrating today." },
+      { "s": "agent", "t": "No worries. Your premium stays the same as last year." },
+      { "s": "customer", "t": "Okay, good. I'm not worried about the price." },
+      { "s": "agent", "t": "Do you have any changes to your address or nominee?" },
+      { "s": "customer", "t": "No changes. I sold my second car last year, but that's a different policy anyway." },
+      { "s": "agent", "t": "Understood. I'll send the renewal reminder by email." },
+      { "s": "customer", "t": "That's fine, thank you." }
+    ],
+    "expected": [],
+    "acceptable": [],
+    "mustNotFire": ["frustration", "cross_sell", "payment_difficulty", "compliance_disclosure", "compliance_risky_statement", "callback_need"]
+  }
+]

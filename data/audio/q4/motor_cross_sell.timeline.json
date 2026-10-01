@@ -1,0 +1,84 @@
+{
+  "id": "motor_cross_sell",
+  "durationMs": 58499,
+  "lines": [
+    {
+      "s": "agent",
+      "t": "Good morning, this is Neha from Dravix General Insurance. This call is recorded for quality and training purposes. Am I speaking with Mister Arjun Rao?",
+      "channel": 0,
+      "startMs": 400,
+      "endMs": 9355
+    },
+    {
+      "s": "customer",
+      "t": "Yes, speaking.",
+      "channel": 1,
+      "startMs": 10055,
+      "endMs": 11309
+    },
+    {
+      "s": "agent",
+      "t": "I'm calling about your car insurance renewal, which is due on the twentieth of this month.",
+      "channel": 0,
+      "startMs": 12009,
+      "endMs": 16949
+    },
+    {
+      "s": "customer",
+      "t": "Okay. What will the premium be this year?",
+      "channel": 1,
+      "startMs": 17649,
+      "endMs": 20472
+    },
+    {
+      "s": "agent",
+      "t": "Your renewal premium for the Honda City is eleven thousand four hundred rupees, including your no claim bonus.",
+      "channel": 0,
+      "startMs": 21172,
+      "endMs": 27152
+    },
+    {
+      "s": "customer",
+      "t": "That's fine. By the way, my wife also has a car, a Hyundai i20, and her insurance is with another company.",
+      "label": "cross_sell",
+      "channel": 1,
+      "startMs": 27852,
+      "endMs": 35396
+    },
+    {
+      "s": "agent",
+      "t": "Okay, noted. Shall I send the renewal payment link to your registered mobile number?",
+      "channel": 0,
+      "startMs": 36096,
+      "endMs": 41395
+    },
+    {
+      "s": "customer",
+      "t": "Yes, please send it. How do I pay, can I use UPI?",
+      "channel": 1,
+      "startMs": 42095,
+      "endMs": 46379
+    },
+    {
+      "s": "agent",
+      "t": "Yes, the link supports UPI, cards and net banking.",
+      "channel": 0,
+      "startMs": 47079,
+      "endMs": 50211
+    },
+    {
+      "s": "customer",
+      "t": "Great, sounds good. I will pay tonight.",
+      "channel": 1,
+      "startMs": 50911,
+      "endMs": 53811
+    },
+    {
+      "s": "agent",
+      "t": "Thank you, Mister Rao. Have a nice day.",
+      "channel": 0,
+      "startMs": 54511,
+      "endMs": 57199
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[
+  { "id": "V1", "type": "product", "question": "Is there an annual health check-up included in any plan?", "expected": ["Gold Plan"], "acceptable": ["Dravix Health Plans at a Glance", "Plan comparison"], "rationale": "Gold includes a free annual health check-up." },
+  { "id": "V2", "type": "product", "question": "Are ambulance charges covered?", "expected": ["Benefits Included in Every Plan"], "acceptable": [], "rationale": "Ambulance charges up to ₹2,000 per hospitalisation." },
+  { "id": "V3", "type": "product", "question": "What room can I stay in under the Silver plan?", "expected": ["Silver Plan", "Plan comparison"], "acceptable": ["Dravix Health Plans at a Glance"], "rationale": "Silver room rent up to 1% of sum insured per day." },
+  { "id": "V4", "type": "policy", "question": "If an accident happens in the first week, am I covered?", "expected": ["Waiting periods", "Is there a waiting period when I first buy the policy?"], "acceptable": [], "rationale": "Accidents are covered from day one." },
+  { "id": "V5", "type": "policy", "question": "What if my claim gets rejected, can I appeal?", "expected": ["Claim settlement"], "acceptable": ["Objection – \"Insurance companies reject claims\""], "rationale": "Written reason + review within 30 days." },
+  { "id": "V6", "type": "qualification", "question": "My mother is 78, can she be added?", "expected": ["Family members"], "acceptable": [], "rationale": "Parents max entry age 75 → not eligible." },
+  { "id": "V7", "type": "qualification", "question": "Who decides if someone with past cancer can get a policy?", "expected": ["Conditions that need underwriter review"], "acceptable": [], "rationale": "Cancer within 5 years → underwriter review." },
+  { "id": "V8", "type": "faq", "question": "Is there an extra charge for paying monthly?", "expected": ["Can I pay the premium monthly?"], "acceptable": [], "rationale": "No extra charge for monthly EMI." },
+  { "id": "V9", "type": "faq", "question": "How many days do I get to review the policy after buying?", "expected": ["What is the free-look period?"], "acceptable": [], "rationale": "30-day free-look." },
+  { "id": "V10", "type": "objection", "question": "Paying every month for something I may never use feels like a waste.", "expected": ["Objection – \"I am young and healthy, I don't need it\"", "Objection – \"It is too expensive\""], "acceptable": [], "rationale": "Value objection – young/healthy or price playbook entries." },
+  { "id": "V11", "type": "objection", "question": "Let me discuss with my wife and get back to you.", "expected": ["Objection – \"I need to think about it / call me later\""], "acceptable": [], "rationale": "Think-about-it objection: offer callback, no pressure." },
+  { "id": "V12", "type": "out_of_scope", "question": "Do you offer travel insurance for my Europe trip?", "expected": [], "acceptable": [], "rationale": "Travel insurance not in KB." },
+  { "id": "V13", "type": "out_of_scope", "question": "Does the Gold plan cover LASIK eye surgery?", "expected": [], "acceptable": [], "rationale": "LASIK not mentioned anywhere; must not guess." }
+]

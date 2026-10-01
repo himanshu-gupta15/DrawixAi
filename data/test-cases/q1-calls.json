@@ -1,0 +1,241 @@
+[
+  {
+    "id": "q1_cooperative",
+    "title": "Cooperative customer",
+    "voice": "Rishi",
+    "turns": [
+      "Yes, sure, go ahead.",
+      "My name is Rohan Verma.",
+      "I am thirty four years old.",
+      "Myself and my wife.",
+      {
+        "t": "I live in Pune.",
+        "alt": "Pune city."
+      },
+      "No, nobody has any health problems.",
+      "No, we don't smoke.",
+      "Around fifteen hundred rupees a month.",
+      "Yes please, tomorrow at six pm."
+    ],
+    "checks": [
+      {
+        "name": "qualified",
+        "type": "qualification",
+        "value": "qualified"
+      },
+      {
+        "name": "callback scheduled",
+        "type": "action",
+        "value": "callback"
+      },
+      {
+        "name": "lead created",
+        "type": "action",
+        "value": "lead"
+      },
+      {
+        "name": "CRM summary written",
+        "type": "action",
+        "value": "crm_summary"
+      }
+    ]
+  },
+  {
+    "id": "q1_objections",
+    "title": "Objections (employer cover, price)",
+    "voice": "Aman",
+    "turns": [
+      "Yes, okay.",
+      "This is Imran Shaikh.",
+      "I'm twenty nine.",
+      "Just me.",
+      {
+        "t": "Mumbai.",
+        "alt": "I live in Mumbai."
+      },
+      "Honestly, I already have insurance from my office, why do I need another one?",
+      "No health issues.",
+      "No.",
+      "Hmm, this sounds too expensive for me.",
+      "Maybe around eight hundred a month.",
+      "Okay, call me on Saturday morning."
+    ],
+    "checks": [
+      {
+        "name": "employer objection answered from KB",
+        "type": "grounded_category",
+        "value": "objection",
+        "count": 2
+      },
+      {
+        "name": "no invented answer",
+        "type": "all_answers_grounded"
+      },
+      {
+        "name": "still qualified",
+        "type": "qualification",
+        "value": "qualified"
+      },
+      {
+        "name": "callback scheduled",
+        "type": "action",
+        "value": "callback"
+      }
+    ]
+  },
+  {
+    "id": "q1_incomplete_conflicting",
+    "title": "Incomplete and conflicting details",
+    "voice": "Samantha",
+    "turns": [
+      "Yes.",
+      "Sorry, the line is bad.",
+      "My name is Meera Joshi.",
+      "I'm forty three.",
+      "Me and my two kids.",
+      {
+        "t": "Bengaluru.",
+        "alt": "I live in Bangalore."
+      },
+      "No, none.",
+      "No.",
+      "About two thousand a month. Actually I'm thirty four, not forty three.",
+      "Thirty four is correct.",
+      "Two thousand a month.",
+      "Yes, Monday at eleven am."
+    ],
+    "checks": [
+      {
+        "name": "reprompted for missing name",
+        "type": "agent_said",
+        "value": "Could you tell me your name"
+      },
+      {
+        "name": "asked to resolve conflicting age",
+        "type": "agent_said",
+        "value": "Just to confirm"
+      },
+      {
+        "name": "final age is the confirmed one (34)",
+        "type": "slot",
+        "slot": "age",
+        "value": 34
+      },
+      {
+        "name": "qualified",
+        "type": "qualification",
+        "value": "qualified"
+      }
+    ]
+  },
+  {
+    "id": "q1_out_of_scope",
+    "title": "Out-of-scope / unavailable information",
+    "voice": "Rishi",
+    "turns": [
+      "Yes.",
+      "Arjun Mehta.",
+      {
+        "t": "Thirty eight.",
+        "alt": "I am thirty eight years old."
+      },
+      "Me and my parents. My father is seventy.",
+      {
+        "t": "Delhi.",
+        "alt": "I live in New Delhi."
+      },
+      "Does the policy cover IVF treatment?",
+      "My mother has thyroid.",
+      "No.",
+      "Do you also sell car insurance?",
+      "Around twenty five thousand a year.",
+      "No callback needed, just email me."
+    ],
+    "checks": [
+      {
+        "name": "said information unavailable (IVF)",
+        "type": "agent_said",
+        "value": "don't have verified information"
+      },
+      {
+        "name": "refused other product (car insurance)",
+        "type": "agent_said",
+        "value": "only help with Dravix Health"
+      },
+      {
+        "name": "unanswered questions passed to advisor",
+        "type": "unanswered_min",
+        "value": 2
+      },
+      {
+        "name": "qualified (parents need Gold+)",
+        "type": "qualification",
+        "value": "qualified"
+      }
+    ]
+  },
+  {
+    "id": "q1_human_escalation",
+    "title": "Human-assistance request",
+    "voice": "Aman",
+    "turns": [
+      "Yes, tell me.",
+      "Neha Kapoor.",
+      {
+        "t": "Fifty two.",
+        "alt": "I am fifty two years old."
+      },
+      "I don't want to talk to a bot, connect me to a real person please."
+    ],
+    "checks": [
+      {
+        "name": "escalated to human",
+        "type": "escalated"
+      },
+      {
+        "name": "escalation webhook/action logged",
+        "type": "action",
+        "value": "escalation"
+      },
+      {
+        "name": "context handed over (CRM summary)",
+        "type": "action",
+        "value": "crm_summary"
+      }
+    ]
+  },
+  {
+    "id": "q1_underwriting",
+    "title": "Qualification edge case: condition needing underwriting",
+    "voice": "Samantha",
+    "turns": [
+      "Sure.",
+      "Kavita Rao.",
+      {
+        "t": "I'm fifty.",
+        "alt": "I am fifty years old."
+      },
+      "Only me.",
+      {
+        "t": "Hyderabad.",
+        "alt": "I live in Hyderabad city."
+      },
+      "Yes, I had a heart bypass surgery last year.",
+      "No.",
+      "Around twenty thousand a year.",
+      "Yes, call me tomorrow at five pm."
+    ],
+    "checks": [
+      {
+        "name": "marked needs underwriting (not rejected, no approval promised)",
+        "type": "qualification",
+        "value": "needs_underwriting"
+      },
+      {
+        "name": "callback scheduled",
+        "type": "action",
+        "value": "callback"
+      }
+    ]
+  }
+]

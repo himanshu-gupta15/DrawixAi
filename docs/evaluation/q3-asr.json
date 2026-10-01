@@ -1,0 +1,1140 @@
+{
+  "ranAt": "2026-10-01T16:49:22.624Z",
+  "caveat": "Speech is synthesized by macOS voices, not recorded from native speakers; WER on real phone audio will be higher. The Malay voice is only a proxy for a non-Jakarta accent.",
+  "voices": {
+    "PH": {
+      "Samantha": "en_US voice (no Filipino voice installed)",
+      "Damayanti": "id_ID voice reading Tagalog (closer vowel phonology)"
+    },
+    "ID": {
+      "Damayanti": "id_ID native voice (standard Indonesian)",
+      "Amira": "ms_MY Malay voice reading Indonesian – proxy for a non-Jakarta (Sumatra/Riau-like) accent, NOT a real regional speaker"
+    }
+  },
+  "summary": [
+    {
+      "config": "PH | Samantha | whisper-base | tagalog",
+      "meanWer": 0.548,
+      "meanLatencyMs": 544,
+      "n": 5
+    },
+    {
+      "config": "PH | Samantha | whisper-base | english",
+      "meanWer": 0.722,
+      "meanLatencyMs": 429,
+      "n": 5
+    },
+    {
+      "config": "PH | Samantha | whisper-small | tagalog",
+      "meanWer": 0.624,
+      "meanLatencyMs": 1234,
+      "n": 5
+    },
+    {
+      "config": "PH | Samantha | whisper-small | english",
+      "meanWer": 0.692,
+      "meanLatencyMs": 1000,
+      "n": 5
+    },
+    {
+      "config": "PH | Damayanti | whisper-base | tagalog",
+      "meanWer": 0.648,
+      "meanLatencyMs": 414,
+      "n": 5
+    },
+    {
+      "config": "PH | Damayanti | whisper-base | english",
+      "meanWer": 11.656,
+      "meanLatencyMs": 1486,
+      "n": 5
+    },
+    {
+      "config": "PH | Damayanti | whisper-small | tagalog",
+      "meanWer": 0.408,
+      "meanLatencyMs": 974,
+      "n": 5
+    },
+    {
+      "config": "PH | Damayanti | whisper-small | english",
+      "meanWer": 0.688,
+      "meanLatencyMs": 923,
+      "n": 5
+    },
+    {
+      "config": "ID | Damayanti | whisper-base | indonesian",
+      "meanWer": 0.546,
+      "meanLatencyMs": 468,
+      "n": 5
+    },
+    {
+      "config": "ID | Damayanti | whisper-base | english",
+      "meanWer": 0.862,
+      "meanLatencyMs": 478,
+      "n": 5
+    },
+    {
+      "config": "ID | Damayanti | whisper-small | indonesian",
+      "meanWer": 0.324,
+      "meanLatencyMs": 1030,
+      "n": 5
+    },
+    {
+      "config": "ID | Damayanti | whisper-small | english",
+      "meanWer": 0.722,
+      "meanLatencyMs": 1001,
+      "n": 5
+    },
+    {
+      "config": "ID | Amira | whisper-base | indonesian",
+      "meanWer": 0.656,
+      "meanLatencyMs": 477,
+      "n": 5
+    },
+    {
+      "config": "ID | Amira | whisper-base | english",
+      "meanWer": 0.92,
+      "meanLatencyMs": 425,
+      "n": 5
+    },
+    {
+      "config": "ID | Amira | whisper-small | indonesian",
+      "meanWer": 0.54,
+      "meanLatencyMs": 1050,
+      "n": 5
+    },
+    {
+      "config": "ID | Amira | whisper-small | english",
+      "meanWer": 0.908,
+      "meanLatencyMs": 969,
+      "n": 5
+    }
+  ],
+  "categoriesWhisperSmallForced": [
+    {
+      "config": "PH | Samantha | tagalog",
+      "meanWer": 0.895
+    },
+    {
+      "config": "PH | Samantha | taglish",
+      "meanWer": 0.665
+    },
+    {
+      "config": "PH | Samantha | english",
+      "meanWer": 0
+    },
+    {
+      "config": "PH | Damayanti | tagalog",
+      "meanWer": 0.555
+    },
+    {
+      "config": "PH | Damayanti | taglish",
+      "meanWer": 0.465
+    },
+    {
+      "config": "PH | Damayanti | english",
+      "meanWer": 0
+    },
+    {
+      "config": "ID | Damayanti | formal",
+      "meanWer": 0.2
+    },
+    {
+      "config": "ID | Damayanti | casual",
+      "meanWer": 0.1
+    },
+    {
+      "config": "ID | Damayanti | loanwords",
+      "meanWer": 0.56
+    },
+    {
+      "config": "ID | Damayanti | regional_javanese_lexical",
+      "meanWer": 0.38
+    },
+    {
+      "config": "ID | Damayanti | regional_medan_lexical",
+      "meanWer": 0.38
+    },
+    {
+      "config": "ID | Amira | formal",
+      "meanWer": 0.2
+    },
+    {
+      "config": "ID | Amira | casual",
+      "meanWer": 0.2
+    },
+    {
+      "config": "ID | Amira | loanwords",
+      "meanWer": 0.67
+    },
+    {
+      "config": "ID | Amira | regional_javanese_lexical",
+      "meanWer": 0.63
+    },
+    {
+      "config": "ID | Amira | regional_medan_lexical",
+      "meanWer": 1
+    }
+  ],
+  "rows": [
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-base",
+      "language": "tagalog",
+      "reference": "Opo, babayaran ko po bago mag-due date.",
+      "hypothesis": "Apo, babayaran ko po bago magdo date.",
+      "wer": 0.38,
+      "latencyMs": 760,
+      "audioSec": 2.93
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Opo, babayaran ko po bago mag-due date.",
+      "hypothesis": "Oppo, Bbayer and Copo Bago Magdudate",
+      "wer": 0.88,
+      "latencyMs": 432,
+      "audioSec": 2.93
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-small",
+      "language": "tagalog",
+      "reference": "Opo, babayaran ko po bago mag-due date.",
+      "hypothesis": "Apo, ba bae arang ko po bae go magdue date.",
+      "wer": 0.88,
+      "latencyMs": 2401,
+      "audioSec": 2.93
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Opo, babayaran ko po bago mag-due date.",
+      "hypothesis": "Apo, Babayaran Koppu Begumagdu date.",
+      "wer": 0.75,
+      "latencyMs": 1319,
+      "audioSec": 2.93
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-base",
+      "language": "tagalog",
+      "reference": "Wala pa po akong pera ngayon, sa susunod na sahod pa.",
+      "hypothesis": "Walapapo ako ako nga kong parang gan, sayos asunad na sa'yo pa.",
+      "wer": 0.91,
+      "latencyMs": 667,
+      "audioSec": 4.05
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Wala pa po akong pera ngayon, sa susunod na sahod pa.",
+      "hypothesis": "Walla Popo, a compare and gay in, say so soon at Nossabad Pah.",
+      "wer": 1.18,
+      "latencyMs": 503,
+      "audioSec": 4.05
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-small",
+      "language": "tagalog",
+      "reference": "Wala pa po akong pera ngayon, sa susunod na sahod pa.",
+      "hypothesis": "Walapapo akong parang gayan, sayes na sunod na sa hod pa.",
+      "wer": 0.91,
+      "latencyMs": 1069,
+      "audioSec": 4.05
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Wala pa po akong pera ngayon, sa susunod na sahod pa.",
+      "hypothesis": "Walapapohakumparangayun, say se sunid nasahid pa.",
+      "wer": 0.91,
+      "latencyMs": 1027,
+      "audioSec": 4.05
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-base",
+      "language": "tagalog",
+      "reference": "Pwede ba akong magbayad thru GCash this Friday?",
+      "hypothesis": "Weedbawakang magbaay at through G-Cash this Friday?",
+      "wer": 0.75,
+      "latencyMs": 453,
+      "audioSec": 2.83
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Pwede ba akong magbayad thru GCash this Friday?",
+      "hypothesis": "Weedbock and Magbayard through G-Cash this Friday",
+      "wer": 0.75,
+      "latencyMs": 420,
+      "audioSec": 2.83
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-small",
+      "language": "tagalog",
+      "reference": "Pwede ba akong magbayad thru GCash this Friday?",
+      "hypothesis": "Weed ba akong magbayod through G-Cash this Friday?",
+      "wer": 0.63,
+      "latencyMs": 943,
+      "audioSec": 2.83
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Pwede ba akong magbayad thru GCash this Friday?",
+      "hypothesis": "Weed Baak and Mag Bayad through G Cash this Friday.",
+      "wer": 1,
+      "latencyMs": 896,
+      "audioSec": 2.83
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-base",
+      "language": "tagalog",
+      "reference": "Ano mangyayari sa coverage ko pag nag-lapse yung policy?",
+      "hypothesis": "Ano magayari say coverage kopag naglap siyang policy?",
+      "wer": 0.7,
+      "latencyMs": 464,
+      "audioSec": 3.85
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Ano mangyayari sa coverage ko pag nag-lapse yung policy?",
+      "hypothesis": "Anomanga Aresay coverage copagnag laps young policy",
+      "wer": 0.8,
+      "latencyMs": 413,
+      "audioSec": 3.85
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-small",
+      "language": "tagalog",
+      "reference": "Ano mangyayari sa coverage ko pag nag-lapse yung policy?",
+      "hypothesis": "Ano Mangayari say coverage copagnag laps young policy?",
+      "wer": 0.7,
+      "latencyMs": 921,
+      "audioSec": 3.85
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Ano mangyayari sa coverage ko pag nag-lapse yung policy?",
+      "hypothesis": "Anomangayari say coverage copagnag laps young policy.",
+      "wer": 0.8,
+      "latencyMs": 919,
+      "audioSec": 3.85
+    },
+    {
+      "market": "PH",
+      "category": "english",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-base",
+      "language": "tagalog",
+      "reference": "Can I change the beneficiary of my policy?",
+      "hypothesis": "Can I change the beneficiary of my policy?",
+      "wer": 0,
+      "latencyMs": 374,
+      "audioSec": 2.73
+    },
+    {
+      "market": "PH",
+      "category": "english",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Can I change the beneficiary of my policy?",
+      "hypothesis": "Can I change the beneficiary of my policy?",
+      "wer": 0,
+      "latencyMs": 377,
+      "audioSec": 2.73
+    },
+    {
+      "market": "PH",
+      "category": "english",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-small",
+      "language": "tagalog",
+      "reference": "Can I change the beneficiary of my policy?",
+      "hypothesis": "Can I change the beneficiary of my policy?",
+      "wer": 0,
+      "latencyMs": 838,
+      "audioSec": 2.73
+    },
+    {
+      "market": "PH",
+      "category": "english",
+      "voice": "Samantha",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Can I change the beneficiary of my policy?",
+      "hypothesis": "Can I change the beneficiary of my policy?",
+      "wer": 0,
+      "latencyMs": 840,
+      "audioSec": 2.73
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "tagalog",
+      "reference": "Opo, babayaran ko po bago mag-due date.",
+      "hypothesis": "Opo, babayaran ko po bago magduday.",
+      "wer": 0.38,
+      "latencyMs": 430,
+      "audioSec": 3.05
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Opo, babayaran ko po bago mag-due date.",
+      "hypothesis": "Opo, Bavayaran Kopo Bagomadu Dave",
+      "wer": 0.88,
+      "latencyMs": 445,
+      "audioSec": 3.05
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "tagalog",
+      "reference": "Opo, babayaran ko po bago mag-due date.",
+      "hypothesis": "Opo, babayaran ko po bago ma'yudete.",
+      "wer": 0.38,
+      "latencyMs": 970,
+      "audioSec": 3.05
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Opo, babayaran ko po bago mag-due date.",
+      "hypothesis": "Opo, Babayaran Ko Po Baguoma, Judith",
+      "wer": 0.5,
+      "latencyMs": 928,
+      "audioSec": 3.05
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "tagalog",
+      "reference": "Wala pa po akong pera ngayon, sa susunod na sahod pa.",
+      "hypothesis": "wala papo ako ng perangayon sa susunot na sa hot pa.",
+      "wer": 0.73,
+      "latencyMs": 486,
+      "audioSec": 3.89
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Wala pa po akong pera ngayon, sa susunod na sahod pa.",
+      "hypothesis": "and the latest news news.",
+      "wer": 1,
+      "latencyMs": 345,
+      "audioSec": 3.89
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "tagalog",
+      "reference": "Wala pa po akong pera ngayon, sa susunod na sahod pa.",
+      "hypothesis": "Walapapu akong perangayon, sasusunot na sahot pa.",
+      "wer": 0.73,
+      "latencyMs": 1078,
+      "audioSec": 3.89
+    },
+    {
+      "market": "PH",
+      "category": "tagalog",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Wala pa po akong pera ngayon, sa susunod na sahod pa.",
+      "hypothesis": "Wala Papua Kong Perangayon, Sasu Sunotna Sahodpa",
+      "wer": 0.91,
+      "latencyMs": 1014,
+      "audioSec": 3.89
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "tagalog",
+      "reference": "Pwede ba akong magbayad thru GCash this Friday?",
+      "hypothesis": "waday ba akong matbayat through gay cash this Friday.",
+      "wer": 0.63,
+      "latencyMs": 421,
+      "audioSec": 3.25
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Pwede ba akong magbayad thru GCash this Friday?",
+      "hypothesis": "the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before the day before",
+      "wer": 55.5,
+      "latencyMs": 5895,
+      "audioSec": 3.25
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "tagalog",
+      "reference": "Pwede ba akong magbayad thru GCash this Friday?",
+      "hypothesis": "Wede ba akong magbaya true gay cash this Friday.",
+      "wer": 0.63,
+      "latencyMs": 946,
+      "audioSec": 3.25
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Pwede ba akong magbayad thru GCash this Friday?",
+      "hypothesis": "We are going to pay you back in cash this Friday.",
+      "wer": 1.13,
+      "latencyMs": 916,
+      "audioSec": 3.25
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "tagalog",
+      "reference": "Ano mangyayari sa coverage ko pag nag-lapse yung policy?",
+      "hypothesis": "ano mang yayari sa coverage ko pat naklap sa yung policy.",
+      "wer": 0.5,
+      "latencyMs": 467,
+      "audioSec": 4.06
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Ano mangyayari sa coverage ko pag nag-lapse yung policy?",
+      "hypothesis": "and the government to provide the policy.",
+      "wer": 0.9,
+      "latencyMs": 368,
+      "audioSec": 4.06
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "tagalog",
+      "reference": "Ano mangyayari sa coverage ko pag nag-lapse yung policy?",
+      "hypothesis": "ano mangyayari sa coverage ko pa na lapse yung palesi.",
+      "wer": 0.3,
+      "latencyMs": 1013,
+      "audioSec": 4.06
+    },
+    {
+      "market": "PH",
+      "category": "taglish",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Ano mangyayari sa coverage ko pag nag-lapse yung policy?",
+      "hypothesis": "I am going to ask you to cover the policy.",
+      "wer": 0.9,
+      "latencyMs": 879,
+      "audioSec": 4.06
+    },
+    {
+      "market": "PH",
+      "category": "english",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "tagalog",
+      "reference": "Can I change the beneficiary of my policy?",
+      "hypothesis": "...",
+      "wer": 1,
+      "latencyMs": 265,
+      "audioSec": 2.92
+    },
+    {
+      "market": "PH",
+      "category": "english",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Can I change the beneficiary of my policy?",
+      "hypothesis": "Can I change the beneficiary of my policy?",
+      "wer": 0,
+      "latencyMs": 379,
+      "audioSec": 2.92
+    },
+    {
+      "market": "PH",
+      "category": "english",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "tagalog",
+      "reference": "Can I change the beneficiary of my policy?",
+      "hypothesis": "Can I change the beneficiary of my policy?",
+      "wer": 0,
+      "latencyMs": 865,
+      "audioSec": 2.92
+    },
+    {
+      "market": "PH",
+      "category": "english",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Can I change the beneficiary of my policy?",
+      "hypothesis": "Can I change the beneficiary of my policy?",
+      "wer": 0,
+      "latencyMs": 876,
+      "audioSec": 2.92
+    },
+    {
+      "market": "ID",
+      "category": "formal",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "indonesian",
+      "reference": "Baik, saya akan membayar angsuran sebelum tanggal lima belas Oktober.",
+      "hypothesis": "baik, saya akan membayar ansuran sebelum tanggal 15 Oktober.",
+      "wer": 0.3,
+      "latencyMs": 464,
+      "audioSec": 4.88
+    },
+    {
+      "market": "ID",
+      "category": "formal",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Baik, saya akan membayar angsuran sebelum tanggal lima belas Oktober.",
+      "hypothesis": "I will make sure that before 15 October",
+      "wer": 1,
+      "latencyMs": 372,
+      "audioSec": 4.88
+    },
+    {
+      "market": "ID",
+      "category": "formal",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "indonesian",
+      "reference": "Baik, saya akan membayar angsuran sebelum tanggal lima belas Oktober.",
+      "hypothesis": "Baik, saya akan membayar angsuran sebelum tanggal 15 Oktober.",
+      "wer": 0.2,
+      "latencyMs": 1041,
+      "audioSec": 4.88
+    },
+    {
+      "market": "ID",
+      "category": "formal",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Baik, saya akan membayar angsuran sebelum tanggal lima belas Oktober.",
+      "hypothesis": "Okay, I will pay the bill before 15 October.",
+      "wer": 1,
+      "latencyMs": 885,
+      "audioSec": 4.88
+    },
+    {
+      "market": "ID",
+      "category": "casual",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "indonesian",
+      "reference": "Waduh Mbak, gaji gue belum cair, nanti aja ya bayarnya.",
+      "hypothesis": "Waduhemba, ga Jiguai belum cari, nanti aja ya bayarnya.",
+      "wer": 0.5,
+      "latencyMs": 504,
+      "audioSec": 4.35
+    },
+    {
+      "market": "ID",
+      "category": "casual",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Waduh Mbak, gaji gue belum cair, nanti aja ya bayarnya.",
+      "hypothesis": "Waduhemba, Gadjigue Belumcair, Nanti Aja Ya Bayar Nya",
+      "wer": 0.8,
+      "latencyMs": 569,
+      "audioSec": 4.35
+    },
+    {
+      "market": "ID",
+      "category": "casual",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "indonesian",
+      "reference": "Waduh Mbak, gaji gue belum cair, nanti aja ya bayarnya.",
+      "hypothesis": "Waduh mba, gaji gue belum cair, nanti aja ya bayarnya.",
+      "wer": 0.1,
+      "latencyMs": 1065,
+      "audioSec": 4.35
+    },
+    {
+      "market": "ID",
+      "category": "casual",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Waduh Mbak, gaji gue belum cair, nanti aja ya bayarnya.",
+      "hypothesis": "Waduh Mba, Gaji Gwee Belum Chair, Nanti Ajaya Bayarnya.",
+      "wer": 0.5,
+      "latencyMs": 1128,
+      "audioSec": 4.35
+    },
+    {
+      "market": "ID",
+      "category": "loanwords",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "indonesian",
+      "reference": "Kalau telat, late fee-nya berapa? Bisa reschedule nggak?",
+      "hypothesis": "Kalau telat, Latvi hanya berapa bisa reseca duleng ga?",
+      "wer": 0.67,
+      "latencyMs": 459,
+      "audioSec": 3.93
+    },
+    {
+      "market": "ID",
+      "category": "loanwords",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Kalau telat, late fee-nya berapa? Bisa reschedule nggak?",
+      "hypothesis": "If you are late, let's see what can happen next.",
+      "wer": 1,
+      "latencyMs": 444,
+      "audioSec": 3.93
+    },
+    {
+      "market": "ID",
+      "category": "loanwords",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "indonesian",
+      "reference": "Kalau telat, late fee-nya berapa? Bisa reschedule nggak?",
+      "hypothesis": "Kalau telat, latviannya berapa, bisa reschedulenga?",
+      "wer": 0.56,
+      "latencyMs": 984,
+      "audioSec": 3.93
+    },
+    {
+      "market": "ID",
+      "category": "loanwords",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Kalau telat, late fee-nya berapa? Bisa reschedule nggak?",
+      "hypothesis": "If later, how late the V will be, can you wait?",
+      "wer": 1.11,
+      "latencyMs": 955,
+      "audioSec": 3.93
+    },
+    {
+      "market": "ID",
+      "category": "regional_javanese_lexical",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "indonesian",
+      "reference": "Durung ono duit, Mbak. Mengko tak bayar nggih.",
+      "hypothesis": "Duru ngonoduit, ba, mengkota bayar pergi.",
+      "wer": 0.88,
+      "latencyMs": 465,
+      "audioSec": 3.45
+    },
+    {
+      "market": "ID",
+      "category": "regional_javanese_lexical",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Durung ono duit, Mbak. Mengko tak bayar nggih.",
+      "hypothesis": "Duru Ngaonwao Duit, Bap, Mengkota Bayaranggi.",
+      "wer": 0.88,
+      "latencyMs": 539,
+      "audioSec": 3.45
+    },
+    {
+      "market": "ID",
+      "category": "regional_javanese_lexical",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "indonesian",
+      "reference": "Durung ono duit, Mbak. Mengko tak bayar nggih.",
+      "hypothesis": "Durung ono duit, Mbak, mengkota bayar nge.",
+      "wer": 0.38,
+      "latencyMs": 1034,
+      "audioSec": 3.45
+    },
+    {
+      "market": "ID",
+      "category": "regional_javanese_lexical",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Durung ono duit, Mbak. Mengko tak bayar nggih.",
+      "hypothesis": "Durung ono duit, ma, mengkota bayar ngih.",
+      "wer": 0.5,
+      "latencyMs": 1019,
+      "audioSec": 3.45
+    },
+    {
+      "market": "ID",
+      "category": "regional_medan_lexical",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "indonesian",
+      "reference": "Bah, kek mana lah, awak belum gajian, lae.",
+      "hypothesis": "Bah, ketmana lah, awak belum gajian, lai.",
+      "wer": 0.38,
+      "latencyMs": 449,
+      "audioSec": 3.65
+    },
+    {
+      "market": "ID",
+      "category": "regional_medan_lexical",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Bah, kek mana lah, awak belum gajian, lae.",
+      "hypothesis": "Bah, Cat Manala, Awak Belum Gajian, La E",
+      "wer": 0.63,
+      "latencyMs": 467,
+      "audioSec": 3.65
+    },
+    {
+      "market": "ID",
+      "category": "regional_medan_lexical",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "indonesian",
+      "reference": "Bah, kek mana lah, awak belum gajian, lae.",
+      "hypothesis": "Bah, ketmanalah, awak belum gajian, lae.",
+      "wer": 0.38,
+      "latencyMs": 1028,
+      "audioSec": 3.65
+    },
+    {
+      "market": "ID",
+      "category": "regional_medan_lexical",
+      "voice": "Damayanti",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Bah, kek mana lah, awak belum gajian, lae.",
+      "hypothesis": "Bah, ket manalah, awak belum gajian, lai.",
+      "wer": 0.5,
+      "latencyMs": 1020,
+      "audioSec": 3.65
+    },
+    {
+      "market": "ID",
+      "category": "formal",
+      "voice": "Amira",
+      "model": "Xenova/whisper-base",
+      "language": "indonesian",
+      "reference": "Baik, saya akan membayar angsuran sebelum tanggal lima belas Oktober.",
+      "hypothesis": "baik, saya akan membayar angguran sebelum tanggal 15 October.",
+      "wer": 0.4,
+      "latencyMs": 468,
+      "audioSec": 4.45
+    },
+    {
+      "market": "ID",
+      "category": "formal",
+      "voice": "Amira",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Baik, saya akan membayar angsuran sebelum tanggal lima belas Oktober.",
+      "hypothesis": "I will pay the amount before October 15.",
+      "wer": 1,
+      "latencyMs": 395,
+      "audioSec": 4.45
+    },
+    {
+      "market": "ID",
+      "category": "formal",
+      "voice": "Amira",
+      "model": "Xenova/whisper-small",
+      "language": "indonesian",
+      "reference": "Baik, saya akan membayar angsuran sebelum tanggal lima belas Oktober.",
+      "hypothesis": "Baik, saya akan membayar angsuran sebelum tanggal 15 Oktober.",
+      "wer": 0.2,
+      "latencyMs": 1069,
+      "audioSec": 4.45
+    },
+    {
+      "market": "ID",
+      "category": "formal",
+      "voice": "Amira",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Baik, saya akan membayar angsuran sebelum tanggal lima belas Oktober.",
+      "hypothesis": "Okay, I will pay the bill before 15 October.",
+      "wer": 1,
+      "latencyMs": 915,
+      "audioSec": 4.45
+    },
+    {
+      "market": "ID",
+      "category": "casual",
+      "voice": "Amira",
+      "model": "Xenova/whisper-base",
+      "language": "indonesian",
+      "reference": "Waduh Mbak, gaji gue belum cair, nanti aja ya bayarnya.",
+      "hypothesis": "Wadom, va, ga ji gue belum cahaya, nanti aja ya bayanya.",
+      "wer": 0.6,
+      "latencyMs": 512,
+      "audioSec": 4.15
+    },
+    {
+      "market": "ID",
+      "category": "casual",
+      "voice": "Amira",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Waduh Mbak, gaji gue belum cair, nanti aja ya bayarnya.",
+      "hypothesis": "Wadomva, Gaji Goya Belumcai, Nanti Aja Ya Bayanya",
+      "wer": 0.6,
+      "latencyMs": 516,
+      "audioSec": 4.15
+    },
+    {
+      "market": "ID",
+      "category": "casual",
+      "voice": "Amira",
+      "model": "Xenova/whisper-small",
+      "language": "indonesian",
+      "reference": "Waduh Mbak, gaji gue belum cair, nanti aja ya bayarnya.",
+      "hypothesis": "Waduh mba, gaji gue belum cair, nanti aja ya bayannya.",
+      "wer": 0.2,
+      "latencyMs": 1082,
+      "audioSec": 4.15
+    },
+    {
+      "market": "ID",
+      "category": "casual",
+      "voice": "Amira",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Waduh Mbak, gaji gue belum cair, nanti aja ya bayarnya.",
+      "hypothesis": "Wado mba ga jigwe belom chai nanti a jaya bayanya.",
+      "wer": 0.9,
+      "latencyMs": 1094,
+      "audioSec": 4.15
+    },
+    {
+      "market": "ID",
+      "category": "loanwords",
+      "voice": "Amira",
+      "model": "Xenova/whisper-base",
+      "language": "indonesian",
+      "reference": "Kalau telat, late fee-nya berapa? Bisa reschedule nggak?",
+      "hypothesis": "Kalau telah, leh, finya berapa, bisa rasanya dolem gva.",
+      "wer": 0.78,
+      "latencyMs": 521,
+      "audioSec": 4.12
+    },
+    {
+      "market": "ID",
+      "category": "loanwords",
+      "voice": "Amira",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Kalau telat, late fee-nya berapa? Bisa reschedule nggak?",
+      "hypothesis": "The",
+      "wer": 1,
+      "latencyMs": 279,
+      "audioSec": 4.12
+    },
+    {
+      "market": "ID",
+      "category": "loanwords",
+      "voice": "Amira",
+      "model": "Xenova/whisper-small",
+      "language": "indonesian",
+      "reference": "Kalau telat, late fee-nya berapa? Bisa reschedule nggak?",
+      "hypothesis": "Kalautelah, le, fi, nya berapa, bisa reschedulim gra.",
+      "wer": 0.67,
+      "latencyMs": 1108,
+      "audioSec": 4.12
+    },
+    {
+      "market": "ID",
+      "category": "loanwords",
+      "voice": "Amira",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Kalau telat, late fee-nya berapa? Bisa reschedule nggak?",
+      "hypothesis": "If later, Lea, Fiamia, Berapa, Bissaris, Cedulem Gra",
+      "wer": 0.89,
+      "latencyMs": 1140,
+      "audioSec": 4.12
+    },
+    {
+      "market": "ID",
+      "category": "regional_javanese_lexical",
+      "voice": "Amira",
+      "model": "Xenova/whisper-base",
+      "language": "indonesian",
+      "reference": "Durung ono duit, Mbak. Mengko tak bayar nggih.",
+      "hypothesis": "Duru ngonodui, va menggota bayang di.",
+      "wer": 1,
+      "latencyMs": 438,
+      "audioSec": 3.5
+    },
+    {
+      "market": "ID",
+      "category": "regional_javanese_lexical",
+      "voice": "Amira",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Durung ono duit, Mbak. Mengko tak bayar nggih.",
+      "hypothesis": "during a day, and I'm not sure.",
+      "wer": 1,
+      "latencyMs": 406,
+      "audioSec": 3.5
+    },
+    {
+      "market": "ID",
+      "category": "regional_javanese_lexical",
+      "voice": "Amira",
+      "model": "Xenova/whisper-small",
+      "language": "indonesian",
+      "reference": "Durung ono duit, Mbak. Mengko tak bayar nggih.",
+      "hypothesis": "Durung ono duit mba mengkota bayang gih.",
+      "wer": 0.63,
+      "latencyMs": 998,
+      "audioSec": 3.5
+    },
+    {
+      "market": "ID",
+      "category": "regional_javanese_lexical",
+      "voice": "Amira",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Durung ono duit, Mbak. Mengko tak bayar nggih.",
+      "hypothesis": "Durung ono dui mba mengkota bayang ghi.",
+      "wer": 0.75,
+      "latencyMs": 995,
+      "audioSec": 3.5
+    },
+    {
+      "market": "ID",
+      "category": "regional_medan_lexical",
+      "voice": "Amira",
+      "model": "Xenova/whisper-base",
+      "language": "indonesian",
+      "reference": "Bah, kek mana lah, awak belum gajian, lae.",
+      "hypothesis": "Ba, kayak mana lah, awak belum gajian, lah ya?",
+      "wer": 0.5,
+      "latencyMs": 445,
+      "audioSec": 3.52
+    },
+    {
+      "market": "ID",
+      "category": "regional_medan_lexical",
+      "voice": "Amira",
+      "model": "Xenova/whisper-base",
+      "language": "english",
+      "reference": "Bah, kek mana lah, awak belum gajian, lae.",
+      "hypothesis": "Ba, kya kmanala, awat belong gajian, la ee.",
+      "wer": 1,
+      "latencyMs": 529,
+      "audioSec": 3.52
+    },
+    {
+      "market": "ID",
+      "category": "regional_medan_lexical",
+      "voice": "Amira",
+      "model": "Xenova/whisper-small",
+      "language": "indonesian",
+      "reference": "Bah, kek mana lah, awak belum gajian, lae.",
+      "hypothesis": "Ba, kemanalah, awat belom gajian, lah ye.",
+      "wer": 1,
+      "latencyMs": 994,
+      "audioSec": 3.52
+    },
+    {
+      "market": "ID",
+      "category": "regional_medan_lexical",
+      "voice": "Amira",
+      "model": "Xenova/whisper-small",
+      "language": "english",
+      "reference": "Bah, kek mana lah, awak belum gajian, lae.",
+      "hypothesis": "Bye.",
+      "wer": 1,
+      "latencyMs": 699,
+      "audioSec": 3.52
+    }
+  ]
+}

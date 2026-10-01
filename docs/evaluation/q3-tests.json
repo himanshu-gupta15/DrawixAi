@@ -1,0 +1,969 @@
+{
+  "ranAt": "2026-10-01T16:52:53.984Z",
+  "note": "Development set (was held-out v1; its first-run result is kept in q3-tests-heldout-v1.json, then it was used to drive general fixes).",
+  "summary": {
+    "passed": 97,
+    "failed": 1,
+    "total": 98
+  },
+  "cases": [
+    {
+      "id": "ph_cooperative_tagalog",
+      "market": "PH",
+      "title": "Cooperative customer (Tagalog)",
+      "turns": [
+        {
+          "text": "Opo, ako nga po.",
+          "reply": "Salamat po, Ma'am Maria. Tumatawag po ako para ipaalala na ang buwanang premium ng inyong LifeSecure policy na ₱2,450.00 ay dapat mabayaran sa ika-15 ng Oktubre. Makakabayad po ba kayo sa o bago ang due date?",
+          "ttsText": "Salamat po, Ma'am Maria. Tumatawag po ako para ipaalala na ang buwanang premium ng inyong LifeSecure policy na 2,450 pesos ay dapat mabayaran sa ika-15 ng Oktubre. Makakabayad po ba kayo sa o bago ang due date?",
+          "intent": "identity_confirmed",
+          "confidence": 0.887,
+          "method": "context",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "tl",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "detected tl (got tl)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (tl)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Sige po, babayaran ko bago mag-due.",
+          "reply": "Salamat po! Puwede po kayong magbayad sa auto-debit ng inyong bank account, sa kahit anong branch ng partner bank, o sa GCash o Maya gamit ang inyong policy number. May iba pa po ba akong maitutulong?",
+          "ttsText": "Salamat po! Puwede po kayong magbayad sa auto-debit ng inyong bank account, sa kahit anong branch ng partner bank, o sa G-Cash o Maya gamit ang inyong policy number. May iba pa po ba akong maitutulong?",
+          "intent": "will_pay",
+          "confidence": 0.943,
+          "method": "cue",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "tl",
+          "checks": [
+            {
+              "name": "intent ∈ {will_pay} (got will_pay)",
+              "pass": true
+            },
+            {
+              "name": "detected tl (got tl)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (tl)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Wala na po, salamat.",
+          "reply": "Maraming salamat po sa oras ninyo, Ma'am Maria. Ingat po kayo!",
+          "ttsText": "Maraming salamat po sa oras ninyo, Ma'am Maria. Ingat po kayo!",
+          "intent": "deny",
+          "confidence": 0.859,
+          "method": "context",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "tl",
+          "checks": [
+            {
+              "name": "intent ∈ {deny} (got deny)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (tl)",
+              "pass": true
+            },
+            {
+              "name": "call ended",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ph_objection_taglish",
+      "market": "PH",
+      "title": "Sector objection – can't afford premium (Taglish)",
+      "turns": [
+        {
+          "text": "Yes po, si Maria ito.",
+          "reply": "Thank you po, Ma'am Maria. Tumatawag lang po ako para i-remind na yung monthly premium ng LifeSecure policy n'yo na ₱2,450.00 ay due na sa October 15. Makakapagbayad po ba kayo on or before the due date?",
+          "ttsText": "Thank you po, Ma'am Maria. Tumatawag lang po ako para i-remind na yung monthly premium ng LifeSecure policy n'yo na 2,450 pesos ay due na sa October 15. Makakapagbayad po ba kayo on or before the due date?",
+          "intent": "identity_confirmed",
+          "confidence": 0.916,
+          "method": "context",
+          "variant": "taglish",
+          "regional": null,
+          "replyVariant": "taglish",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "detected taglish (got taglish)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (taglish)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Medyo gipit kasi ako ngayon, next week pa yung sahod ko.",
+          "reply": "Gets ko po, Ma'am, mahirap talaga pag gipit. Para tuloy-tuloy pa rin ang coverage ng family n'yo, may 31-day grace period pa po kayo hanggang November 15. Kung kailangan n'yo ng ibang payment arrangement, pwede ko po kayong i-refer sa licensed advisor namin. Okay lang po ba?",
+          "ttsText": "Gets ko po, Ma'am, mahirap talaga pag gipit. Para tuloy-tuloy pa rin ang coverage ng family n'yo, may 31-day grace period pa po kayo hanggang November 15. Kung kailangan n'yo ng ibang payment arrangement, pwede ko po kayong i-refer sa licensed advisor namin. Okay lang po ba?",
+          "intent": "objection_no_money",
+          "confidence": 0.865,
+          "method": "cue",
+          "variant": "taglish",
+          "regional": null,
+          "replyVariant": "taglish",
+          "checks": [
+            {
+              "name": "intent ∈ {objection_no_money} (got objection_no_money)",
+              "pass": true
+            },
+            {
+              "name": "detected taglish (got taglish)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (taglish)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Oo sige, pa-refer na lang po.",
+          "reply": "Sige po, ikokonekta ko po kayo sa isang licensed advisor namin. Sandali lang po.",
+          "ttsText": "Sige po, ikokonekta ko po kayo sa isang licensed advisor namin. Sandali lang po.",
+          "intent": "escalation",
+          "confidence": 0.9,
+          "method": "cue",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "tl",
+          "checks": [
+            {
+              "name": "intent ∈ {escalation} (got escalation)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (tl)",
+              "pass": true
+            },
+            {
+              "name": "call ended",
+              "pass": true
+            },
+            {
+              "name": "escalated to human",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ph_finance_terms_english",
+      "market": "PH",
+      "title": "Mixed English / finance terms",
+      "turns": [
+        {
+          "text": "Yes, this is Maria speaking.",
+          "reply": "Thank you, Ma'am Maria. I'm calling to remind you that the monthly premium of your LifeSecure policy, ₱2,450.00, is due on October 15. Will you be able to pay on or before the due date?",
+          "ttsText": "Thank you, Ma'am Maria. I'm calling to remind you that the monthly premium of your LifeSecure policy, 2,450 pesos, is due on October 15. Will you be able to pay on or before the due date?",
+          "intent": "identity_confirmed",
+          "confidence": 0.921,
+          "method": "context",
+          "variant": "en",
+          "regional": null,
+          "replyVariant": "en",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "detected en (got en)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "If I miss the due date, will my policy lapse right away?",
+          "reply": "If the premium is still unpaid after the grace period, the policy lapses and coverage stops. You can apply for reinstatement within 2 years by paying the missed premiums and submitting a health declaration. Is there anything else I can help you with?",
+          "ttsText": "If the premium is still unpaid after the grace period, the policy lapses and coverage stops. You can apply for reinstatement within 2 years by paying the missed premiums and submitting a health declaration. Is there anything else I can help you with?",
+          "intent": "ask_lapse",
+          "confidence": 0.933,
+          "method": "cue",
+          "variant": "en",
+          "regional": null,
+          "replyVariant": "en",
+          "checks": [
+            {
+              "name": "intent ∈ {ask_grace_period,ask_lapse} (got ask_lapse)",
+              "pass": true
+            },
+            {
+              "name": "detected en (got en)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "What does my rider cover again?",
+          "reply": "Your policy includes an Accidental Death Benefit rider, which pays an additional benefit to your beneficiary if death is caused by an accident, as long as the policy is active. Is there anything else I can help you with?",
+          "ttsText": "Your policy includes an Accidental Death Benefit rider, which pays an additional benefit to your beneficiary if death is caused by an accident, as long as the policy is active. Is there anything else I can help you with?",
+          "intent": "ask_rider",
+          "confidence": 0.915,
+          "method": "cue",
+          "variant": "en",
+          "regional": null,
+          "replyVariant": "en",
+          "checks": [
+            {
+              "name": "intent ∈ {ask_rider} (got ask_rider)",
+              "pass": true
+            },
+            {
+              "name": "detected en (got en)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "No, that's all, thanks.",
+          "reply": "Thank you for your time, Ma'am Maria. Take care!",
+          "ttsText": "Thank you for your time, Ma'am Maria. Take care!",
+          "intent": "deny",
+          "confidence": 0.932,
+          "method": "context",
+          "variant": "en",
+          "regional": null,
+          "replyVariant": "en",
+          "checks": [
+            {
+              "name": "intent ∈ {deny} (got deny)",
+              "pass": true
+            },
+            {
+              "name": "call ended",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ph_colloquial",
+      "market": "PH",
+      "title": "Colloquial speech",
+      "turns": [
+        {
+          "text": "Oo, ako 'to.",
+          "reply": "Salamat po, Ma'am Maria. Tumatawag po ako para ipaalala na ang buwanang premium ng inyong LifeSecure policy na ₱2,450.00 ay dapat mabayaran sa ika-15 ng Oktubre. Makakabayad po ba kayo sa o bago ang due date?",
+          "ttsText": "Salamat po, Ma'am Maria. Tumatawag po ako para ipaalala na ang buwanang premium ng inyong LifeSecure policy na 2,450 pesos ay dapat mabayaran sa ika-15 ng Oktubre. Makakabayad po ba kayo sa o bago ang due date?",
+          "intent": "identity_confirmed",
+          "confidence": 0.909,
+          "method": "context",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "tl",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "detected tl (got tl)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (tl)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Eh bakit pa ko magbabayad, wala naman akong napapala diyan.",
+          "reply": "Naiintindihan ko po. Ang life insurance po ay para sa inyong beneficiary sa panahong pinakakailangan nila. Kapag nag-lapse po ang policy, mawawala ang coverage pati ang inyong Accidental Death Benefit rider, at baka kailanganin ng bagong health declaration para ma-reinstate. May iba pa po ba akong maitutulong?",
+          "ttsText": "Naiintindihan ko po. Ang life insurance po ay para sa inyong beneficiary sa panahong pinakakailangan nila. Kapag nag-lapse po ang policy, mawawala ang coverage pati ang inyong Accidental Death Benefit rider, at baka kailanganin ng bagong health declaration para ma-reinstate. May iba pa po ba akong maitutulong?",
+          "intent": "objection_not_using",
+          "confidence": 0.885,
+          "method": "embedding",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "tl",
+          "checks": [
+            {
+              "name": "intent ∈ {objection_not_using} (got objection_not_using)",
+              "pass": true
+            },
+            {
+              "name": "detected tl (got tl)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (tl)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Ayoko na talaga, ipapa-cancel ko na lang yan.",
+          "reply": "Hindi ko po maipoproseso ang cancellation sa tawag na ito, pero bago po kayo magdesisyon, maipapaliwanag ng isang licensed advisor ang surrender value at ibang options, gaya ng pag-adjust ng coverage. Gusto n'yo po bang ikonekta ko kayo?",
+          "ttsText": "Hindi ko po maipoproseso ang cancellation sa tawag na ito, pero bago po kayo magdesisyon, maipapaliwanag ng isang licensed advisor ang surrender value at ibang options, gaya ng pag-adjust ng coverage. Gusto n'yo po bang ikonekta ko kayo?",
+          "intent": "objection_cancel",
+          "confidence": 0.875,
+          "method": "cue",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "tl",
+          "checks": [
+            {
+              "name": "intent ∈ {objection_cancel} (got objection_cancel)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (tl)",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ph_escalation",
+      "market": "PH",
+      "title": "Human escalation (Tagalog)",
+      "turns": [
+        {
+          "text": "Opo.",
+          "reply": "Thank you po, Ma'am Maria. Tumatawag lang po ako para i-remind na yung monthly premium ng LifeSecure policy n'yo na ₱2,450.00 ay due na sa October 15. Makakapagbayad po ba kayo on or before the due date?",
+          "ttsText": "Thank you po, Ma'am Maria. Tumatawag lang po ako para i-remind na yung monthly premium ng LifeSecure policy n'yo na 2,450 pesos ay due na sa October 15. Makakapagbayad po ba kayo on or before the due date?",
+          "intent": "identity_confirmed",
+          "confidence": 0.95,
+          "method": "context",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "taglish",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (taglish)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Pwede po bang tao na lang ang kausap ko?",
+          "reply": "Sige po, ikokonekta ko po kayo sa isang licensed advisor namin. Sandali lang po.",
+          "ttsText": "Sige po, ikokonekta ko po kayo sa isang licensed advisor namin. Sandali lang po.",
+          "intent": "escalation",
+          "confidence": 0.924,
+          "method": "cue",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "tl",
+          "checks": [
+            {
+              "name": "intent ∈ {escalation} (got escalation)",
+              "pass": true
+            },
+            {
+              "name": "detected tl (got tl)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (tl)",
+              "pass": true
+            },
+            {
+              "name": "call ended",
+              "pass": true
+            },
+            {
+              "name": "escalated to human",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ph_out_of_scope",
+      "market": "PH",
+      "title": "Out-of-scope (hard negative with 'magkano')",
+      "turns": [
+        {
+          "text": "Opo, ako po.",
+          "reply": "Salamat po, Ma'am Maria. Tumatawag po ako para ipaalala na ang buwanang premium ng inyong LifeSecure policy na ₱2,450.00 ay dapat mabayaran sa ika-15 ng Oktubre. Makakabayad po ba kayo sa o bago ang due date?",
+          "ttsText": "Salamat po, Ma'am Maria. Tumatawag po ako para ipaalala na ang buwanang premium ng inyong LifeSecure policy na 2,450 pesos ay dapat mabayaran sa ika-15 ng Oktubre. Makakabayad po ba kayo sa o bago ang due date?",
+          "intent": "identity_confirmed",
+          "confidence": 0.882,
+          "method": "context",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "tl",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (tl)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Magkano po ba ang bigas ngayon sa palengke?",
+          "reply": "Pasensya na po, hindi ko po masyadong naintindihan. Pakiulit po?",
+          "ttsText": "Pasensya na po, hindi ko po masyadong naintindihan. Pakiulit po?",
+          "intent": "fallback",
+          "confidence": 0.843,
+          "method": "fallback",
+          "variant": "tl",
+          "regional": null,
+          "replyVariant": "tl",
+          "checks": [
+            {
+              "name": "intent ∈ {fallback} (got fallback)",
+              "pass": true
+            },
+            {
+              "name": "detected tl (got tl)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (tl)",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "id_cooperative_formal",
+      "market": "ID",
+      "title": "Cooperative customer (formal)",
+      "turns": [
+        {
+          "text": "Ya, benar, saya Budi Santoso.",
+          "reply": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran ke-10 pembiayaan motor Bapak sebesar Rp1.250.000 akan jatuh tempo pada 15 Oktober 2026. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "ttsText": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran kesepuluh pembiayaan motor Bapak sebesar satu juta dua ratus lima puluh ribu rupiah akan jatuh tempo pada lima belas Oktober dua ribu dua puluh enam. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "intent": "identity_confirmed",
+          "confidence": 0.931,
+          "method": "context",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "detected formal (got formal)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Baik, saya akan membayar sebelum jatuh tempo.",
+          "reply": "Terima kasih, Bapak. Pembayaran dapat dilakukan melalui virtual account, aplikasi Dravix Finance, gerai Indomaret atau Alfamart, maupun kantor cabang kami. Apakah ada hal lain yang bisa saya bantu?",
+          "ttsText": "Terima kasih, Bapak. Pembayaran dapat dilakukan melalui virtual account, aplikasi Dravix Finance, gerai Indomaret atau Alfamart, maupun kantor cabang kami. Apakah ada hal lain yang bisa saya bantu?",
+          "intent": "will_pay",
+          "confidence": 0.889,
+          "method": "embedding",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {will_pay} (got will_pay)",
+              "pass": true
+            },
+            {
+              "name": "detected formal (got formal)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Tidak ada, terima kasih.",
+          "reply": "Terima kasih atas waktunya, Bapak Budi. Selamat siang.",
+          "ttsText": "Terima kasih atas waktunya, Bapak Budi. Selamat siang.",
+          "intent": "deny",
+          "confidence": 0.937,
+          "method": "context",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {deny} (got deny)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            },
+            {
+              "name": "call ended",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "id_objection_casual",
+      "market": "ID",
+      "title": "Sector objection – no money (casual)",
+      "turns": [
+        {
+          "text": "Iya, saya sendiri.",
+          "reply": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran ke-10 pembiayaan motor Bapak sebesar Rp1.250.000 akan jatuh tempo pada 15 Oktober 2026. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "ttsText": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran kesepuluh pembiayaan motor Bapak sebesar satu juta dua ratus lima puluh ribu rupiah akan jatuh tempo pada lima belas Oktober dua ribu dua puluh enam. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "intent": "identity_confirmed",
+          "confidence": 0.934,
+          "method": "context",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Aduh Mbak, bulan ini lagi bokek banget, belum bisa bayar.",
+          "reply": "Saya ngerti, Pak, lagi berat ya. Biar nggak kena denda, usahakan bayar sebelum tanggal 15. Kalau butuh keringanan atau reschedule, harus lewat petugas kami, Pak. Mau saya sambungkan?",
+          "ttsText": "Saya ngerti, Pak, lagi berat ya. Biar nggak kena denda, usahakan bayar sebelum tanggal lima belas. Kalau butuh keringanan atau reschedule, harus lewat petugas kami, Pak. Mau saya sambungkan?",
+          "intent": "objection_no_money",
+          "confidence": 0.927,
+          "method": "cue",
+          "variant": "casual",
+          "regional": null,
+          "replyVariant": "casual",
+          "checks": [
+            {
+              "name": "intent ∈ {objection_no_money} (got objection_no_money)",
+              "pass": true
+            },
+            {
+              "name": "detected casual (got casual)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (casual)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Gak usah, nanti saya usahain bayar.",
+          "reply": "Terima kasih, Bapak. Pembayaran dapat dilakukan melalui virtual account, aplikasi Dravix Finance, gerai Indomaret atau Alfamart, maupun kantor cabang kami. Apakah ada hal lain yang bisa saya bantu?",
+          "ttsText": "Terima kasih, Bapak. Pembayaran dapat dilakukan melalui virtual account, aplikasi Dravix Finance, gerai Indomaret atau Alfamart, maupun kantor cabang kami. Apakah ada hal lain yang bisa saya bantu?",
+          "intent": "will_pay",
+          "confidence": 0.887,
+          "method": "embedding",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {deny,will_pay} (got will_pay)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "id_loanwords",
+      "market": "ID",
+      "title": "English finance loanwords",
+      "turns": [
+        {
+          "text": "Betul.",
+          "reply": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran ke-10 pembiayaan motor Bapak sebesar Rp1.250.000 akan jatuh tempo pada 15 Oktober 2026. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "ttsText": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran kesepuluh pembiayaan motor Bapak sebesar satu juta dua ratus lima puluh ribu rupiah akan jatuh tempo pada lima belas Oktober dua ribu dua puluh enam. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "intent": "identity_confirmed",
+          "confidence": 0.85,
+          "method": "context",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Kalau payment-nya telat, late fee-nya dihitung per hari ya?",
+          "reply": "Jika pembayaran melewati jatuh tempo, akan dikenakan denda keterlambatan sebesar 0,5% per hari dari nilai angsuran, yaitu Rp6.250 per hari. Apakah ada hal lain yang bisa saya bantu?",
+          "ttsText": "Jika pembayaran melewati jatuh tempo, akan dikenakan denda keterlambatan sebesar nol koma lima persen per hari dari nilai angsuran, yaitu enam ribu dua ratus lima puluh rupiah per hari. Apakah ada hal lain yang bisa saya bantu?",
+          "intent": "ask_penalty",
+          "confidence": 0.934,
+          "method": "cue",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {ask_penalty} (got ask_penalty)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Oke, bisa transfer lewat virtual account kan?",
+          "reply": "Bisa lewat virtual account, aplikasi Dravix Finance, Indomaret, Alfamart, atau ke kantor cabang, Pak. Nomor VA-nya ada di aplikasi sama SMS tagihan. Ada lagi yang mau ditanyain, Pak?",
+          "ttsText": "Bisa lewat virtual account, aplikasi Dravix Finance, Indomaret, Alfamart, atau ke kantor cabang, Pak. Nomor virtual account-nya ada di aplikasi sama SMS tagihan. Ada lagi yang mau ditanyain, Pak?",
+          "intent": "ask_payment_channels",
+          "confidence": 0.921,
+          "method": "cue",
+          "variant": "casual",
+          "regional": null,
+          "replyVariant": "casual",
+          "checks": [
+            {
+              "name": "intent ∈ {ask_payment_channels} (got ask_payment_channels)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (casual)",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "id_colloquial_jakarta",
+      "market": "ID",
+      "title": "Colloquial Jakarta speech",
+      "turns": [
+        {
+          "text": "Iya, gue Budi.",
+          "reply": "Makasih, Pak Budi. Mau ngingetin aja, Pak, cicilan motor yang ke-10, Rp1.250.000, jatuh temponya tanggal 15. Kira-kira bisa dibayar sebelum tanggal itu, Pak?",
+          "ttsText": "Makasih, Pak Budi. Mau ngingetin aja, Pak, cicilan motor yang kesepuluh, satu juta dua ratus lima puluh ribu rupiah, jatuh temponya tanggal lima belas. Kira-kira bisa dibayar sebelum tanggal itu, Pak?",
+          "intent": "identity_confirmed",
+          "confidence": 0.937,
+          "method": "context",
+          "variant": "casual",
+          "regional": null,
+          "replyVariant": "casual",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "detected casual (got casual)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (casual)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Udah gue bayar kemaren kok lewat aplikasi.",
+          "reply": "Oke, makasih, Pak. Biasanya pembayaran masuk ke sistem dalam 1x24 jam. Kalau sudah lewat dari itu belum masuk, nanti kami bantu cek ya. Ada lagi yang mau ditanyain, Pak?",
+          "ttsText": "Oke, makasih, Pak. Biasanya pembayaran masuk ke sistem dalam satu kali dua puluh empat jam. Kalau sudah lewat dari itu belum masuk, nanti kami bantu cek ya. Ada lagi yang mau ditanyain, Pak?",
+          "intent": "already_paid",
+          "confidence": 0.883,
+          "method": "embedding",
+          "variant": "casual",
+          "regional": null,
+          "replyVariant": "casual",
+          "checks": [
+            {
+              "name": "intent ∈ {already_paid} (got already_paid)",
+              "pass": true
+            },
+            {
+              "name": "detected casual (got casual)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (casual)",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "id_regional_javanese",
+      "market": "ID",
+      "title": "Regional: Javanese-influenced speech",
+      "turns": [
+        {
+          "text": "Nggih, leres, kulo Budi.",
+          "reply": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran ke-10 pembiayaan motor Bapak sebesar Rp1.250.000 akan jatuh tempo pada 15 Oktober 2026. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "ttsText": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran kesepuluh pembiayaan motor Bapak sebesar satu juta dua ratus lima puluh ribu rupiah akan jatuh tempo pada lima belas Oktober dua ribu dua puluh enam. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "intent": "identity_confirmed",
+          "confidence": 0.847,
+          "method": "context",
+          "variant": "formal",
+          "regional": "javanese",
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "regional javanese (got javanese)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Ngapunten Mbak, kulo dereng gajian, mangke nggih kulo bayar.",
+          "reply": "Terima kasih, Bapak. Pembayaran dapat dilakukan melalui virtual account, aplikasi Dravix Finance, gerai Indomaret atau Alfamart, maupun kantor cabang kami. Apakah ada hal lain yang bisa saya bantu?",
+          "ttsText": "Terima kasih, Bapak. Pembayaran dapat dilakukan melalui virtual account, aplikasi Dravix Finance, gerai Indomaret atau Alfamart, maupun kantor cabang kami. Apakah ada hal lain yang bisa saya bantu?",
+          "intent": "will_pay",
+          "confidence": 0.864,
+          "method": "cue",
+          "variant": "formal",
+          "regional": "javanese",
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {objection_no_money,will_pay} (got will_pay)",
+              "pass": true
+            },
+            {
+              "name": "regional javanese (got javanese)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "id_regional_sundanese",
+      "market": "ID",
+      "title": "Regional: Sundanese-influenced speech",
+      "turns": [
+        {
+          "text": "Muhun, abdi Budi.",
+          "reply": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran ke-10 pembiayaan motor Bapak sebesar Rp1.250.000 akan jatuh tempo pada 15 Oktober 2026. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "ttsText": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran kesepuluh pembiayaan motor Bapak sebesar satu juta dua ratus lima puluh ribu rupiah akan jatuh tempo pada lima belas Oktober dua ribu dua puluh enam. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "intent": "identity_confirmed",
+          "confidence": 0.887,
+          "method": "context",
+          "variant": "formal",
+          "regional": "sundanese",
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "regional sundanese (got sundanese)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Punten Teh, artosna teu acan aya, kumaha atuh?",
+          "reply": "Saya ngerti, Pak, lagi berat ya. Biar nggak kena denda, usahakan bayar sebelum tanggal 15. Kalau butuh keringanan atau reschedule, harus lewat petugas kami, Pak. Mau saya sambungkan?",
+          "ttsText": "Saya ngerti, Pak, lagi berat ya. Biar nggak kena denda, usahakan bayar sebelum tanggal lima belas. Kalau butuh keringanan atau reschedule, harus lewat petugas kami, Pak. Mau saya sambungkan?",
+          "intent": "objection_no_money",
+          "confidence": 0.865,
+          "method": "cue",
+          "variant": "casual",
+          "regional": "sundanese",
+          "replyVariant": "casual",
+          "checks": [
+            {
+              "name": "intent ∈ {objection_no_money} (got objection_no_money)",
+              "pass": true
+            },
+            {
+              "name": "regional sundanese (got sundanese)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (casual)",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "id_escalation",
+      "market": "ID",
+      "title": "Human escalation (formal)",
+      "turns": [
+        {
+          "text": "Iya, betul.",
+          "reply": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran ke-10 pembiayaan motor Bapak sebesar Rp1.250.000 akan jatuh tempo pada 15 Oktober 2026. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "ttsText": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran kesepuluh pembiayaan motor Bapak sebesar satu juta dua ratus lima puluh ribu rupiah akan jatuh tempo pada lima belas Oktober dua ribu dua puluh enam. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "intent": "identity_confirmed",
+          "confidence": 0.945,
+          "method": "context",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Saya mau bicara langsung dengan petugas saja.",
+          "reply": "Baik, Bapak. Saya akan menghubungkan Bapak dengan petugas layanan kami. Mohon ditunggu sebentar.",
+          "ttsText": "Baik, Bapak. Saya akan menghubungkan Bapak dengan petugas layanan kami. Mohon ditunggu sebentar.",
+          "intent": "escalation",
+          "confidence": 0.96,
+          "method": "cue",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {escalation} (got escalation)",
+              "pass": true
+            },
+            {
+              "name": "detected formal (got formal)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            },
+            {
+              "name": "call ended",
+              "pass": true
+            },
+            {
+              "name": "escalated to human",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "id_out_of_scope",
+      "market": "ID",
+      "title": "Out-of-scope (hard negative with 'di mana')",
+      "turns": [
+        {
+          "text": "Iya.",
+          "reply": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran ke-10 pembiayaan motor Bapak sebesar Rp1.250.000 akan jatuh tempo pada 15 Oktober 2026. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "ttsText": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran kesepuluh pembiayaan motor Bapak sebesar satu juta dua ratus lima puluh ribu rupiah akan jatuh tempo pada lima belas Oktober dua ribu dua puluh enam. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+          "intent": "identity_confirmed",
+          "confidence": 0.954,
+          "method": "context",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {identity_confirmed} (got identity_confirmed)",
+              "pass": true
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        },
+        {
+          "text": "Mbak, motor saya mogok, bengkel terdekat di mana ya?",
+          "reply": "Pembayaran dapat dilakukan melalui virtual account, aplikasi Dravix Finance, gerai Indomaret atau Alfamart, maupun kantor cabang kami. Nomor virtual account tercantum di aplikasi dan SMS tagihan. Apakah ada hal lain yang bisa saya bantu?",
+          "ttsText": "Pembayaran dapat dilakukan melalui virtual account, aplikasi Dravix Finance, gerai Indomaret atau Alfamart, maupun kantor cabang kami. Nomor virtual account tercantum di aplikasi dan SMS tagihan. Apakah ada hal lain yang bisa saya bantu?",
+          "intent": "ask_payment_channels",
+          "confidence": 0.867,
+          "method": "embedding",
+          "variant": "formal",
+          "regional": null,
+          "replyVariant": "formal",
+          "checks": [
+            {
+              "name": "intent ∈ {fallback} (got ask_payment_channels)",
+              "pass": false
+            },
+            {
+              "name": "reply stays in caller variant (formal)",
+              "pass": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

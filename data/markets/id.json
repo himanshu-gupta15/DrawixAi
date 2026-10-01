@@ -1,0 +1,401 @@
+{
+  "market": "ID",
+  "sector": "Multifinance (motorcycle financing)",
+  "flow": "Installment (angsuran) reminder with collections support",
+  "botName": "Sari",
+  "languages": [
+    "formal",
+    "casual"
+  ],
+  "defaultVariant": "formal",
+  "asr": {
+    "browserLocale": "id-ID",
+    "whisperLanguage": "indonesian"
+  },
+  "tts": {
+    "browserLocales": [
+      "id-ID"
+    ],
+    "note": "macOS voice Damayanti (id_ID) is native Indonesian."
+  },
+  "customer": {
+    "name": "Budi Santoso",
+    "addressFormal": "Bapak Budi",
+    "addressCasual": "Pak Budi",
+    "product": "pembiayaan motor",
+    "installment": 1250000,
+    "installmentNo": 10,
+    "tenorMonths": 24,
+    "dueDate": "2026-10-15",
+    "penaltyPctPerDay": 0.5
+  },
+  "variants": {
+    "greeting": {
+      "formal": "Selamat siang. Saya Sari, asisten virtual dari Dravix Finance. Panggilan ini direkam untuk menjaga kualitas layanan. Apakah saya berbicara dengan Bapak Budi Santoso?",
+      "casual": "Siang, Pak. Saya Sari, asisten virtual dari Dravix Finance. Telepon ini direkam ya, Pak, buat kualitas layanan. Betul ini dengan Pak Budi Santoso?"
+    },
+    "reminder": {
+      "formal": "Terima kasih, Bapak Budi. Kami ingin mengingatkan bahwa angsuran ke-{no} pembiayaan motor Bapak sebesar {amount} akan jatuh tempo pada {date}. Apakah Bapak dapat melakukan pembayaran sebelum tanggal tersebut?",
+      "casual": "Makasih, Pak Budi. Mau ngingetin aja, Pak, cicilan motor yang ke-{no}, {amount}, jatuh temponya tanggal {date_short}. Kira-kira bisa dibayar sebelum tanggal itu, Pak?"
+    },
+    "wrong_person": {
+      "formal": "Mohon maaf atas gangguannya. Terima kasih atas waktunya.",
+      "casual": "Oh, maaf ganggu ya. Makasih banyak."
+    },
+    "fallback": {
+      "formal": "Mohon maaf, saya kurang menangkap maksud Bapak. Bisa diulangi?",
+      "casual": "Maaf, Pak, saya kurang nangkep. Bisa diulang?"
+    },
+    "out_of_scope": {
+      "formal": "Mohon maaf, saya belum memiliki informasi mengenai hal tersebut. Jika Bapak berkenan, petugas kami dapat menghubungi Bapak kembali.",
+      "casual": "Maaf, Pak, soal itu saya belum punya infonya. Kalau mau, nanti petugas kami yang telepon balik ya, Pak."
+    },
+    "anything_else": {
+      "formal": "Apakah ada hal lain yang bisa saya bantu?",
+      "casual": "Ada lagi yang mau ditanyain, Pak?"
+    },
+    "closing": {
+      "formal": "Terima kasih atas waktunya, Bapak Budi. Selamat siang.",
+      "casual": "Oke, makasih ya, Pak Budi. Selamat siang!"
+    }
+  },
+  "intents": {
+    "will_pay": {
+      "examples": [
+        "Iya, nanti saya bayar sebelum tanggal 15",
+        "Besok saya transfer",
+        "Siap, Mbak, nanti saya bayar",
+        "Baik, akan saya bayarkan minggu ini",
+        "Oke, gajian langsung saya bayar",
+        "Bisa, nanti sore saya bayar",
+        "Iyo, mengko tak bayar",
+        "Nggih, mangke kulo bayar"
+      ],
+      "cues": [
+        "saya bayar",
+        "transfer",
+        "akan saya bayar",
+        "dibayar",
+        "tak bayar",
+        "kulo bayar"
+      ],
+      "responses": {
+        "formal": "Terima kasih, Bapak. Pembayaran dapat dilakukan melalui virtual account, aplikasi Dravix Finance, gerai Indomaret atau Alfamart, maupun kantor cabang kami.",
+        "casual": "Siap, makasih, Pak{jv}. Bayarnya bisa lewat virtual account, aplikasi Dravix Finance, Indomaret atau Alfamart, atau langsung ke kantor cabang."
+      },
+      "then": "anything_else"
+    },
+    "already_paid": {
+      "examples": [
+        "Saya sudah bayar kemarin",
+        "Udah bayar kok, Mbak",
+        "Sudah saya transfer tadi pagi",
+        "Lho, udah lunas bulan ini",
+        "Wis tak bayar wingi",
+        "Sampun kulo bayar"
+      ],
+      "cues": [
+        "sudah bayar",
+        "udah bayar",
+        "sudah saya transfer",
+        "udah lunas",
+        "wis tak bayar",
+        "sampun"
+      ],
+      "responses": {
+        "formal": "Terima kasih, Bapak. Pembayaran biasanya tercatat dalam 1x24 jam. Jika sudah lebih dari itu dan belum tercatat, kami akan bantu melakukan pengecekan.",
+        "casual": "Oke, makasih, Pak{jv}. Biasanya pembayaran masuk ke sistem dalam 1x24 jam. Kalau sudah lewat dari itu belum masuk, nanti kami bantu cek ya."
+      },
+      "then": "anything_else"
+    },
+    "ask_amount": {
+      "examples": [
+        "Berapa angsuran saya bulan ini?",
+        "Cicilannya berapa, Mbak?",
+        "Totalnya berapa yang harus dibayar?",
+        "Bayarnya berapa?",
+        "Piro cicilane?"
+      ],
+      "cues": [
+        "berapa angsuran",
+        "angsurannya berapa",
+        "cicilannya berapa",
+        "bayarnya berapa",
+        "piro cicilane",
+        "totalnya berapa"
+      ],
+      "responses": {
+        "formal": "Angsuran ke-{no} Bapak sebesar {amount}, jatuh tempo pada {date}.",
+        "casual": "Cicilan ke-{no} itu {amount}, Pak, jatuh temponya tanggal {date_short}."
+      },
+      "then": "anything_else"
+    },
+    "ask_due_date": {
+      "examples": [
+        "Jatuh temponya kapan?",
+        "Tanggal berapa harus bayar?",
+        "Kapan terakhir bayarnya?",
+        "Deadline-nya kapan?"
+      ],
+      "cues": [
+        "jatuh tempo",
+        "jatuh temponya",
+        "tanggal berapa harus",
+        "deadline"
+      ],
+      "responses": {
+        "formal": "Jatuh tempo angsuran Bapak adalah {date}.",
+        "casual": "Jatuh temponya tanggal {date_short}, Pak."
+      },
+      "then": "anything_else"
+    },
+    "ask_penalty": {
+      "examples": [
+        "Kalau telat kena denda nggak?",
+        "Dendanya berapa?",
+        "Kalau saya terlambat bayar bagaimana?",
+        "Ada late fee-nya?",
+        "Telat sehari kena berapa?"
+      ],
+      "cues": [
+        "denda",
+        "telat",
+        "terlambat",
+        "late fee"
+      ],
+      "responses": {
+        "formal": "Jika pembayaran melewati jatuh tempo, akan dikenakan denda keterlambatan sebesar {penalty_pct} per hari dari nilai angsuran, yaitu {penalty_amount} per hari.",
+        "casual": "Kalau lewat jatuh tempo, kena denda {penalty_pct} per hari dari cicilan, Pak, jadi sekitar {penalty_amount} sehari."
+      },
+      "then": "anything_else"
+    },
+    "ask_payment_channels": {
+      "examples": [
+        "Bayarnya lewat mana?",
+        "Bisa bayar di Indomaret?",
+        "Nomor virtual account-nya berapa?",
+        "Bisa lewat aplikasi?",
+        "Bayar di mana, Mbak?"
+      ],
+      "cues": [
+        "lewat mana",
+        "indomaret",
+        "alfamart",
+        "virtual account",
+        "lewat aplikasi",
+        "bayar di mana"
+      ],
+      "responses": {
+        "formal": "Pembayaran dapat dilakukan melalui virtual account, aplikasi Dravix Finance, gerai Indomaret atau Alfamart, maupun kantor cabang kami. Nomor virtual account tercantum di aplikasi dan SMS tagihan.",
+        "casual": "Bisa lewat virtual account, aplikasi Dravix Finance, Indomaret, Alfamart, atau ke kantor cabang, Pak. Nomor VA-nya ada di aplikasi sama SMS tagihan."
+      },
+      "then": "anything_else"
+    },
+    "objection_no_money": {
+      "examples": [
+        "Lagi nggak ada duit, Mbak",
+        "Gaji saya belum turun",
+        "Bulan ini lagi susah",
+        "Saya belum punya uang untuk bayar",
+        "Lagi seret nih",
+        "Durung ono duit",
+        "Teu acan aya artos",
+        "Awak lagi tak ada duit"
+      ],
+      "cues": [
+        "nggak ada duit",
+        "gak ada duit",
+        "belum turun",
+        "lagi susah",
+        "belum punya uang",
+        "seret",
+        "durung ono",
+        "teu acan",
+        "tak ada duit",
+        "nggak punya uang",
+        "belum gajian",
+        "bokek",
+        "belum bisa bayar",
+        "kena phk"
+      ],
+      "responses": {
+        "formal": "Kami memahami kondisi Bapak. Agar tidak terkena denda, pembayaran sebaiknya dilakukan sebelum {date}. Jika Bapak memerlukan keringanan atau penjadwalan ulang, pengajuannya perlu dibahas dengan petugas kami. Apakah Bapak ingin saya hubungkan?",
+        "casual": "Saya ngerti, Pak, lagi berat ya{jv}. Biar nggak kena denda, usahakan bayar sebelum tanggal {date_short}. Kalau butuh keringanan atau reschedule, harus lewat petugas kami, Pak. Mau saya sambungkan?"
+      },
+      "then": "offer_advisor"
+    },
+    "ask_restructure": {
+      "examples": [
+        "Bisa minta keringanan?",
+        "Tenornya bisa diperpanjang?",
+        "Bisa reschedule cicilan?",
+        "Saya mau restrukturisasi",
+        "Bisa dicicil dendanya?"
+      ],
+      "cues": [
+        "keringanan",
+        "diperpanjang",
+        "reschedule",
+        "restrukturisasi",
+        "restruktur"
+      ],
+      "responses": {
+        "formal": "Pengajuan keringanan atau restrukturisasi tidak dapat saya setujui melalui telepon ini. Petugas kami akan meninjau kondisi Bapak. Apakah Bapak ingin saya hubungkan dengan petugas?",
+        "casual": "Untuk keringanan atau restruktur, saya nggak bisa approve lewat telepon ini, Pak. Nanti petugas kami yang cek kondisinya. Mau saya sambungkan ke petugas?"
+      },
+      "then": "offer_advisor"
+    },
+    "ask_remaining": {
+      "examples": [
+        "Sisa tenornya berapa bulan lagi?",
+        "Tinggal berapa kali cicilan?",
+        "Kapan lunasnya?",
+        "Masih berapa bulan lagi?"
+      ],
+      "cues": [
+        "sisa",
+        "tinggal berapa",
+        "lunasnya",
+        "berapa bulan lagi"
+      ],
+      "responses": {
+        "formal": "Ini adalah angsuran ke-{no} dari tenor {tenor} bulan. Setelah pembayaran ini, tersisa {remaining} kali angsuran.",
+        "casual": "Ini cicilan ke-{no} dari tenor {tenor} bulan, Pak. Habis ini tinggal {remaining} kali lagi."
+      },
+      "then": "anything_else"
+    },
+    "ask_early_settlement": {
+      "examples": [
+        "Kalau mau pelunasan dipercepat bagaimana?",
+        "Bisa dilunasi sekarang?",
+        "Saya mau lunasin sekalian",
+        "Berapa kalau mau pelunasan?"
+      ],
+      "cues": [
+        "pelunasan",
+        "dilunasi",
+        "lunasin"
+      ],
+      "responses": {
+        "formal": "Pelunasan dipercepat dapat diajukan di kantor cabang atau aplikasi. Nominal pastinya dihitung pada hari pengajuan, sehingga saya belum dapat menyebutkan angkanya sekarang.",
+        "casual": "Pelunasan dipercepat bisa diajukan di cabang atau lewat aplikasi, Pak. Nominalnya dihitung pas hari pengajuan, jadi saya belum bisa sebut angkanya sekarang."
+      },
+      "then": "anything_else"
+    },
+    "ask_dp": {
+      "examples": [
+        "DP saya kemarin dihitung nggak?",
+        "Uang muka saya masuk ke mana?",
+        "Kenapa cicilan masih segini padahal DP sudah besar?"
+      ],
+      "cues": [
+        "dp",
+        "uang muka"
+      ],
+      "responses": {
+        "formal": "DP atau uang muka sudah diperhitungkan saat akad pembiayaan, sehingga angsuran {amount} per bulan dihitung dari sisa pokok pembiayaan setelah DP.",
+        "casual": "DP-nya udah dihitung pas akad, Pak, jadi cicilan {amount} per bulan itu dari sisa pembiayaan setelah DP."
+      },
+      "then": "anything_else"
+    },
+    "dispute": {
+      "examples": [
+        "Saya nggak pernah ambil kredit motor",
+        "Angsurannya salah, kok beda",
+        "Ini bukan tagihan saya",
+        "Saya mau komplain soal tagihan ini"
+      ],
+      "cues": [
+        "nggak pernah ambil",
+        "tidak pernah mengambil",
+        "angsurannya salah",
+        "tagihannya salah",
+        "salah tagih",
+        "bukan tagihan saya",
+        "komplain"
+      ],
+      "responses": {
+        "formal": "Mohon maaf atas ketidaknyamanannya. Agar dapat diperiksa dengan benar, saya akan menghubungkan Bapak dengan petugas layanan kami.",
+        "casual": "Maaf ya, Pak, atas ketidaknyamanannya. Biar dicek dengan benar, saya sambungkan ke petugas kami ya."
+      },
+      "then": "escalated"
+    },
+    "escalation": {
+      "examples": [
+        "Saya mau bicara dengan petugas",
+        "Sambungkan ke orang aja, Mbak",
+        "Mau ngomong sama manusia",
+        "Bisa ngobrol sama CS?",
+        "Saya mau ketemu kolektor saja",
+        "Kulo pengen ngomong kalih petugas",
+        "Hubungkan saya ke customer service"
+      ],
+      "cues": [
+        "petugas",
+        "orang aja",
+        "manusia",
+        "customer service",
+        "sambungkan",
+        "hubungkan",
+        "kolektor",
+        "sambungin"
+      ],
+      "responses": {
+        "formal": "Baik, Bapak. Saya akan menghubungkan Bapak dengan petugas layanan kami. Mohon ditunggu sebentar.",
+        "casual": "Oke, Pak. Saya sambungkan ke petugas kami ya, ditunggu sebentar{jv}."
+      },
+      "then": "escalated"
+    },
+    "callback": {
+      "examples": [
+        "Nanti telepon lagi ya, saya lagi di jalan",
+        "Lagi rapat, nanti aja",
+        "Telepon besok aja",
+        "Saya lagi kerja, nanti sore saja"
+      ],
+      "cues": [
+        "telepon lagi",
+        "di jalan",
+        "nanti aja",
+        "besok aja",
+        "lagi rapat",
+        "nanti sore"
+      ],
+      "responses": {
+        "formal": "Baik, Bapak. Kami akan menghubungi Bapak kembali nanti. Terima kasih.",
+        "casual": "Oke, Pak, nanti kami telepon lagi ya. Makasih!"
+      },
+      "then": "end"
+    },
+    "affirm": {
+      "examples": [
+        "Iya",
+        "Ya, betul",
+        "Betul, saya sendiri",
+        "Iya, saya Budi",
+        "Nggih",
+        "Leres",
+        "Iyo",
+        "Muhun",
+        "Ya, dengan saya sendiri"
+      ],
+      "cues": [],
+      "responses": {},
+      "then": "context"
+    },
+    "deny": {
+      "examples": [
+        "Bukan",
+        "Bukan, salah sambung",
+        "Tidak",
+        "Enggak",
+        "Mboten",
+        "Sudah, itu saja",
+        "Nggak ada, cukup"
+      ],
+      "cues": [],
+      "responses": {},
+      "then": "context"
+    }
+  }
+}

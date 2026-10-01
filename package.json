@@ -1,26 +1,52 @@
 {
-  "name": "scaffold",
+  "name": "dravix-ai-assessment",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "tsx --env-file-if-exists=.env server.ts",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "NODE_ENV=production tsx --env-file-if-exists=.env server.ts",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "db:push": "prisma db push",
+    "ingest": "tsx --env-file-if-exists=.env scripts/ingest.ts",
+    "eval:retrieval": "tsx --env-file-if-exists=.env scripts/eval-retrieval.ts",
+    "audio:q4": "tsx --env-file-if-exists=.env scripts/generate-q4-audio.ts",
+    "bench:q4": "tsx --env-file-if-exists=.env scripts/benchmark-q4.ts",
+    "pdf:sample": "tsx --env-file-if-exists=.env scripts/build-sample-pdf.ts",
+    "test": "tsx --env-file-if-exists=.env scripts/run-tests.ts",
+    "eval:retrieval:heldout": "tsx --env-file-if-exists=.env scripts/eval-retrieval.ts heldout-v2",
+    "calibrate:retrieval": "tsx --env-file-if-exists=.env scripts/calibrate-retrieval.ts",
+    "test:calls": "tsx --env-file-if-exists=.env scripts/run-test-calls.ts",
+    "test:q3": "tsx --env-file-if-exists=.env scripts/test-q3.ts v2",
+    "test:q3:asr": "tsx --env-file-if-exists=.env scripts/test-q3-asr.ts",
+    "calls:q3": "tsx --env-file-if-exists=.env scripts/run-q3-calls.ts",
+    "reports": "tsx --env-file-if-exists=.env scripts/render-reports.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "@huggingface/transformers": "^4.3.0",
+    "@prisma/client": "^6.19.3",
+    "@qdrant/js-client-rest": "^1.19.0",
+    "cheerio": "^1.2.0",
     "next": "16.3.8",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "unpdf": "^1.8.1",
+    "ws": "^8.22.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/ws": "^8.18.2",
     "eslint": "^9",
     "eslint-config-next": "16.3.8",
+    "pdf-lib": "^1.17.1",
+    "prisma": "^6.19.3",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

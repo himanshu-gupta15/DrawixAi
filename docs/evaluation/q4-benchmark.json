@@ -1,0 +1,1713 @@
+{
+  "ranAt": "2026-10-01T17:21:43.062Z",
+  "asrModel": "Xenova/whisper-base",
+  "hardware": "Apple M4 (CPU inference via onnxruntime-node)",
+  "scenarios": [
+    {
+      "id": "motor_cross_sell",
+      "title": "Motor renewal – missed multi-vehicle cross-sell",
+      "durationMs": 58499,
+      "expected": [
+        "cross_sell"
+      ],
+      "created": [
+        "cross_sell",
+        "buying_signal"
+      ],
+      "truePositives": [
+        "cross_sell"
+      ],
+      "missed": [],
+      "falsePositives": [],
+      "forbiddenFired": [],
+      "merged": 1,
+      "suppressed": [],
+      "resolved": [],
+      "nudges": [
+        {
+          "type": "cross_sell",
+          "priority": "medium",
+          "text": "Customer has another vehicle: suggest the multi-vehicle discount.",
+          "confidence": 0.85,
+          "evidence": "That's fine, by the way, my wife also has a car, a Honda EI-20, and her insurer",
+          "callMsAtNudge": 33840,
+          "wallMsDisplayed": 34370,
+          "triggerLineEndMs": 35396,
+          "secondsAfterTriggerSpeechEnd": -1.03,
+          "beforeCallEnd": true,
+          "timings": {
+            "endpointMs": 0,
+            "asrQueueMs": 1,
+            "asrMs": 558,
+            "signalMs": 1.2,
+            "llmMs": null,
+            "genMs": 0,
+            "serverMs": 560
+          }
+        },
+        {
+          "type": "buying_signal",
+          "priority": "medium",
+          "text": "Buying signal: confirm the plan and move to the next step now.",
+          "confidence": 0.8,
+          "evidence": "Yes, please send it. How do I pay? Can I use UPI?",
+          "callMsAtNudge": 46460,
+          "wallMsDisplayed": 47284,
+          "triggerLineEndMs": null,
+          "secondsAfterTriggerSpeechEnd": null,
+          "beforeCallEnd": true,
+          "timings": {
+            "endpointMs": 500,
+            "asrQueueMs": 1,
+            "asrMs": 472,
+            "signalMs": 1.3,
+            "llmMs": null,
+            "genMs": 0,
+            "serverMs": 474
+          }
+        }
+      ],
+      "metrics": {
+        "callMs": 58499,
+        "nudges": {
+          "created": 2,
+          "active": 2,
+          "resolved": 0,
+          "expired": 0,
+          "merged": 1,
+          "suppressed": 0
+        },
+        "latencyMs": {
+          "endpointing": {
+            "n": 13,
+            "p50": 500,
+            "p95": 500,
+            "max": 500
+          },
+          "asrQueue": {
+            "n": 13,
+            "p50": 1,
+            "p95": 2,
+            "max": 2
+          },
+          "asr": {
+            "n": 13,
+            "p50": 468,
+            "p95": 570,
+            "max": 570
+          },
+          "signalExtraction": {
+            "n": 13,
+            "p50": 0.6,
+            "p95": 1.3,
+            "max": 1.3
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudgeGeneration": {
+            "n": 13,
+            "p50": 0,
+            "p95": 0.1,
+            "max": 0.1
+          },
+          "serverPipeline": {
+            "n": 13,
+            "p50": 470,
+            "p95": 571,
+            "max": 571
+          },
+          "delivery": {
+            "n": 15,
+            "p50": 0.3,
+            "p95": 2.7,
+            "max": 2.7
+          },
+          "endToEndTranscript": {
+            "n": 13,
+            "p50": 470.1,
+            "p95": 574,
+            "max": 574
+          },
+          "endToEndNudge": {
+            "n": 2,
+            "p50": 474.7,
+            "p95": 560.7,
+            "max": 560.7
+          }
+        },
+        "llmEnabled": false
+      },
+      "transcript": [
+        {
+          "speaker": "agent",
+          "text": "Good morning, this is Neha from Dravick's General Insurance.",
+          "startMs": 420,
+          "endMs": 3520,
+          "snrDb": 29.2
+        },
+        {
+          "speaker": "agent",
+          "text": "This call is recorded for quality and training purposes. Am I speaking with Mr. Arjun Rao?",
+          "startMs": 3940,
+          "endMs": 9400,
+          "snrDb": 33.7
+        },
+        {
+          "speaker": "customer",
+          "text": "Yes, speaking.",
+          "startMs": 10060,
+          "endMs": 11360,
+          "snrDb": 40
+        },
+        {
+          "speaker": "agent",
+          "text": "I'm calling about your car insurance renewal, which is due on the 20th of this month.",
+          "startMs": 12000,
+          "endMs": 16880,
+          "snrDb": 34.1
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, what will the premium be this year?",
+          "startMs": 17640,
+          "endMs": 20340,
+          "snrDb": 25.7
+        },
+        {
+          "speaker": "agent",
+          "text": "Your renewal premium for the Honda City is 11,400 Rs. Include Your No Claim Bonus.",
+          "startMs": 21180,
+          "endMs": 27180,
+          "snrDb": 24.4
+        },
+        {
+          "speaker": "customer",
+          "text": "That's fine, by the way, my wife also has a car, a Honda EI-20, and her insurer",
+          "startMs": 27840,
+          "endMs": 33840,
+          "snrDb": 36.7
+        },
+        {
+          "speaker": "customer",
+          "text": "is with another company.",
+          "startMs": 33840,
+          "endMs": 35400,
+          "snrDb": 26.4
+        },
+        {
+          "speaker": "agent",
+          "text": "Okay, noted. Shall I send the renewal payment link to your registered mobile number?",
+          "startMs": 36100,
+          "endMs": 41420,
+          "snrDb": 34.5
+        },
+        {
+          "speaker": "customer",
+          "text": "Yes, please send it. How do I pay? Can I use UPI?",
+          "startMs": 42100,
+          "endMs": 46460,
+          "snrDb": 42.8
+        },
+        {
+          "speaker": "agent",
+          "text": "Yes the link supports UPI, cards and net banking.",
+          "startMs": 47080,
+          "endMs": 50280,
+          "snrDb": 39.7
+        },
+        {
+          "speaker": "customer",
+          "text": "Great, sounds good, I will pay tonight.",
+          "startMs": 50920,
+          "endMs": 53800,
+          "snrDb": 42.8
+        },
+        {
+          "speaker": "agent",
+          "text": "Thank you, Mr. Raul.",
+          "startMs": 54600,
+          "endMs": 57240,
+          "snrDb": 41.4
+        }
+      ],
+      "samples": {
+        "endpoint": [
+          500,
+          500,
+          500,
+          500,
+          500,
+          0,
+          0,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500
+        ],
+        "asr": [
+          511,
+          570,
+          328,
+          500,
+          379,
+          506,
+          558,
+          327,
+          468,
+          472,
+          402,
+          393,
+          378
+        ],
+        "asrQueue": [
+          2,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "signal": [
+          0.5,
+          0.6,
+          1.1,
+          0.4,
+          1.1,
+          0.4,
+          1.2,
+          1.1,
+          0.4,
+          1.3,
+          0.4,
+          1.2,
+          0.3
+        ],
+        "llm": [],
+        "gen": [
+          0.1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "server": [
+          514,
+          571,
+          330,
+          502,
+          381,
+          508,
+          560,
+          328,
+          470,
+          474,
+          402,
+          395,
+          379
+        ],
+        "transcriptE2e": [
+          514.2,
+          574,
+          330.2,
+          504.2,
+          381.1,
+          508.3,
+          560.7,
+          328.8,
+          470.1,
+          474.7,
+          402.7,
+          395,
+          378.8
+        ],
+        "nudgeE2e": [
+          560.7,
+          474.7
+        ],
+        "delivery": [
+          0.4,
+          2.7,
+          0.3,
+          2.4,
+          0.3,
+          0.5,
+          0.5,
+          0.3,
+          0.3,
+          0.3,
+          0.4,
+          0.3,
+          0.3,
+          0.3,
+          0.2
+        ]
+      }
+    },
+    {
+      "id": "health_compliance",
+      "title": "Health sales – skipped recording disclosure and risky claim promise",
+      "durationMs": 47626,
+      "expected": [
+        "compliance_disclosure",
+        "compliance_risky_statement",
+        "cross_sell",
+        "callback_need"
+      ],
+      "created": [
+        "compliance_disclosure",
+        "compliance_risky_statement",
+        "cross_sell"
+      ],
+      "truePositives": [
+        "compliance_disclosure",
+        "compliance_risky_statement",
+        "cross_sell"
+      ],
+      "missed": [
+        "callback_need"
+      ],
+      "falsePositives": [],
+      "forbiddenFired": [],
+      "merged": 5,
+      "suppressed": [
+        "callback_need: deferred: non-urgent nudges are spaced 10 s apart"
+      ],
+      "resolved": [],
+      "nudges": [
+        {
+          "type": "compliance_disclosure",
+          "priority": "high",
+          "text": "Disclose the call recording before discussing price or payment.",
+          "confidence": 0.9,
+          "evidence": "Agent has not stated that the call is recorded and is already discussing price/payment.",
+          "callMsAtNudge": 15800,
+          "wallMsDisplayed": 16242,
+          "triggerLineEndMs": 16795,
+          "secondsAfterTriggerSpeechEnd": -0.55,
+          "beforeCallEnd": true,
+          "timings": {
+            "endpointMs": 0,
+            "asrQueueMs": 1,
+            "asrMs": 528,
+            "signalMs": 0.1,
+            "llmMs": null,
+            "genMs": 0,
+            "serverMs": 529
+          }
+        },
+        {
+          "type": "compliance_risky_statement",
+          "priority": "high",
+          "text": "Correct the promise \"always approved\": claims can't be guaranteed; they follow policy terms.",
+          "confidence": 0.92,
+          "evidence": "\"always approved\" — Don't worry, sir, with us claims are always approved at this guaranteed. No questions asked.",
+          "callMsAtNudge": 27040,
+          "wallMsDisplayed": 27940,
+          "triggerLineEndMs": 26993,
+          "secondsAfterTriggerSpeechEnd": 0.95,
+          "beforeCallEnd": true,
+          "timings": {
+            "endpointMs": 500,
+            "asrQueueMs": 1,
+            "asrMs": 526,
+            "signalMs": 0.2,
+            "llmMs": null,
+            "genMs": 0,
+            "serverMs": 527
+          }
+        },
+        {
+          "type": "cross_sell",
+          "priority": "medium",
+          "text": "Family members are uninsured: suggest adding them on a family floater.",
+          "confidence": 0.8,
+          "evidence": "Okay, my parents also have no insurance right now, actually.",
+          "callMsAtNudge": 38780,
+          "wallMsDisplayed": 39554,
+          "triggerLineEndMs": 38753,
+          "secondsAfterTriggerSpeechEnd": 0.8,
+          "beforeCallEnd": true,
+          "timings": {
+            "endpointMs": 500,
+            "asrQueueMs": 1,
+            "asrMs": 440,
+            "signalMs": 0.1,
+            "llmMs": null,
+            "genMs": 0.1,
+            "serverMs": 440
+          }
+        }
+      ],
+      "metrics": {
+        "callMs": 47626,
+        "nudges": {
+          "created": 3,
+          "active": 3,
+          "resolved": 0,
+          "expired": 0,
+          "merged": 5,
+          "suppressed": 1
+        },
+        "latencyMs": {
+          "endpointing": {
+            "n": 12,
+            "p50": 500,
+            "p95": 500,
+            "max": 500
+          },
+          "asrQueue": {
+            "n": 12,
+            "p50": 1,
+            "p95": 1,
+            "max": 1
+          },
+          "asr": {
+            "n": 12,
+            "p50": 416,
+            "p95": 528,
+            "max": 528
+          },
+          "signalExtraction": {
+            "n": 12,
+            "p50": 0,
+            "p95": 0.9,
+            "max": 0.9
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudgeGeneration": {
+            "n": 12,
+            "p50": 0,
+            "p95": 0.1,
+            "max": 0.1
+          },
+          "serverPipeline": {
+            "n": 12,
+            "p50": 418,
+            "p95": 529,
+            "max": 529
+          },
+          "delivery": {
+            "n": 15,
+            "p50": 0.3,
+            "p95": 0.4,
+            "max": 0.4
+          },
+          "endToEndTranscript": {
+            "n": 12,
+            "p50": 418.3,
+            "p95": 529.3,
+            "max": 529.3
+          },
+          "endToEndNudge": {
+            "n": 3,
+            "p50": 527,
+            "p95": 529.4,
+            "max": 529.4
+          }
+        },
+        "llmEnabled": false
+      },
+      "transcript": [
+        {
+          "speaker": "agent",
+          "text": "Hello, this is Rahul from Dravick's Health.",
+          "startMs": 440,
+          "endMs": 2640,
+          "snrDb": 34.9
+        },
+        {
+          "speaker": "agent",
+          "text": "You had inquired about health insurance for your family.",
+          "startMs": 3080,
+          "endMs": 5920,
+          "snrDb": 34.2
+        },
+        {
+          "speaker": "customer",
+          "text": "Yes I filled the form on your website last week.",
+          "startMs": 6580,
+          "endMs": 9020,
+          "snrDb": 31.3
+        },
+        {
+          "speaker": "agent",
+          "text": "Great. For a family of four with five lack cover, the gold plan premium is around 18,000",
+          "startMs": 9800,
+          "endMs": 15800,
+          "snrDb": 23.1
+        },
+        {
+          "speaker": "agent",
+          "text": "and repeat here.",
+          "startMs": 15800,
+          "endMs": 16840,
+          "snrDb": 34.5
+        },
+        {
+          "speaker": "customer",
+          "text": "Hmm, my father has diabetes will his claims be paid.",
+          "startMs": 17540,
+          "endMs": 20920,
+          "snrDb": 29.7
+        },
+        {
+          "speaker": "agent",
+          "text": "Don't worry, sir, with us claims are always approved at this guaranteed. No questions asked.",
+          "startMs": 21640,
+          "endMs": 27040,
+          "snrDb": 40.6
+        },
+        {
+          "speaker": "customer",
+          "text": "Really, even for diabetes from day 1.",
+          "startMs": 27700,
+          "endMs": 30400,
+          "snrDb": 33.3
+        },
+        {
+          "speaker": "agent",
+          "text": "Yes sir, 100% you have nothing to worry about.",
+          "startMs": 31060,
+          "endMs": 34220,
+          "snrDb": 32.1
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, my parents also have no insurance right now, actually.",
+          "startMs": 34980,
+          "endMs": 38780,
+          "snrDb": 37.2
+        },
+        {
+          "speaker": "agent",
+          "text": "Okay, shall I send you the proposal form?",
+          "startMs": 39460,
+          "endMs": 42480,
+          "snrDb": 36.4
+        },
+        {
+          "speaker": "customer",
+          "text": "Let me think about it, please call me back tomorrow evening.",
+          "startMs": 43120,
+          "endMs": 46360,
+          "snrDb": 41.4
+        }
+      ],
+      "samples": {
+        "endpoint": [
+          500,
+          500,
+          500,
+          0,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500
+        ],
+        "asr": [
+          424,
+          400,
+          416,
+          528,
+          328,
+          426,
+          526,
+          369,
+          402,
+          440,
+          383,
+          424
+        ],
+        "asrQueue": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "signal": [
+          0,
+          0,
+          0.9,
+          0.1,
+          0,
+          0,
+          0.2,
+          0,
+          0.1,
+          0.1,
+          0,
+          0.2
+        ],
+        "llm": [],
+        "gen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.1,
+          0,
+          0
+        ],
+        "server": [
+          425,
+          401,
+          418,
+          529,
+          329,
+          426,
+          527,
+          370,
+          403,
+          440,
+          384,
+          425
+        ],
+        "transcriptE2e": [
+          425.1,
+          401.1,
+          418.3,
+          529.3,
+          328.9,
+          426.8,
+          527,
+          369.8,
+          403,
+          440.8,
+          384.1,
+          425.5
+        ],
+        "nudgeE2e": [
+          529.4,
+          527,
+          440.9
+        ],
+        "delivery": [
+          0.4,
+          0.3,
+          0.3,
+          0.4,
+          0.2,
+          0.3,
+          0.3,
+          0.3,
+          0.2,
+          0.3,
+          0.3,
+          0.4,
+          0.3,
+          0.3,
+          0.3
+        ]
+      }
+    },
+    {
+      "id": "collections_frustration",
+      "title": "Collections – rising frustration and payment difficulty",
+      "durationMs": 58094,
+      "expected": [
+        "frustration",
+        "payment_difficulty"
+      ],
+      "created": [
+        "frustration",
+        "payment_difficulty"
+      ],
+      "truePositives": [
+        "frustration",
+        "payment_difficulty"
+      ],
+      "missed": [],
+      "falsePositives": [],
+      "forbiddenFired": [],
+      "merged": 1,
+      "suppressed": [],
+      "resolved": [],
+      "nudges": [
+        {
+          "type": "frustration",
+          "priority": "high",
+          "text": "Rising frustration: acknowledge the concern and summarise what you'll do before continuing.",
+          "confidence": 0.85,
+          "evidence": "I told you already, next week, why do you keep calling me every day?",
+          "callMsAtNudge": 28800,
+          "wallMsDisplayed": 29600,
+          "triggerLineEndMs": 39922,
+          "secondsAfterTriggerSpeechEnd": -10.32,
+          "beforeCallEnd": true,
+          "timings": {
+            "endpointMs": 500,
+            "asrQueueMs": 1,
+            "asrMs": 462,
+            "signalMs": 0.5,
+            "llmMs": null,
+            "genMs": 0,
+            "serverMs": 463
+          }
+        },
+        {
+          "type": "payment_difficulty",
+          "priority": "high",
+          "text": "Customer reports payment difficulty: offer the approved EMI / grace-period option or a callback with a specialist.",
+          "confidence": 0.88,
+          "evidence": "Look, I lost my job last month and money is tight, I am trying my best.",
+          "callMsAtNudge": 49660,
+          "wallMsDisplayed": 50535,
+          "triggerLineEndMs": 49620,
+          "secondsAfterTriggerSpeechEnd": 0.92,
+          "beforeCallEnd": true,
+          "timings": {
+            "endpointMs": 500,
+            "asrQueueMs": 1,
+            "asrMs": 498,
+            "signalMs": 0.2,
+            "llmMs": null,
+            "genMs": 0,
+            "serverMs": 499
+          }
+        }
+      ],
+      "metrics": {
+        "callMs": 58094,
+        "nudges": {
+          "created": 2,
+          "active": 2,
+          "resolved": 0,
+          "expired": 0,
+          "merged": 1,
+          "suppressed": 0
+        },
+        "latencyMs": {
+          "endpointing": {
+            "n": 13,
+            "p50": 500,
+            "p95": 500,
+            "max": 500
+          },
+          "asrQueue": {
+            "n": 13,
+            "p50": 1,
+            "p95": 1,
+            "max": 1
+          },
+          "asr": {
+            "n": 13,
+            "p50": 451,
+            "p95": 521,
+            "max": 521
+          },
+          "signalExtraction": {
+            "n": 13,
+            "p50": 0,
+            "p95": 0.5,
+            "max": 0.5
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudgeGeneration": {
+            "n": 13,
+            "p50": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "serverPipeline": {
+            "n": 13,
+            "p50": 452,
+            "p95": 522,
+            "max": 522
+          },
+          "delivery": {
+            "n": 15,
+            "p50": 0.3,
+            "p95": 0.4,
+            "max": 0.4
+          },
+          "endToEndTranscript": {
+            "n": 13,
+            "p50": 451.9,
+            "p95": 522.5,
+            "max": 522.5
+          },
+          "endToEndNudge": {
+            "n": 2,
+            "p50": 463.7,
+            "p95": 499.4,
+            "max": 499.4
+          }
+        },
+        "llmEnabled": false
+      },
+      "transcript": [
+        {
+          "speaker": "agent",
+          "text": "Good afternoon, this is Priya from Dravick's Finance.",
+          "startMs": 420,
+          "endMs": 3120,
+          "snrDb": 31.1
+        },
+        {
+          "speaker": "agent",
+          "text": "This call is recorded, am I speaking with Mr Vikram Singh?",
+          "startMs": 3540,
+          "endMs": 7120,
+          "snrDb": 35
+        },
+        {
+          "speaker": "customer",
+          "text": "Yes.",
+          "startMs": 7800,
+          "endMs": 8300,
+          "snrDb": 40.8
+        },
+        {
+          "speaker": "agent",
+          "text": "Sir your loan installment of 8200 Rs was due on the 5th and is still pending.",
+          "startMs": 9000,
+          "endMs": 14340,
+          "snrDb": 37.3
+        },
+        {
+          "speaker": "customer",
+          "text": "I know, I already told your colleague yesterday that I will pay next week.",
+          "startMs": 14980,
+          "endMs": 19520,
+          "snrDb": 33.6
+        },
+        {
+          "speaker": "agent",
+          "text": "Sir, can you please confirm the exact date you will pay?",
+          "startMs": 20360,
+          "endMs": 23480,
+          "snrDb": 35.5
+        },
+        {
+          "speaker": "customer",
+          "text": "I told you already, next week, why do you keep calling me every day?",
+          "startMs": 24140,
+          "endMs": 28800,
+          "snrDb": 31.5
+        },
+        {
+          "speaker": "agent",
+          "text": "Sir, I understand, but I need a confirmed date for our records.",
+          "startMs": 29540,
+          "endMs": 33220,
+          "snrDb": 33.2
+        },
+        {
+          "speaker": "customer",
+          "text": "this is the third time this week, this is ridiculous, i am really fed up with these calls.",
+          "startMs": 33960,
+          "endMs": 39960,
+          "snrDb": 17
+        },
+        {
+          "speaker": "agent",
+          "text": "So if the payment is late, the penalty will apply.",
+          "startMs": 40680,
+          "endMs": 43600,
+          "snrDb": 39.9
+        },
+        {
+          "speaker": "customer",
+          "text": "Look, I lost my job last month and money is tight, I am trying my best.",
+          "startMs": 44240,
+          "endMs": 49660,
+          "snrDb": 43.2
+        },
+        {
+          "speaker": "agent",
+          "text": "I see, can you pay at least part of the amount today?",
+          "startMs": 50340,
+          "endMs": 53680,
+          "snrDb": 37.3
+        },
+        {
+          "speaker": "customer",
+          "text": "No, I cannot afford it right now.",
+          "startMs": 54340,
+          "endMs": 56860,
+          "snrDb": 38.5
+        }
+      ],
+      "samples": {
+        "endpoint": [
+          500,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500,
+          0,
+          500,
+          500,
+          500,
+          500
+        ],
+        "asr": [
+          436,
+          440,
+          311,
+          495,
+          470,
+          422,
+          462,
+          455,
+          521,
+          408,
+          498,
+          451,
+          376
+        ],
+        "asrQueue": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "signal": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.5,
+          0,
+          0.2,
+          0,
+          0.2,
+          0,
+          0.2
+        ],
+        "llm": [],
+        "gen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "server": [
+          437,
+          441,
+          312,
+          496,
+          471,
+          422,
+          463,
+          456,
+          522,
+          409,
+          499,
+          452,
+          377
+        ],
+        "transcriptE2e": [
+          436.9,
+          440.8,
+          312.1,
+          496.2,
+          471.5,
+          422.6,
+          463.6,
+          456.4,
+          522.5,
+          409.4,
+          499.4,
+          451.9,
+          377.1
+        ],
+        "nudgeE2e": [
+          463.7,
+          499.4
+        ],
+        "delivery": [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.4,
+          0.2,
+          0.4,
+          0.2,
+          0.3,
+          0.3,
+          0.2,
+          0.3,
+          0.2,
+          0.3,
+          0.3
+        ]
+      }
+    },
+    {
+      "id": "noisy_ambiguous",
+      "title": "Noisy line with ambiguous phrases – no nudges expected",
+      "durationMs": 41277,
+      "expected": [],
+      "created": [],
+      "truePositives": [],
+      "missed": [],
+      "falsePositives": [],
+      "forbiddenFired": [],
+      "merged": 0,
+      "suppressed": [],
+      "resolved": [],
+      "nudges": [],
+      "metrics": {
+        "callMs": 41277,
+        "nudges": {
+          "created": 0,
+          "active": 0,
+          "resolved": 0,
+          "expired": 0,
+          "merged": 0,
+          "suppressed": 0
+        },
+        "latencyMs": {
+          "endpointing": {
+            "n": 11,
+            "p50": 500,
+            "p95": 500,
+            "max": 500
+          },
+          "asrQueue": {
+            "n": 11,
+            "p50": 1,
+            "p95": 1,
+            "max": 1
+          },
+          "asr": {
+            "n": 11,
+            "p50": 407,
+            "p95": 536,
+            "max": 536
+          },
+          "signalExtraction": {
+            "n": 11,
+            "p50": 0,
+            "p95": 0.2,
+            "max": 0.2
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudgeGeneration": {
+            "n": 11,
+            "p50": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "serverPipeline": {
+            "n": 11,
+            "p50": 408,
+            "p95": 537,
+            "max": 537
+          },
+          "delivery": {
+            "n": 11,
+            "p50": 0.3,
+            "p95": 0.4,
+            "max": 0.4
+          },
+          "endToEndTranscript": {
+            "n": 11,
+            "p50": 408.5,
+            "p95": 537.7,
+            "max": 537.7
+          },
+          "endToEndNudge": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "llmEnabled": false
+      },
+      "transcript": [
+        {
+          "speaker": "agent",
+          "text": "Hello, this is Kavya from Dravik's Health and this call is recorded for quality purposes.",
+          "startMs": 0,
+          "endMs": 6000,
+          "snrDb": 13.8
+        },
+        {
+          "speaker": "agent",
+          "text": "That's a good time.",
+          "startMs": 6000,
+          "endMs": 6880,
+          "snrDb": 14.5
+        },
+        {
+          "speaker": "customer",
+          "text": "Yes, it's fine, no problem at all.",
+          "startMs": 7660,
+          "endMs": 9440,
+          "snrDb": 15.1
+        },
+        {
+          "speaker": "agent",
+          "text": "I'm calling to confirm your policy. Renewal next month.",
+          "startMs": 10220,
+          "endMs": 12940,
+          "snrDb": 14.1
+        },
+        {
+          "speaker": "customer",
+          "text": "Sorry about the noise the traffic here is really frustrating today.",
+          "startMs": 14700,
+          "endMs": 17840,
+          "snrDb": 15
+        },
+        {
+          "speaker": "agent",
+          "text": "No worries, your premium stays the same as last year.",
+          "startMs": 18580,
+          "endMs": 21960,
+          "snrDb": 14.8
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, good. I'm not worried about the price",
+          "startMs": 22660,
+          "endMs": 24920,
+          "snrDb": 15.6
+        },
+        {
+          "speaker": "agent",
+          "text": "Do you have any changes to your address or nominee?",
+          "startMs": 25760,
+          "endMs": 28380,
+          "snrDb": 14.3
+        },
+        {
+          "speaker": "customer",
+          "text": "No changes. I sold my second car last year but that's a different policy anyway.",
+          "startMs": 29060,
+          "endMs": 34100,
+          "snrDb": 15
+        },
+        {
+          "speaker": "agent",
+          "text": "understood. I'll send the renewal reminder by email.",
+          "startMs": 34840,
+          "endMs": 37920,
+          "snrDb": 13.6
+        },
+        {
+          "speaker": "customer",
+          "text": "That's fine, thank you.",
+          "startMs": 38800,
+          "endMs": 39940,
+          "snrDb": 15.6
+        }
+      ],
+      "samples": {
+        "endpoint": [
+          0,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500,
+          500
+        ],
+        "asr": [
+          536,
+          351,
+          392,
+          438,
+          433,
+          412,
+          407,
+          392,
+          468,
+          387,
+          358
+        ],
+        "asrQueue": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "signal": [
+          0,
+          0,
+          0,
+          0,
+          0.2,
+          0,
+          0,
+          0,
+          0.2,
+          0,
+          0
+        ],
+        "llm": [],
+        "gen": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "server": [
+          537,
+          352,
+          392,
+          439,
+          434,
+          412,
+          408,
+          392,
+          469,
+          388,
+          359
+        ],
+        "transcriptE2e": [
+          537.7,
+          352,
+          392.7,
+          439.4,
+          434.5,
+          412.7,
+          408.5,
+          392.6,
+          469.9,
+          388.1,
+          359.4
+        ],
+        "nudgeE2e": [],
+        "delivery": [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.4,
+          0.3,
+          0.3
+        ]
+      }
+    }
+  ],
+  "totals": {
+    "expected": 7,
+    "truePositives": 6,
+    "falsePositives": 0,
+    "missed": 1,
+    "nudgesBeforeCallEnd": "7/7",
+    "secondsAfterTriggerSpeechEnd": {
+      "p50": -0.55,
+      "p95": 0.95
+    }
+  },
+  "pooledLatency": {
+    "endpointing": {
+      "n": 49,
+      "p50": 500,
+      "p95": 500,
+      "max": 500
+    },
+    "asrQueue": {
+      "n": 49,
+      "p50": 1,
+      "p95": 1,
+      "max": 2
+    },
+    "asr": {
+      "n": 49,
+      "p50": 424,
+      "p95": 536,
+      "max": 570
+    },
+    "signalExtraction": {
+      "n": 49,
+      "p50": 0.1,
+      "p95": 1.2,
+      "max": 1.3
+    },
+    "llm": {
+      "n": 0,
+      "p50": null,
+      "p95": null,
+      "max": null
+    },
+    "nudgeGeneration": {
+      "n": 49,
+      "p50": 0,
+      "p95": 0,
+      "max": 0.1
+    },
+    "serverPipeline": {
+      "n": 49,
+      "p50": 425,
+      "p95": 537,
+      "max": 571
+    },
+    "delivery": {
+      "n": 56,
+      "p50": 0.3,
+      "p95": 0.5,
+      "max": 2.7
+    },
+    "endToEndTranscript": {
+      "n": 49,
+      "p50": 425.5,
+      "p95": 537.7,
+      "max": 574
+    },
+    "endToEndNudge": {
+      "n": 7,
+      "p50": 499.4,
+      "p95": 560.7,
+      "max": 560.7
+    }
+  },
+  "perScenarioLatency": [
+    {
+      "id": "motor_cross_sell",
+      "endpointing": {
+        "n": 13,
+        "p50": 500,
+        "p95": 500,
+        "max": 500
+      },
+      "asrQueue": {
+        "n": 13,
+        "p50": 1,
+        "p95": 2,
+        "max": 2
+      },
+      "asr": {
+        "n": 13,
+        "p50": 468,
+        "p95": 570,
+        "max": 570
+      },
+      "signalExtraction": {
+        "n": 13,
+        "p50": 0.6,
+        "p95": 1.3,
+        "max": 1.3
+      },
+      "llm": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "nudgeGeneration": {
+        "n": 13,
+        "p50": 0,
+        "p95": 0.1,
+        "max": 0.1
+      },
+      "serverPipeline": {
+        "n": 13,
+        "p50": 470,
+        "p95": 571,
+        "max": 571
+      },
+      "delivery": {
+        "n": 15,
+        "p50": 0.3,
+        "p95": 2.7,
+        "max": 2.7
+      },
+      "endToEndTranscript": {
+        "n": 13,
+        "p50": 470.1,
+        "p95": 574,
+        "max": 574
+      },
+      "endToEndNudge": {
+        "n": 2,
+        "p50": 474.7,
+        "p95": 560.7,
+        "max": 560.7
+      }
+    },
+    {
+      "id": "health_compliance",
+      "endpointing": {
+        "n": 12,
+        "p50": 500,
+        "p95": 500,
+        "max": 500
+      },
+      "asrQueue": {
+        "n": 12,
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "asr": {
+        "n": 12,
+        "p50": 416,
+        "p95": 528,
+        "max": 528
+      },
+      "signalExtraction": {
+        "n": 12,
+        "p50": 0,
+        "p95": 0.9,
+        "max": 0.9
+      },
+      "llm": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "nudgeGeneration": {
+        "n": 12,
+        "p50": 0,
+        "p95": 0.1,
+        "max": 0.1
+      },
+      "serverPipeline": {
+        "n": 12,
+        "p50": 418,
+        "p95": 529,
+        "max": 529
+      },
+      "delivery": {
+        "n": 15,
+        "p50": 0.3,
+        "p95": 0.4,
+        "max": 0.4
+      },
+      "endToEndTranscript": {
+        "n": 12,
+        "p50": 418.3,
+        "p95": 529.3,
+        "max": 529.3
+      },
+      "endToEndNudge": {
+        "n": 3,
+        "p50": 527,
+        "p95": 529.4,
+        "max": 529.4
+      }
+    },
+    {
+      "id": "collections_frustration",
+      "endpointing": {
+        "n": 13,
+        "p50": 500,
+        "p95": 500,
+        "max": 500
+      },
+      "asrQueue": {
+        "n": 13,
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "asr": {
+        "n": 13,
+        "p50": 451,
+        "p95": 521,
+        "max": 521
+      },
+      "signalExtraction": {
+        "n": 13,
+        "p50": 0,
+        "p95": 0.5,
+        "max": 0.5
+      },
+      "llm": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "nudgeGeneration": {
+        "n": 13,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "serverPipeline": {
+        "n": 13,
+        "p50": 452,
+        "p95": 522,
+        "max": 522
+      },
+      "delivery": {
+        "n": 15,
+        "p50": 0.3,
+        "p95": 0.4,
+        "max": 0.4
+      },
+      "endToEndTranscript": {
+        "n": 13,
+        "p50": 451.9,
+        "p95": 522.5,
+        "max": 522.5
+      },
+      "endToEndNudge": {
+        "n": 2,
+        "p50": 463.7,
+        "p95": 499.4,
+        "max": 499.4
+      }
+    },
+    {
+      "id": "noisy_ambiguous",
+      "endpointing": {
+        "n": 11,
+        "p50": 500,
+        "p95": 500,
+        "max": 500
+      },
+      "asrQueue": {
+        "n": 11,
+        "p50": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "asr": {
+        "n": 11,
+        "p50": 407,
+        "p95": 536,
+        "max": 536
+      },
+      "signalExtraction": {
+        "n": 11,
+        "p50": 0,
+        "p95": 0.2,
+        "max": 0.2
+      },
+      "llm": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "nudgeGeneration": {
+        "n": 11,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "serverPipeline": {
+        "n": 11,
+        "p50": 408,
+        "p95": 537,
+        "max": 537
+      },
+      "delivery": {
+        "n": 11,
+        "p50": 0.3,
+        "p95": 0.4,
+        "max": 0.4
+      },
+      "endToEndTranscript": {
+        "n": 11,
+        "p50": 408.5,
+        "p95": 537.7,
+        "max": 537.7
+      },
+      "endToEndNudge": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      }
+    }
+  ]
+}

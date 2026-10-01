@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Design tokens (light + dark). Dark is the default; the toggle sets data-theme on <html>. */
+:root,
+[data-theme="light"] {
+  --bg: #f7f7f5; --subtle: #fbfbfa; --surface: #fff; --row-hover: #fafaf8;
+  --border: #e7e6e1; --divider: #efeee9; --chip: #f3f2ee; --track: #ecebe6; --avatar: #e9e8e3;
+  --input-border: #d9d8d2; --border-strong: #d1d0ca; --faint: #c4c3bc;
+  --text-4: #9a9992; --text-3: #87867f; --text-2: #5c5b55; --text-body: #3d3c37;
+  --ink: #18181a; --ink-hover: #3a3a3c; --on-ink: #fff; --header: rgba(247, 247, 245, 0.92);
+  --primary: oklch(0.47 0.15 262); --primary-hover: oklch(0.42 0.15 262); --ring: oklch(0.92 0.04 262);
+  --g-fg: oklch(0.45 0.11 155); --g-bg: oklch(0.96 0.03 155); --g-bd: oklch(0.88 0.05 155);
+  --a-fg: oklch(0.47 0.1 65); --a-bg: oklch(0.965 0.04 80); --a-bd: oklch(0.88 0.06 80);
+  --r-fg: oklch(0.5 0.15 25); --r-bg: oklch(0.965 0.025 25); --r-bd: oklch(0.88 0.05 25);
+  --p-fg: oklch(0.42 0.15 262); --p-bg: oklch(0.96 0.025 262); --p-bd: oklch(0.88 0.05 262);
+  --honesty-bg: oklch(0.98 0.02 85); --danger: oklch(0.52 0.16 25);
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --bg: #121211; --subtle: #161615; --surface: #1b1b1a; --row-hover: #21211f;
+  --border: #2c2c2a; --divider: #262624; --chip: #272725; --track: #2f2f2c; --avatar: #2f2f2c;
+  --input-border: #3b3b38; --border-strong: #47473f; --faint: #56564f;
+  --text-4: #7f7e77; --text-3: #908f88; --text-2: #acaba4; --text-body: #cfcec8;
+  --ink: #ededea; --ink-hover: #d2d2ce; --on-ink: #121211; --header: rgba(18, 18, 17, 0.88);
+  --primary: oklch(0.58 0.15 262); --primary-hover: oklch(0.64 0.15 262); --ring: oklch(0.34 0.08 262);
+  --g-fg: oklch(0.8 0.11 155); --g-bg: oklch(0.26 0.04 155); --g-bd: oklch(0.38 0.06 155);
+  --a-fg: oklch(0.83 0.1 75); --a-bg: oklch(0.27 0.04 75); --a-bd: oklch(0.4 0.06 75);
+  --r-fg: oklch(0.77 0.13 25); --r-bg: oklch(0.27 0.045 25); --r-bd: oklch(0.4 0.07 25);
+  --p-fg: oklch(0.8 0.1 262); --p-bg: oklch(0.27 0.05 262); --p-bd: oklch(0.4 0.08 262);
+  --honesty-bg: oklch(0.21 0.02 80); --danger: oklch(0.55 0.16 25);
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg: var(--bg);
+  --color-subtle: var(--subtle);
+  --color-surface: var(--surface);
+  --color-row-hover: var(--row-hover);
+  --color-line: var(--border);
+  --color-divider: var(--divider);
+  --color-chip: var(--chip);
+  --color-track: var(--track);
+  --color-avatar: var(--avatar);
+  --color-input: var(--input-border);
+  --color-strong: var(--border-strong);
+  --color-faint: var(--faint);
+  --color-t4: var(--text-4);
+  --color-t3: var(--text-3);
+  --color-t2: var(--text-2);
+  --color-body: var(--text-body);
+  --color-ink: var(--ink);
+  --color-ink-hover: var(--ink-hover);
+  --color-on-ink: var(--on-ink);
+  --color-header: var(--header);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-ring: var(--ring);
+  --color-g-fg: var(--g-fg); --color-g-bg: var(--g-bg); --color-g-bd: var(--g-bd);
+  --color-a-fg: var(--a-fg); --color-a-bg: var(--a-bg); --color-a-bd: var(--a-bd);
+  --color-r-fg: var(--r-fg); --color-r-bg: var(--r-bg); --color-r-bd: var(--r-bd);
+  --color-p-fg: var(--p-fg); --color-p-bg: var(--p-bg); --color-p-bd: var(--p-bd);
+  --color-honesty: var(--honesty-bg);
+  --color-danger: var(--danger);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
 }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 6px; }
+input:focus, select:focus, textarea:focus { border-color: var(--primary) !important; box-shadow: 0 0 0 3px var(--ring); outline: none; }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.25s ease-out both; }
+@keyframes shimmer { 0% { opacity: 0.55; } 50% { opacity: 1; } 100% { opacity: 0.55; } }
+.shimmer { animation: shimmer 1.4s ease-in-out infinite; }
+
+/* Theme toggle label: offer the theme you are not in. */
+[data-theme="dark"] .theme-to-dark, [data-theme="light"] .theme-to-light { display: none; }

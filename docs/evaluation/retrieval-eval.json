@@ -1,0 +1,351 @@
+{
+  "ranAt": "2026-10-01T16:58:57.583Z",
+  "summary": {
+    "total": 16,
+    "correct": 16,
+    "partiallyCorrect": 0,
+    "incorrect": 0,
+    "p50LatencyMs": 100.5,
+    "p95LatencyMs": 111.8,
+    "coldStartMs": 490
+  },
+  "results": [
+    {
+      "id": "R1",
+      "type": "product",
+      "question": "What does the Gold plan include?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_product_002",
+        "title": "Gold Plan",
+        "content": "The Gold plan offers sum insured options of ₹5 lakh and ₹10 lakh. Premium starts at ₹9,800 per year for an individual aged 18-35. It covers a single private room, maternity expenses up to ₹50,000 after a 2-year waiting period, AYUSH treatment up to the sum insured and a free annual health check-up.",
+        "category": "product"
+      },
+      "otherResults": [
+        "kb_product_006 Benefits Included in Every Plan",
+        "kb_pricing_002 Gold plan premium rates"
+      ],
+      "sourceReference": "website / plans page (v2026.09) — website/plans.html#gold-plan",
+      "relevanceExplanation": "Gold plan section of the plans page lists sum insured, room, maternity, AYUSH and check-up. Retrieved: dense=0.851, bm25=4.374, shared terms [gold, plan].",
+      "answer": "The Gold plan offers sum insured options of ₹5 lakh and ₹10 lakh. Premium starts at ₹9,800 per year for an individual aged 18-35.",
+      "verdict": "correct",
+      "latencyMs": 101.4
+    },
+    {
+      "id": "R2",
+      "type": "product",
+      "question": "Does any plan cover hospital treatment abroad?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_faq_011",
+        "title": "What is not covered?",
+        "content": "Common exclusions are cosmetic or aesthetic surgery, self-inflicted injury, injuries from hazardous adventure sports, dental treatment unless caused by an accident, and treatment outside India (except Platinum global emergency cover).",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_product_003 Platinum Plan",
+        "kb_product_005 Dravix Health Plans at a Glance"
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#what-is-not-covered",
+      "relevanceExplanation": "Only Platinum has global emergency hospitalisation; exclusions say treatment outside India is excluded except Platinum. Retrieved: dense=0.876, bm25=17.233, shared terms [cover, treatment, outside, india, global, emergency].",
+      "answer": "Common exclusions are cosmetic or aesthetic surgery, self-inflicted injury, injuries from hazardous adventure sports, dental treatment unless caused by an accident, and treatment outside India (except Platinum global emergency cover).",
+      "verdict": "correct",
+      "latencyMs": 105.6
+    },
+    {
+      "id": "R3",
+      "type": "policy",
+      "question": "What is the waiting period for pre-existing diseases like diabetes?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_eligibility_004",
+        "title": "Pre-existing disease (PED)",
+        "content": "Pre-existing disease must be declared on the proposal form. Declared PED such as diabetes, hypertension, thyroid disorders and asthma is accepted and covered after a waiting period of 36 months. Non-disclosure of a PED can lead to claim rejection or policy cancellation.",
+        "category": "eligibility"
+      },
+      "otherResults": [
+        "kb_policy_002 Waiting periods",
+        "kb_objection_003 Objection – \"I am young and healthy, I don't need it\""
+      ],
+      "sourceReference": "underwriting & eligibility rules v2.0 (v2.0) — docs/eligibility-rules.md#pre-existing-disease-ped",
+      "relevanceExplanation": "Current policy v2.0 / eligibility rules state 36 months. The website FAQ (4 years) and policy v1.0 (48 months) must NOT be returned. Retrieved: dense=0.908, bm25=15.549, shared terms [wait, period, pre, exist, disease, diabet].",
+      "answer": "Pre-existing disease must be declared on the proposal form. Declared PED such as diabetes, hypertension, thyroid disorders and asthma is accepted and covered after a waiting period of 36 months.",
+      "verdict": "correct",
+      "latencyMs": 70.7
+    },
+    {
+      "id": "R4",
+      "type": "policy",
+      "question": "What is the grace period if I pay late?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_faq_008",
+        "title": "What is the grace period if I miss a payment?",
+        "content": "Annual premiums have a grace period of 30 days; monthly instalments have a grace period of 15 days. Claims are not payable for hospitalisation that starts during the unpaid grace period.",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_faq_010 What is the free-look period?",
+        "kb_policy_002 Waiting periods"
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#what-is-the-grace-period-if-i-miss-a-payment",
+      "relevanceExplanation": "FAQ gives 30 days for annual and 15 days for monthly premiums. Retrieved: dense=0.89, bm25=9.075, shared terms [grace, period].",
+      "answer": "Annual premiums have a grace period of 30 days; monthly instalments have a grace period of 15 days. Claims are not payable for hospitalisation that starts during the unpaid grace period.",
+      "verdict": "correct",
+      "latencyMs": 72.4
+    },
+    {
+      "id": "R5",
+      "type": "qualification",
+      "question": "Can I add my 72 year old father to the policy?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_eligibility_003",
+        "title": "Family members",
+        "content": "A family floater can cover the proposer, spouse, up to 3 dependent children aged 91 days to 25 years, and parents. Parents can be added only under Gold or Platinum, with a maximum entry age of 75 years. Members who are 61 years or older at entry have a 20% co-payment on every claim.",
+        "category": "eligibility"
+      },
+      "otherResults": [
+        "kb_eligibility_001 Who can buy?",
+        "kb_eligibility_002 Proposer eligibility"
+      ],
+      "sourceReference": "underwriting & eligibility rules v2.0 (v2.0) — docs/eligibility-rules.md#family-members",
+      "relevanceExplanation": "Eligibility rules: parents only under Gold/Platinum, max entry age 75, 20% co-pay above 60. Retrieved: dense=0.893, bm25=23.669, shared terms [year, family, member, floater, parent, spouse].",
+      "answer": "A family floater can cover the proposer, spouse, up to 3 dependent children aged 91 days to 25 years, and parents. Parents can be added only under Gold or Platinum, with a maximum entry age of 75 years.",
+      "verdict": "correct",
+      "latencyMs": 109.8
+    },
+    {
+      "id": "R6",
+      "type": "qualification",
+      "question": "I had a heart bypass last year, can I still get covered?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_eligibility_005",
+        "title": "Conditions that need underwriter review",
+        "content": "The following cannot be approved by sales and must be referred to an underwriter: any cancer diagnosis or treatment within the last 5 years, kidney failure or dialysis, heart surgery or angioplasty within the last 2 years, and any organ transplant. Sales agents must not promise approval in these cases.",
+        "category": "eligibility"
+      },
+      "otherResults": [
+        "kb_policy_002 Waiting periods",
+        "kb_product_006 Benefits Included in Every Plan"
+      ],
+      "sourceReference": "underwriting & eligibility rules v2.0 (v2.0) — docs/eligibility-rules.md#conditions-that-need-underwriter-review",
+      "relevanceExplanation": "Heart surgery within 2 years must be referred to an underwriter; sales cannot promise approval. Retrieved: dense=0.88, bm25=28.682, shared terms [heart, last, year, underwriter, review, surgery].",
+      "answer": "The following cannot be approved by sales and must be referred to an underwriter: any cancer diagnosis or treatment within the last 5 years, kidney failure or dialysis, heart surgery or angioplasty within the last 2 years, and any organ transplant. Sales agents must not promise approval in these cases.",
+      "verdict": "correct",
+      "latencyMs": 111.8
+    },
+    {
+      "id": "R7",
+      "type": "qualification",
+      "question": "I am 67, am I eligible to buy a policy?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_eligibility_002",
+        "title": "Proposer eligibility",
+        "content": "The proposer must be an Indian resident aged between 18 and 65 years (completed age) at entry. Proposers above 65 years are not eligible for a new policy and must be referred to a human advisor for senior-citizen options.",
+        "category": "eligibility"
+      },
+      "otherResults": [
+        "kb_eligibility_001 Who can buy?",
+        "kb_faq_002 Is there a waiting period when I first buy the policy?"
+      ],
+      "sourceReference": "underwriting & eligibility rules v2.0 (v2.0) — docs/eligibility-rules.md#proposer-eligibility",
+      "relevanceExplanation": "Proposer must be 18-65 at entry; above 65 is referred to a human advisor. Retrieved: dense=0.881, bm25=13.968, shared terms [eligible, policy, entry, age, eligibility], intent hint 'eligibility'.",
+      "answer": "The proposer must be an Indian resident aged between 18 and 65 years (completed age) at entry. Proposers above 65 years are not eligible for a new policy and must be referred to a human advisor for senior-citizen options.",
+      "verdict": "correct",
+      "latencyMs": 69
+    },
+    {
+      "id": "R8",
+      "type": "faq",
+      "question": "How do I get cashless treatment at a hospital?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_faq_003",
+        "title": "How do I make a cashless claim?",
+        "content": "Show your Dravix Health e-card at the insurance desk of any network hospital. The hospital sends a pre-authorisation request and we confirm the cashless approval, usually within 1 hour.",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_claims_005 Network",
+        "kb_faq_005 How do I get a reimbursement claim?"
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#how-do-i-make-a-cashless-claim",
+      "relevanceExplanation": "FAQ explains the e-card + pre-authorisation flow. Its near-duplicate must not appear as a separate result. Retrieved: dense=0.897, bm25=8.103, shared terms [cashles, hospital].",
+      "answer": "Show your Dravix Health e-card at the insurance desk of any network hospital. The hospital sends a pre-authorisation request and we confirm the cashless approval, usually within 1 hour.",
+      "verdict": "correct",
+      "latencyMs": 72.8
+    },
+    {
+      "id": "R9",
+      "type": "faq",
+      "question": "Will I get a tax deduction on the premium?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_faq_006",
+        "title": "Can I get tax benefits?",
+        "content": "Yes. Premiums paid are eligible for deduction under Section 80D of the Income Tax Act – up to ₹25,000 per year for self and family, and an additional ₹50,000 if you pay for senior-citizen parents. Tax benefits are subject to changes in tax law.",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_objection_001 Objection – \"It is too expensive\"",
+        "kb_faq_010 What is the free-look period?"
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#can-i-get-tax-benefits",
+      "relevanceExplanation": "Section 80D FAQ. Retrieved: dense=0.915, bm25=18.762, shared terms [get, tax, deduction, premium, section, 80d], intent hint 'pricing'.",
+      "answer": "Premiums paid are eligible for deduction under Section 80D of the Income Tax Act – up to ₹25,000 per year for self and family, and an additional ₹50,000 if you pay for senior-citizen parents. Tax benefits are subject to changes in tax law.",
+      "verdict": "correct",
+      "latencyMs": 67.4
+    },
+    {
+      "id": "R10",
+      "type": "faq",
+      "question": "Can I cancel the policy if I don't like it?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_faq_010",
+        "title": "What is the free-look period?",
+        "content": "You have 30 days from receiving the policy document to review it. If you cancel during the free-look period, the premium is refunded after deducting stamp duty and any medical check-up costs.",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_objection_004 Objection – \"Insurance companies reject claims\"",
+        "kb_eligibility_004 Pre-existing disease (PED)"
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#what-is-the-free-look-period",
+      "relevanceExplanation": "Free-look period FAQ (30 days, refund minus stamp duty/medical costs). Retrieved: dense=0.894, bm25=15.465, shared terms [cancel, policy, free, look, period].",
+      "answer": "You have 30 days from receiving the policy document to review it. If you cancel during the free-look period, the premium is refunded after deducting stamp duty and any medical check-up costs.",
+      "verdict": "correct",
+      "latencyMs": 82.7
+    },
+    {
+      "id": "R11",
+      "type": "objection",
+      "question": "Honestly this is too costly for me.",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_objection_001",
+        "title": "Objection – \"It is too expensive\"",
+        "content": "Acknowledge the concern. Explain that the Silver plan starts at about ₹6,200 a year (roughly ₹520 a month), that premiums can be paid in 12 monthly instalments at no extra cost, and that premiums qualify for tax deduction under Section 80D. Never offer discounts that are not in the approved price list.",
+        "category": "objection"
+      },
+      "otherResults": [
+        "kb_pricing_001 Silver plan premium rates",
+        "kb_pricing_002 Gold plan premium rates"
+      ],
+      "sourceReference": "sales objection playbook v1.3 (v1.3) — docs/objection-playbook.md#objection-it-is-too-expensive",
+      "relevanceExplanation": "Playbook price objection: Silver from ₹6,200/yr, monthly EMI, 80D. Retrieved: dense=0.869, bm25=8.924, shared terms [too, premium, year, month].",
+      "answer": "The Silver plan starts at about ₹6,200 a year (roughly ₹520 a month), premiums can be paid in 12 monthly instalments at no extra cost, and premiums qualify for tax deduction under Section 80D.",
+      "verdict": "correct",
+      "latencyMs": 102.1
+    },
+    {
+      "id": "R12",
+      "type": "objection",
+      "question": "My office already gives me health cover, why buy another?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_objection_002",
+        "title": "Objection – \"I already have insurance from my employer\"",
+        "content": "Acknowledge that employer cover is useful. Explain that group cover usually ends when you leave or change jobs, often has a lower sum insured, and may not cover parents. A personal policy keeps waiting-period credit building independently of employment. Customers can also move an existing individual policy to Dravix Health through portability.",
+        "category": "objection"
+      },
+      "otherResults": [
+        "kb_objection_003 Objection – \"I am young and healthy, I don't need it\"",
+        "kb_faq_002 Is there a waiting period when I first buy the policy?"
+      ],
+      "sourceReference": "sales objection playbook v1.3 (v1.3) — docs/objection-playbook.md#objection-i-already-have-insurance-from-my-employer",
+      "relevanceExplanation": "Playbook employer-cover objection. Retrieved: dense=0.87, bm25=7.42, shared terms [already, health, cover].",
+      "answer": "Group cover usually ends when you leave or change jobs, often has a lower sum insured, and may not cover parents. You can also move an existing individual policy to Dravix Health through portability.",
+      "verdict": "correct",
+      "latencyMs": 100.5
+    },
+    {
+      "id": "R13",
+      "type": "objection",
+      "question": "I've heard insurers reject most claims.",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_objection_004",
+        "title": "Objection – \"Insurance companies reject claims\"",
+        "content": "Share the 96.4% claim settlement ratio for FY 2025-26, cashless treatment at 9,500+ network hospitals, and the written reason plus review process if a claim is rejected. Remind the customer of the 30-day free-look period to review the policy.",
+        "category": "objection"
+      },
+      "otherResults": [
+        "kb_claims_004 Claim settlement",
+        "kb_claims_001 Claim settlement experience"
+      ],
+      "sourceReference": "sales objection playbook v1.3 (v1.3) — docs/objection-playbook.md#objection-insurance-companies-reject-claims",
+      "relevanceExplanation": "Playbook trust objection: 96.4% settlement ratio, written reasons, free-look. Retrieved: dense=0.902, bm25=14.708, shared terms [reject, claim, rejected, settlement, ratio].",
+      "answer": "We have a 96.4% claim settlement ratio for FY 2025-26, cashless treatment at 9,500+ network hospitals, and the written reason plus review process if a claim is rejected. You also get the 30-day free-look period to review the policy.",
+      "verdict": "correct",
+      "latencyMs": 106.1
+    },
+    {
+      "id": "R14",
+      "type": "out_of_scope",
+      "question": "Do you also sell car insurance?",
+      "grounded": false,
+      "retrieved": {
+        "recordId": "kb_faq_007",
+        "title": "Can I pay the premium monthly?",
+        "content": "Yes. You can choose annual payment or a monthly instalment option (12 EMIs) using auto-debit. There is no extra charge for monthly payment.",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_objection_002 Objection – \"I already have insurance from my employer\"",
+        "kb_objection_003 Objection – \"I am young and healthy, I don't need it\""
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#can-i-pay-the-premium-monthly",
+      "relevanceExplanation": "Correctly refused: out-of-domain topic: motor insurance. Motor insurance is not in the KB; the system must report unavailable.",
+      "answer": "I'm sorry, I don't have verified information about that, so I won't guess.",
+      "verdict": "correct",
+      "latencyMs": 53.8
+    },
+    {
+      "id": "R15",
+      "type": "out_of_scope",
+      "question": "Is IVF treatment covered?",
+      "grounded": false,
+      "retrieved": {
+        "recordId": "kb_faq_011",
+        "title": "What is not covered?",
+        "content": "Common exclusions are cosmetic or aesthetic surgery, self-inflicted injury, injuries from hazardous adventure sports, dental treatment unless caused by an accident, and treatment outside India (except Platinum global emergency cover).",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_policy_002 Waiting periods",
+        "kb_product_006 Benefits Included in Every Plan"
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#what-is-not-covered",
+      "relevanceExplanation": "Correctly refused: below grounding threshold: rerank=-2.73 (≥0, or ≥-2.5 with dense ≥0.85), dense=0.840, bm25=5.07. IVF is not mentioned anywhere in the sources; a guess would be a hallucination.",
+      "answer": "I'm sorry, I don't have verified information about that, so I won't guess.",
+      "verdict": "correct",
+      "latencyMs": 103.4
+    },
+    {
+      "id": "R16",
+      "type": "partnership",
+      "question": "What benefits do branch partners receive?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_partnership_001",
+        "title": "Branch Partnership Benefits",
+        "content": "Operational, marketing, and technology support is provided to branch partners. Partners get a co-branded point-of-sale app, monthly product training and a dedicated relationship manager.",
+        "category": "partnership"
+      },
+      "otherResults": [
+        "kb_partnership_002 Who can become a partner?",
+        "kb_partnership_003 Branch office"
+      ],
+      "sourceReference": "website / partners section (v2026.09) — website/partners.html#branch-partnership-benefits",
+      "relevanceExplanation": "Matches the field example in the assessment (kb_product_001 style record). Retrieved: dense=0.904, bm25=11.737, shared terms [benefit, branch, partner].",
+      "answer": "Operational, marketing, and technology support is provided to branch partners. Partners get a co-branded point-of-sale app, monthly product training and a dedicated relationship manager.",
+      "verdict": "correct",
+      "latencyMs": 99.9
+    }
+  ],
+  "note": "Development set: also used to tune synonyms and thresholds (see retrieval-calibration.json)."
+}

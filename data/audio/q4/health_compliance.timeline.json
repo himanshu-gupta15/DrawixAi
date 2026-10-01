@@ -1,0 +1,80 @@
+{
+  "id": "health_compliance",
+  "durationMs": 47626,
+  "lines": [
+    {
+      "s": "agent",
+      "t": "Hello, this is Rahul from Dravix Health. You had enquired about health insurance for your family.",
+      "channel": 0,
+      "startMs": 400,
+      "endMs": 5877
+    },
+    {
+      "s": "customer",
+      "t": "Yes, I filled a form on your website last week.",
+      "channel": 1,
+      "startMs": 6577,
+      "endMs": 9087
+    },
+    {
+      "s": "agent",
+      "t": "Great. For a family of four with five lakh cover, the Gold plan premium is around eighteen thousand rupees a year.",
+      "label": "compliance_disclosure",
+      "channel": 0,
+      "startMs": 9787,
+      "endMs": 16795
+    },
+    {
+      "s": "customer",
+      "t": "Hmm. My father has diabetes. Will his claims be paid?",
+      "channel": 1,
+      "startMs": 17495,
+      "endMs": 20933
+    },
+    {
+      "s": "agent",
+      "t": "Don't worry sir, with us claims are always approved, it is guaranteed. No questions asked.",
+      "label": "compliance_risky_statement",
+      "channel": 0,
+      "startMs": 21633,
+      "endMs": 26993
+    },
+    {
+      "s": "customer",
+      "t": "Really? Even for diabetes from day one?",
+      "channel": 1,
+      "startMs": 27693,
+      "endMs": 30343
+    },
+    {
+      "s": "agent",
+      "t": "Yes sir, one hundred percent, you have nothing to worry about.",
+      "channel": 0,
+      "startMs": 31043,
+      "endMs": 34294
+    },
+    {
+      "s": "customer",
+      "t": "Okay. My parents also have no insurance right now, actually.",
+      "label": "cross_sell",
+      "channel": 1,
+      "startMs": 34994,
+      "endMs": 38753
+    },
+    {
+      "s": "agent",
+      "t": "Okay. Shall I send you the proposal form?",
+      "channel": 0,
+      "startMs": 39453,
+      "endMs": 42410
+    },
+    {
+      "s": "customer",
+      "t": "Let me think about it. Please call me back tomorrow evening.",
+      "label": "callback_need",
+      "channel": 1,
+      "startMs": 43110,
+      "endMs": 46326
+    }
+  ]
+}

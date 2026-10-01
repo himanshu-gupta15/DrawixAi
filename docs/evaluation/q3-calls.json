@@ -1,0 +1,45 @@
+{
+  "ranAt": "2026-10-01T16:51:25.363Z",
+  "calls": [
+    {
+      "id": "ph_call1_taglish_cooperative",
+      "market": "PH",
+      "title": "PH – English-leaning Taglish, finance terms, cooperative",
+      "outcome": "will_pay",
+      "escalated": false,
+      "meanWer": 0.165,
+      "lastIntent": "deny",
+      "recording": "recordings/q3/ph_call1_taglish_cooperative.wav"
+    },
+    {
+      "id": "ph_call2_tagalog_objection_escalation",
+      "market": "PH",
+      "title": "PH – Tagalog, can't-afford objection, human escalation",
+      "outcome": "escalated",
+      "escalated": true,
+      "meanWer": 0.437,
+      "lastIntent": "escalation",
+      "recording": "recordings/q3/ph_call2_tagalog_objection_escalation.wav"
+    },
+    {
+      "id": "id_call1_formal_loanwords",
+      "market": "ID",
+      "title": "ID – formal register, penalty question, loanwords",
+      "outcome": "will_pay",
+      "escalated": false,
+      "meanWer": 0.025,
+      "lastIntent": "deny",
+      "recording": "recordings/q3/id_call1_formal_loanwords.wav"
+    },
+    {
+      "id": "id_call2_accent_proxy_objection_escalation",
+      "market": "ID",
+      "title": "ID – non-Jakarta accent proxy (Malay voice), casual objection, escalation",
+      "outcome": "escalated",
+      "escalated": true,
+      "meanWer": 0.387,
+      "lastIntent": "escalation",
+      "recording": "recordings/q3/id_call2_accent_proxy_objection_escalation.wav"
+    }
+  ]
+}

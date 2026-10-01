@@ -1,0 +1,76 @@
+{
+  "id": "noisy_ambiguous",
+  "durationMs": 41277,
+  "lines": [
+    {
+      "s": "agent",
+      "t": "Hello, this is Kavya from Dravix Health, and this call is recorded for quality purposes. Is this a good time?",
+      "channel": 0,
+      "startMs": 400,
+      "endMs": 6870
+    },
+    {
+      "s": "customer",
+      "t": "Yes, it's fine, no problem at all.",
+      "channel": 1,
+      "startMs": 7570,
+      "endMs": 9508
+    },
+    {
+      "s": "agent",
+      "t": "I'm calling to confirm your policy renewal next month.",
+      "channel": 0,
+      "startMs": 10208,
+      "endMs": 13097
+    },
+    {
+      "s": "customer",
+      "t": "Sure. Sorry about the noise, the traffic here is really frustrating today.",
+      "channel": 1,
+      "startMs": 13797,
+      "endMs": 17865
+    },
+    {
+      "s": "agent",
+      "t": "No worries. Your premium stays the same as last year.",
+      "channel": 0,
+      "startMs": 18565,
+      "endMs": 21952
+    },
+    {
+      "s": "customer",
+      "t": "Okay, good. I'm not worried about the price.",
+      "channel": 1,
+      "startMs": 22652,
+      "endMs": 25028
+    },
+    {
+      "s": "agent",
+      "t": "Do you have any changes to your address or nominee?",
+      "channel": 0,
+      "startMs": 25728,
+      "endMs": 28350
+    },
+    {
+      "s": "customer",
+      "t": "No changes. I sold my second car last year, but that's a different policy anyway.",
+      "channel": 1,
+      "startMs": 29050,
+      "endMs": 34140
+    },
+    {
+      "s": "agent",
+      "t": "Understood. I'll send the renewal reminder by email.",
+      "channel": 0,
+      "startMs": 34840,
+      "endMs": 38012
+    },
+    {
+      "s": "customer",
+      "t": "That's fine, thank you.",
+      "channel": 1,
+      "startMs": 38712,
+      "endMs": 39977
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  { "id": "ph2_cooperative_english", "market": "PH", "title": "Cooperative customer (English)", "turns": [
+    { "text": "Yes, speaking. Who is this?", "intent": ["identity_confirmed"], "variant": "en" },
+    { "text": "Sure, I'll settle it this Friday.", "intent": ["will_pay"], "variant": "en" },
+    { "text": "Where can I pay, can I use GCash?", "intent": ["ask_payment_channels"] },
+    { "text": "None, thank you.", "intent": ["deny"], "ended": true } ] },
+  { "id": "ph2_objection_tagalog", "market": "PH", "title": "Sector objection (Tagalog)", "turns": [
+    { "text": "Oo, ako si Maria.", "intent": ["identity_confirmed"], "variant": "tl" },
+    { "text": "Pasensya na, wala talaga akong pambayad ngayong buwan.", "intent": ["objection_no_money"], "variant": "tl" },
+    { "text": "Hindi na, babayaran ko na lang pagdating ng sahod.", "intent": ["deny", "will_pay"] } ] },
+  { "id": "ph2_taglish_terms", "market": "PH", "title": "Taglish with insurance terms", "turns": [
+    { "text": "Yes po, ako po yun.", "intent": ["identity_confirmed"] },
+    { "text": "Paano po kung gusto kong i-update yung beneficiary ko?", "intent": ["ask_beneficiary"] },
+    { "text": "Okay, at magkano nga ulit yung premium ko this month?", "intent": ["ask_amount"], "variant": "taglish" } ] },
+  { "id": "ph2_bank_referral", "market": "PH", "title": "Bancassurance / bank referral question", "turns": [
+    { "text": "Opo.", "intent": ["identity_confirmed"] },
+    { "text": "Teka, bakit insurance company ang tumatawag? Sa bangko ko lang naman nakuha yung policy.", "intent": ["ask_bank_referral"] } ] },
+  { "id": "ph2_escalation_english", "market": "PH", "title": "Escalation (English)", "turns": [
+    { "text": "Yes this is her.", "intent": ["identity_confirmed"] },
+    { "text": "I'd rather talk to a real person about this.", "intent": ["escalation"], "variant": "en", "ended": true, "escalated": true } ] },
+  { "id": "ph2_wrong_person", "market": "PH", "title": "Wrong person – no disclosure", "turns": [
+    { "text": "Hindi po, wrong number po kayo.", "intent": ["deny"], "ended": true } ] },
+  { "id": "id2_formal_question", "market": "ID", "title": "Formal speaker with questions", "turns": [
+    { "text": "Ya, dengan saya sendiri.", "intent": ["identity_confirmed"], "variant": "formal" },
+    { "text": "Mohon maaf, berapa sisa angsuran saya?", "intent": ["ask_remaining", "ask_amount"], "variant": "formal" },
+    { "text": "Baik, terima kasih atas informasinya. Sudah cukup.", "intent": ["deny"], "ended": true } ] },
+  { "id": "id2_casual_restructure", "market": "ID", "title": "Casual – restructuring request", "turns": [
+    { "text": "Iya Mbak, kenapa?", "intent": ["identity_confirmed"] },
+    { "text": "Gue lagi kena PHK nih, bisa minta keringanan gak?", "intent": ["ask_restructure", "objection_no_money"], "variant": "casual" },
+    { "text": "Iya, sambungin aja.", "intent": ["escalation"], "ended": true, "escalated": true } ] },
+  { "id": "id2_loanwords_dp", "market": "ID", "title": "Loanwords – DP and early settlement", "turns": [
+    { "text": "Iya betul.", "intent": ["identity_confirmed"] },
+    { "text": "DP saya kan udah gede, kok cicilannya masih segitu?", "intent": ["ask_dp"] },
+    { "text": "Kalau mau pelunasan sekarang gimana caranya?", "intent": ["ask_early_settlement"] } ] },
+  { "id": "id2_regional_medan", "market": "ID", "title": "Regional: Medan speech", "turns": [
+    { "text": "Iya, betul, awak Budi.", "intent": ["identity_confirmed"], "regional": "medan" },
+    { "text": "Kek mana lah ini, uang awak belum ada, Kak.", "intent": ["objection_no_money"], "regional": "medan", "variant": "casual" } ] },
+  { "id": "id2_regional_javanese_ngoko", "market": "ID", "title": "Regional: Javanese ngoko", "turns": [
+    { "text": "Iyo, aku Budi.", "intent": ["identity_confirmed"], "regional": "javanese" },
+    { "text": "Wis tak transfer mau esuk, Mbak.", "intent": ["already_paid"], "regional": "javanese" } ] },
+  { "id": "id2_out_of_scope", "market": "ID", "title": "Out-of-scope question", "turns": [
+    { "text": "Betul, saya Budi.", "intent": ["identity_confirmed"] },
+    { "text": "Mbak, kalau mau kredit mobil baru di sini bunganya berapa?", "intent": ["fallback"] } ] }
+]
