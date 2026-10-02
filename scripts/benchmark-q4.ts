@@ -23,7 +23,7 @@ function runScenario(id: string): Promise<{ events: Ev[]; summary: Ev; startedAt
       e._wallMs = Date.now() - startedAt;
       events.push(e);
       if (e.type === "transcript") ws.send(JSON.stringify({ type: "ack", id: e.id }));
-      if (e.type === "nudge" && e.event === "created") ws.send(JSON.stringify({ type: "ack", id: e.eventId }));
+      if (e.type === "nudge" && (e.event === "created" || e.event === "rephrased")) ws.send(JSON.stringify({ type: "ack", id: e.eventId }));
       if (e.type === "error") reject(new Error(e.message));
       if (e.type === "ended") { ws.close(); resolve({ events, summary: e.summary, startedAt }); }
     });
@@ -44,10 +44,11 @@ async function main() {
     const fn = sc.expected.filter((t: string) => !types.includes(t));
     const fp = types.filter((t: string) => !sc.expected.includes(t) && !sc.acceptable.includes(t));
     const forbidden = types.filter((t: string) => sc.mustNotFire.includes(t));
+    const phrased = new Map(events.filter((e) => e.type === "nudge" && e.event === "rephrased").map((e) => [e.nudge.id, e]));
     const nudges = created.map((e) => {
       const label = timeline.lines.find((l: Ev) => l.label === e.nudge.type);
       return {
-        type: e.nudge.type, priority: e.nudge.priority, text: e.nudge.text, confidence: e.nudge.confidence, evidence: e.nudge.evidence[0],
+        type: e.nudge.type, priority: e.nudge.priority, text: e.nudge.text, phrasedText: phrased.get(e.nudge.id)?.nudge.text ?? null, phrasedBy: phrased.get(e.nudge.id)?.detail ?? null, phrasedAtWallMs: phrased.get(e.nudge.id)?._wallMs ?? null, confidence: e.nudge.confidence, evidence: e.nudge.evidence[0],
         callMsAtNudge: e.nudge.createdCallMs, wallMsDisplayed: e._wallMs, triggerLineEndMs: label?.endMs ?? null,
         secondsAfterTriggerSpeechEnd: label ? +((e._wallMs - label.endMs) / 1000).toFixed(2) : null,
         beforeCallEnd: e._wallMs < timeline.durationMs, timings: e.timings,
@@ -65,6 +66,7 @@ async function main() {
   const out = {
     ranAt: new Date().toISOString(),
     asrModel: process.env.ASR_MODEL || "Xenova/whisper-base",
+    llm: process.env.GROQ_API_KEY ? `Groq ${process.env.GROQ_NUDGE_MODEL || "openai/gpt-oss-20b"} (nudge phrasing, non-blocking; compliance nudges not paraphrased)` : process.env.LLM_API_KEY ? "Claude" : "none",
     hardware: "Apple M4 (CPU inference via onnxruntime-node)",
     scenarios: results,
     totals: {
@@ -77,7 +79,7 @@ async function main() {
     },
     pooledLatency: {
       endpointing: stat(pooled("endpoint")), asrQueue: stat(pooled("asrQueue")), asr: stat(pooled("asr")), signalExtraction: stat(pooled("signal")), llm: stat(pooled("llm")),
-      nudgeGeneration: stat(pooled("gen")), serverPipeline: stat(pooled("server")), delivery: stat(pooled("delivery")), endToEndTranscript: stat(pooled("transcriptE2e")), endToEndNudge: stat(pooled("nudgeE2e")),
+      nudgeGeneration: stat(pooled("gen")), serverPipeline: stat(pooled("server")), delivery: stat(pooled("delivery")), endToEndTranscript: stat(pooled("transcriptE2e")), endToEndNudge: stat(pooled("nudgeE2e")), endToEndPhrasedNudge: stat(pooled("phrasedE2e")),
     },
     perScenarioLatency: results.map((r) => ({ id: r.id, ...r.metrics.latencyMs })),
   };

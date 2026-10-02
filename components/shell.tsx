@@ -15,7 +15,7 @@ const SYSTEMS = [
 ];
 const ALL = [...WORKSPACE, ...SYSTEMS, { href: "/settings", label: "Settings" }];
 
-type Status = { postgres?: { ok: boolean }; qdrant?: { ok: boolean }; llm?: { configured: boolean; model: string }; embeddings?: { model: string }; asr?: { server: string } };
+type Status = { postgres?: { ok: boolean }; qdrant?: { ok: boolean }; llm?: { configured: boolean; model: string; provider?: string }; embeddings?: { model: string }; asr?: { server: string } };
 
 const short = (m?: string) => (m ? m.replace(/Xenova\//g, "").replace("multilingual-", "").replace("local Whisper (", "").replace(")", "") : "…");
 
@@ -68,15 +68,15 @@ export function Shell({ children }: { children: ReactNode }) {
         <div className="mb-3 rounded-lg border border-line bg-surface px-3 py-2.5 text-[12.5px]">
           <div className="mb-1.5 flex items-center justify-between">
             <span className="font-medium text-ink">Runtime</span>
-            <span className={`text-[11.5px] ${llmOn ? "text-p-fg" : "text-g-fg"}`}>{llmOn ? "local · Claude on" : "local · no keys"}</span>
+            <span className={`text-[11.5px] ${llmOn ? "text-p-fg" : "text-g-fg"}`}>{llmOn ? `local + ${status?.llm?.provider === "groq" ? "Groq" : "Claude"}` : "local · no keys"}</span>
           </div>
           {[
             ["Embeddings", short(status?.embeddings?.model)],
             ["Reranker", "MiniLM-L6"],
             ["ASR", short(status?.asr?.server)],
-            ["Claude", status ? (llmOn ? "configured" : "no key") : "…"],
+            ["LLM", status ? (llmOn ? (status.llm?.model ?? "").replace(/^openai\//, "") : "no key") : "…"],
           ].map(([k, v]) => (
-            <div key={k} className="flex justify-between py-[3px]"><span className="text-t2">{k}</span><span className={`font-mono text-[11.5px] ${k === "Claude" && !llmOn ? "text-t4" : "text-body"}`}>{v}</span></div>
+            <div key={k} className="flex justify-between py-[3px]"><span className="text-t2">{k}</span><span className={`font-mono text-[11.5px] ${k === "LLM" && !llmOn ? "text-t4" : "text-body"}`}>{v}</span></div>
           ))}
         </div>
         <div className="flex items-center gap-2.5 px-2">

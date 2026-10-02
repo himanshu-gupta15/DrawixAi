@@ -16,7 +16,7 @@ const mmss = (ms: number) => `${Math.floor(ms / 60000)}:${String(Math.floor((ms 
 const P_TONE = { high: "red", medium: "amber", low: "blue" } as const;
 const P_ORDER = { high: 0, medium: 1, low: 2 };
 const KIND: Record<string, string> = { compliance_disclosure: "Compliance", compliance_risky_statement: "Risky statement", cross_sell: "Missed cross-sell", frustration: "Frustration", payment_difficulty: "Payment difficulty", callback_need: "Callback", buying_signal: "Buying signal", churn_risk: "Churn risk" };
-const LAT_ROWS: [string, string][] = [["asr", "ASR · Whisper CPU"], ["signalExtraction", "Signal extraction"], ["llm", "LLM phrasing"], ["delivery", "Delivery · render"], ["endToEndTranscript", "Audio → transcript"], ["endToEndNudge", "Audio → nudge"]];
+const LAT_ROWS: [string, string][] = [["asr", "ASR · Whisper CPU"], ["signalExtraction", "Signal extraction"], ["llm", "LLM phrasing (async)"], ["delivery", "Delivery · render"], ["endToEndTranscript", "Audio → transcript"], ["endToEndNudge", "Audio → nudge"], ["endToEndPhrasedNudge", "Audio → phrased nudge"]];
 
 export default function LiveInsightsPage() {
   const [scenarios, setScenarios] = useState<Scenario[]>([]);
@@ -76,7 +76,7 @@ export default function LiveInsightsPage() {
           const prev = ns.find((n) => n.id === e.nudge.id);
           return [...ns.filter((n) => n.id !== e.nudge.id), { ...prev, ...e.nudge, timings: e.timings ?? prev?.timings, detail: e.detail ?? prev?.detail }];
         });
-        if (e.event === "created") ack(e.eventId);
+        if (e.event === "created" || e.event === "rephrased") ack(e.eventId);
       } else if (e.type === "metrics") setMetrics(e.metrics);
       else if (e.type === "ended") { setMetrics(e.summary.metrics); setState("ended"); mic.current?.stop(); sock.close(); }
     };
@@ -157,7 +157,8 @@ export default function LiveInsightsPage() {
                 </div>
                 <div className="mt-1.5 text-[13.5px] font-medium leading-[1.5] text-ink">{n.text}</div>
                 <div className="mt-0.5 text-[12.5px] leading-[1.5] text-t2">“{n.evidence[n.evidence.length - 1]}”</div>
-                {n.detail && <div className="mt-0.5 text-[12px] text-g-fg">Resolved by agent: {n.detail}</div>}
+                {n.detail && n.status === "resolved" && <div className="mt-0.5 text-[12px] text-g-fg">Resolved by agent: {n.detail}</div>}
+                {n.detail && n.status === "active" && <div className="mt-0.5 text-[11.5px] text-t4">Phrased by {n.detail.replace(/^openai\//, "")}</div>}
               </div>
             ))}
           </section>
@@ -179,6 +180,7 @@ export default function LiveInsightsPage() {
                 {LAT_ROWS.map(([k, label]) => {
                   const v = metrics.latencyMs[k];
                   const last = k === "endToEndNudge";
+                  if (k === "endToEndPhrasedNudge" && !v?.n) return null;
                   return (
                     <div key={k} className={`flex items-center justify-between border-t border-divider py-2 text-[13.5px] first-of-type:border-t-0 ${last ? "font-semibold" : ""}`}>
                       <span className={last ? "text-ink" : "text-body"}>{label}</span>

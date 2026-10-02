@@ -5,7 +5,12 @@ import { EMBEDDING_DIM } from "../embeddings/local";
 export const COLLECTION = "kb_records";
 const g = globalThis as unknown as { __qdrant?: QdrantClient };
 export const qdrant =
-  g.__qdrant ?? (g.__qdrant = new QdrantClient({ url: process.env.VECTOR_DATABASE_URL || "http://localhost:6333", checkCompatibility: false }));
+  g.__qdrant ??
+  (g.__qdrant = new QdrantClient({
+    url: process.env.VECTOR_DATABASE_URL || "http://localhost:6333",
+    apiKey: process.env.VECTOR_DATABASE_API_KEY || process.env.QDRANT_API_KEY,
+    checkCompatibility: false,
+  }));
 
 /** Qdrant point ids must be UUIDs or integers; derive a stable UUID from the record id. */
 export function pointId(recordId: string) {

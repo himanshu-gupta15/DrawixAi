@@ -64,13 +64,14 @@ function extractive(query: string, rec: RetrievedRecord, idf: (t: string) => num
 
 const numbersIn = (s: string) => (s.replace(/(\d),(?=\d)/g, "$1").match(/\d+(?:\.\d+)?/g) ?? []);
 
-/** Reject LLM output that cites unknown records or introduces numbers absent from the sources. */
-export function verifyLlmAnswer(answer: string, cited: string[], records: RetrievedRecord[]): string | null {
+/** Reject LLM output that cites unknown records or introduces numbers absent from the sources (or the question). */
+export function verifyLlmAnswer(answer: string, cited: string[], records: RetrievedRecord[], query = ""): string | null {
   const ids = new Set(records.map((r) => r.recordId));
   if (!cited.length) return "no citation";
   const bad = cited.filter((c) => !ids.has(c));
   if (bad.length) return `cited unknown records ${bad.join(",")}`;
-  const sourceNums = new Set(records.flatMap((r) => numbersIn(`${r.title} ${r.content}`)));
+  // Numbers the caller said ("my 72 year old father") may be echoed back; anything else must come from a record.
+  const sourceNums = new Set([...records.flatMap((r) => numbersIn(`${r.title} ${r.content}`)), ...numbersIn(query)]);
   const novel = numbersIn(answer).filter((n) => !sourceNums.has(n));
   if (novel.length) return `numbers not in sources: ${novel.join(",")}`;
   return null;
@@ -105,7 +106,7 @@ export async function composeAnswer(query: string, retrieval: RetrievalResult, o
         return { text: UNAVAILABLE_TEXT, grounded: false, mode: "llm", citations: [], llmLatencyMs: res.latencyMs, verifier: "model reported unavailable" };
       }
       const cited = (srcPart.match(/kb_[a-z]+_\d{3}/g) ?? []) as string[];
-      const problem = verifyLlmAnswer(answer, cited, retrieval.results);
+      const problem = verifyLlmAnswer(answer, cited, retrieval.results, query);
       if (!problem) {
         return { text: answer, grounded: true, mode: "llm", citations: retrieval.results.filter((r) => cited.includes(r.recordId)).map(cite), llmLatencyMs: res.latencyMs, verifier: "passed" };
       }

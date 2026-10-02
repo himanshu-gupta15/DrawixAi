@@ -22,7 +22,7 @@ export default function SettingsPage() {
         <Card title="AI providers">
           {!s ? "Loading…" : (
             <ul className="space-y-2 text-sm">
-              <li>LLM: {(s.llm as { configured: boolean }).configured ? <Badge tone="green">Claude configured</Badge> : <Badge tone="amber">no LLM_API_KEY</Badge>} <span className="text-t2">{String((s.llm as { model: string }).model)} — {String((s.llm as { mode: string }).mode)}</span></li>
+              <li>LLM: {(s.llm as { configured: boolean }).configured ? <Badge tone="green">{String((s.llm as { provider?: string }).provider === "groq" ? "Groq" : "Claude")} configured</Badge> : <Badge tone="amber">no LLM_API_KEY</Badge>} <span className="text-t2">{String((s.llm as { model: string }).model)} — {String((s.llm as { mode: string }).mode)}</span></li>
               <li>Embeddings: <span className="text-t2">{String((s.embeddings as { provider: string }).provider)} · {String((s.embeddings as { model: string }).model)}</span></li>
               <li>ASR: <span className="text-t2">{String((s.asr as { server: string }).server)}; {String((s.asr as { browser: string }).browser)}</span></li>
               <li>TTS: <span className="text-t2">{String((s.tts as { browser: string }).browser)}; {String((s.tts as { tests: string }).tests)}</span></li>
@@ -33,7 +33,7 @@ export default function SettingsPage() {
           <table className="w-full text-left text-sm">
             <thead className="text-xs text-t2"><tr><th className="py-1">Variable</th><th>Required</th><th>Purpose</th></tr></thead>
             <tbody>
-              {[["DATABASE_URL", "yes", "PostgreSQL connection (docker compose provides port 5433)"], ["VECTOR_DATABASE_URL", "yes", "Qdrant URL (http://localhost:6333)"], ["LLM_API_KEY", "no", "Anthropic API key. Enables Claude answer phrasing (with grounding verifier) and nudge phrasing. Without it answers are extractive."], ["LLM_MODEL", "no", "Claude model id (default claude-opus-5-5)"], ["ESCALATION_WEBHOOK_URL", "no", "POST target for human-escalation events"], ["EMBEDDING_MODEL / ASR_MODEL", "no", "Local transformers.js models (downloaded once, no key)"], ["PORT", "no", "Server port (default 3100)"]].map(([k, r, p]) => (
+              {[["DATABASE_URL", "yes", "PostgreSQL connection (docker compose provides port 5433)"], ["VECTOR_DATABASE_URL", "yes", "Qdrant URL (http://localhost:6333)"], ["GROQ_API_KEY", "no", "Groq API key. Takes precedence: LLM answer phrasing (checked by the grounding verifier) and nudge phrasing via Groq."], ["GROQ_MODEL", "no", "Groq model id (default openai/gpt-oss-120b)"], ["LLM_API_KEY", "no", "Anthropic API key, used when no Groq key is set. Without any key, answers are extractive."], ["LLM_MODEL", "no", "Claude model id (default claude-opus-5-5)"], ["ESCALATION_WEBHOOK_URL", "no", "POST target for human-escalation events"], ["EMBEDDING_MODEL / ASR_MODEL", "no", "Local transformers.js models (downloaded once, no key)"], ["PORT", "no", "Server port (default 3100)"]].map(([k, r, p]) => (
                 <tr key={k} className="border-t border-divider"><td className="py-1 font-mono text-xs">{k}</td><td>{r}</td><td className="text-t2">{p}</td></tr>
               ))}
             </tbody>

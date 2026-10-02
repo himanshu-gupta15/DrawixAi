@@ -1,0 +1,349 @@
+{
+  "ranAt": "2026-10-02T04:07:22.837Z",
+  "summary": {
+    "total": 13,
+    "correct": 8,
+    "partiallyCorrect": 1,
+    "incorrect": 4,
+    "p50LatencyMs": 114.2,
+    "p95LatencyMs": 136.9,
+    "coldStartMs": 630,
+    "llm": {
+      "calls": 10,
+      "verifierPassed": 8,
+      "verifierRejected": 1,
+      "modelSaidUnavailable": 1,
+      "errors": 0,
+      "p50LatencyMs": 643,
+      "p95LatencyMs": 879,
+      "endToEnd": {
+        "correct": 9,
+        "partiallyCorrect": 1,
+        "incorrect": 3
+      },
+      "paceMs": 12000
+    }
+  },
+  "results": [
+    {
+      "id": "V1",
+      "type": "product",
+      "question": "Is there an annual health check-up included in any plan?",
+      "grounded": false,
+      "retrieved": {
+        "recordId": "kb_product_002",
+        "title": "Gold Plan",
+        "content": "The Gold plan offers sum insured options of ₹5 lakh and ₹10 lakh. Premium starts at ₹9,800 per year for an individual aged 18-35. It covers a single private room, maternity expenses up to ₹50,000 after a 2-year waiting period, AYUSH treatment up to the sum insured and a free annual health check-up.",
+        "category": "product"
+      },
+      "otherResults": [
+        "kb_product_005 Dravix Health Plans at a Glance",
+        "kb_process_001 How to Buy and Next Steps"
+      ],
+      "sourceReference": "website / plans page (v2026.09) — website/plans.html#gold-plan",
+      "relevanceExplanation": "Gold includes a free annual health check-up. Retrieved: dense=0.827, bm25=8.071, shared terms [annual, health, check, up, plan].",
+      "answer": "I'm sorry, I don't have verified information about that, so I won't guess.",
+      "verdict": "incorrect",
+      "latencyMs": 120,
+      "answerVerdict": "incorrect",
+      "answerMode": "fallback"
+    },
+    {
+      "id": "V2",
+      "type": "product",
+      "question": "Are ambulance charges covered?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_product_006",
+        "title": "Benefits Included in Every Plan",
+        "content": "Pre-hospitalisation expenses for 60 days and post-hospitalisation expenses for 90 days are covered.\nDay-care procedures that need less than 24 hours of hospitalisation are covered.\nRestore benefit: if the sum insured is exhausted during the year, it is restored once for unrelated illnesses (Gold restores 50%, Platinum restores 100%; Silver has no restore benefit).\nAmbulance charges are covered up to ₹2,000 per hospitalisation. Organ donor expenses are covered up to the sum insured.",
+        "category": "product"
+      },
+      "otherResults": [
+        "kb_faq_011 What is not covered?",
+        "kb_policy_002 Waiting periods"
+      ],
+      "sourceReference": "product brochure PDF 2026 (v2026.1) — docs/product-brochure-2026.pdf#page=2",
+      "relevanceExplanation": "Ambulance charges up to ₹2,000 per hospitalisation. Retrieved: dense=0.864, bm25=7.979, shared terms [ambulance, charg, covered].",
+      "answer": "Yes, ambulance charges are covered up to ₹2,000 per hospitalisation.",
+      "verdict": "correct",
+      "latencyMs": 97.8,
+      "answerVerdict": "correct",
+      "answerMode": "llm",
+      "llmLatencyMs": 592,
+      "verifier": "passed"
+    },
+    {
+      "id": "V3",
+      "type": "product",
+      "question": "What room can I stay in under the Silver plan?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_product_001",
+        "title": "Silver Plan",
+        "content": "The Silver plan is our entry-level health insurance plan. Sum insured options are ₹3 lakh and ₹5 lakh. Premium starts at ₹6,200 per year for an individual aged 18-35. Room rent is covered up to 1% of the sum insured per day. Maternity is not covered under Silver.",
+        "category": "product"
+      },
+      "otherResults": [
+        "kb_product_004 Plan comparison",
+        "kb_product_005 Dravix Health Plans at a Glance"
+      ],
+      "sourceReference": "website / plans page (v2026.09) — website/plans.html#silver-plan",
+      "relevanceExplanation": "Silver room rent up to 1% of sum insured per day. Retrieved: dense=0.872, bm25=9.317, shared terms [room, under, silver, plan].",
+      "answer": "You’ll get room‑rent coverage up to 1 % of the sum insured per day, but no specific private‑room entitlement.",
+      "verdict": "correct",
+      "latencyMs": 126.9,
+      "answerVerdict": "correct",
+      "answerMode": "llm",
+      "llmLatencyMs": 445,
+      "verifier": "passed"
+    },
+    {
+      "id": "V4",
+      "type": "policy",
+      "question": "If an accident happens in the first week, am I covered?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_faq_002",
+        "title": "Is there a waiting period when I first buy the policy?",
+        "content": "Yes. There is an initial waiting period of 30 days from the policy start date. Hospitalisation due to an accident is covered from day one.",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_objection_003 Objection – \"I am young and healthy, I don't need it\"",
+        "kb_policy_002 Waiting periods"
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#is-there-a-waiting-period-when-i-first-buy-the-policy",
+      "relevanceExplanation": "Accidents are covered from day one. Retrieved: dense=0.869, bm25=10.126, shared terms [accident, first, covered].",
+      "answer": "Yes, accidents are covered from day one, even in the first week.",
+      "verdict": "correct",
+      "latencyMs": 96.6,
+      "answerVerdict": "correct",
+      "answerMode": "llm",
+      "llmLatencyMs": 664,
+      "verifier": "passed"
+    },
+    {
+      "id": "V5",
+      "type": "policy",
+      "question": "What if my claim gets rejected, can I appeal?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_objection_004",
+        "title": "Objection – \"Insurance companies reject claims\"",
+        "content": "Share the 96.4% claim settlement ratio for FY 2025-26, cashless treatment at 9,500+ network hospitals, and the written reason plus review process if a claim is rejected. Remind the customer of the 30-day free-look period to review the policy.",
+        "category": "objection"
+      },
+      "otherResults": [
+        "kb_claims_004 Claim settlement",
+        "kb_company_002 Why choose Dravix Health?"
+      ],
+      "sourceReference": "sales objection playbook v1.3 (v1.3) — docs/objection-playbook.md#objection-insurance-companies-reject-claims",
+      "relevanceExplanation": "Written reason + review within 30 days. Retrieved: dense=0.877, bm25=9.982, shared terms [claim, rejected, settlement, ratio].",
+      "answer": "If a claim is rejected you’ll get the reason in writing and can request a review within 30 days. The process lets you appeal the decision.",
+      "verdict": "partially correct",
+      "latencyMs": 104.3,
+      "answerVerdict": "partially correct",
+      "answerMode": "llm",
+      "llmLatencyMs": 493,
+      "verifier": "passed"
+    },
+    {
+      "id": "V6",
+      "type": "qualification",
+      "question": "My mother is 78, can she be added?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_eligibility_003",
+        "title": "Family members",
+        "content": "A family floater can cover the proposer, spouse, up to 3 dependent children aged 91 days to 25 years, and parents. Parents can be added only under Gold or Platinum, with a maximum entry age of 75 years. Members who are 61 years or older at entry have a 20% co-payment on every claim.",
+        "category": "eligibility"
+      },
+      "otherResults": [
+        "kb_eligibility_001 Who can buy?",
+        "kb_eligibility_002 Proposer eligibility"
+      ],
+      "sourceReference": "underwriting & eligibility rules v2.0 (v2.0) — docs/eligibility-rules.md#family-members",
+      "relevanceExplanation": "Parents max entry age 75 → not eligible. Retrieved: dense=0.897, bm25=25.453, shared terms [added, family, member, floater, parent, spouse].",
+      "answer": "She can’t be added – parents are only eligible up to age 75 and only on Gold or Platinum plans.",
+      "verdict": "correct",
+      "latencyMs": 136.9,
+      "answerVerdict": "correct",
+      "answerMode": "llm",
+      "llmLatencyMs": 681,
+      "verifier": "passed"
+    },
+    {
+      "id": "V7",
+      "type": "qualification",
+      "question": "Who decides if someone with past cancer can get a policy?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_eligibility_005",
+        "title": "Conditions that need underwriter review",
+        "content": "The following cannot be approved by sales and must be referred to an underwriter: any cancer diagnosis or treatment within the last 5 years, kidney failure or dialysis, heart surgery or angioplasty within the last 2 years, and any organ transplant. Sales agents must not promise approval in these cases.",
+        "category": "eligibility"
+      },
+      "otherResults": [
+        "kb_eligibility_007 Lead qualification (sales)",
+        "kb_objection_006 Objection – \"Why do you need my medical details?\""
+      ],
+      "sourceReference": "underwriting & eligibility rules v2.0 (v2.0) — docs/eligibility-rules.md#conditions-that-need-underwriter-review",
+      "relevanceExplanation": "Cancer within 5 years → underwriter review. Retrieved: dense=0.869, bm25=23.272, shared terms [cancer, underwriter, review, heart, surgery, kidney].",
+      "answer": "The underwriter makes the decision for anyone with a cancer diagnosis or treatment in the last five years.",
+      "verdict": "correct",
+      "latencyMs": 86.7,
+      "answerVerdict": "correct",
+      "answerMode": "llm",
+      "llmLatencyMs": 654,
+      "verifier": "passed"
+    },
+    {
+      "id": "V8",
+      "type": "faq",
+      "question": "Is there an extra charge for paying monthly?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_faq_007",
+        "title": "Can I pay the premium monthly?",
+        "content": "Yes. You can choose annual payment or a monthly instalment option (12 EMIs) using auto-debit. There is no extra charge for monthly payment.",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_objection_001 Objection – \"It is too expensive\"",
+        "kb_faq_008 What is the grace period if I miss a payment?"
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#can-i-pay-the-premium-monthly",
+      "relevanceExplanation": "No extra charge for monthly EMI. Retrieved: dense=0.921, bm25=19.185, shared terms [extra, charge, monthly, instalment, emi].",
+      "answer": "There’s no extra charge for paying monthly.",
+      "verdict": "correct",
+      "latencyMs": 132.3,
+      "answerVerdict": "correct",
+      "answerMode": "llm",
+      "llmLatencyMs": 647,
+      "verifier": "passed"
+    },
+    {
+      "id": "V9",
+      "type": "faq",
+      "question": "How many days do I get to review the policy after buying?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_faq_010",
+        "title": "What is the free-look period?",
+        "content": "You have 30 days from receiving the policy document to review it. If you cancel during the free-look period, the premium is refunded after deducting stamp duty and any medical check-up costs.",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_faq_002 Is there a waiting period when I first buy the policy?",
+        "kb_objection_003 Objection – \"I am young and healthy, I don't need it\""
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#what-is-the-free-look-period",
+      "relevanceExplanation": "30-day free-look. Retrieved: dense=0.868, bm25=7.096, shared terms [day, review, policy, after].",
+      "answer": "You have a 30‑day free‑look period to review the policy after you receive it.",
+      "verdict": "correct",
+      "latencyMs": 77.3,
+      "answerVerdict": "correct",
+      "answerMode": "llm",
+      "llmLatencyMs": 633,
+      "verifier": "passed"
+    },
+    {
+      "id": "V10",
+      "type": "objection",
+      "question": "Paying every month for something I may never use feels like a waste.",
+      "grounded": false,
+      "retrieved": {
+        "recordId": "kb_faq_007",
+        "title": "Can I pay the premium monthly?",
+        "content": "Yes. You can choose annual payment or a monthly instalment option (12 EMIs) using auto-debit. There is no extra charge for monthly payment.",
+        "category": "faq"
+      },
+      "otherResults": [
+        "kb_objection_001 Objection – \"It is too expensive\"",
+        "kb_faq_008 What is the grace period if I miss a payment?"
+      ],
+      "sourceReference": "website / FAQ page (v2026.09) — website/faq.html#can-i-pay-the-premium-monthly",
+      "relevanceExplanation": "Value objection – young/healthy or price playbook entries. Retrieved: dense=0.827, bm25=0, shared terms [].",
+      "answer": "I'm sorry, I don't have verified information about that, so I won't guess.",
+      "verdict": "incorrect",
+      "latencyMs": 136.2,
+      "answerVerdict": "incorrect",
+      "answerMode": "fallback"
+    },
+    {
+      "id": "V11",
+      "type": "objection",
+      "question": "Let me discuss with my wife and get back to you.",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_eligibility_003",
+        "title": "Family members",
+        "content": "A family floater can cover the proposer, spouse, up to 3 dependent children aged 91 days to 25 years, and parents. Parents can be added only under Gold or Platinum, with a maximum entry age of 75 years. Members who are 61 years or older at entry have a 20% co-payment on every claim.",
+        "category": "eligibility"
+      },
+      "otherResults": [
+        "kb_eligibility_001 Who can buy?",
+        "kb_eligibility_002 Proposer eligibility"
+      ],
+      "sourceReference": "underwriting & eligibility rules v2.0 (v2.0) — docs/eligibility-rules.md#family-members",
+      "relevanceExplanation": "Think-about-it objection: offer callback, no pressure. Retrieved: dense=0.87, bm25=21.993, shared terms [family, member, floater, parent, spouse, children].",
+      "answer": "A family floater can cover the proposer, spouse, up to 3 dependent children aged 91 days to 25 years, and parents. Parents can be added only under Gold or Platinum, with a maximum entry age of 75 years.",
+      "verdict": "incorrect",
+      "latencyMs": 114.2,
+      "answerVerdict": "incorrect",
+      "answerMode": "extractive",
+      "llmLatencyMs": 879,
+      "verifier": "LLM answer rejected (no citation); used extractive answer"
+    },
+    {
+      "id": "V12",
+      "type": "out_of_scope",
+      "question": "Do you offer travel insurance for my Europe trip?",
+      "grounded": false,
+      "retrieved": {
+        "recordId": "kb_company_001",
+        "title": "Health Insurance for Every Family",
+        "content": "Dravix Health offers three health insurance plans – Silver, Gold and Platinum – for individuals and families across India. All plans offer cashless treatment at more than 9,500 network hospitals.",
+        "category": "company"
+      },
+      "otherResults": [
+        "kb_product_001 Silver Plan",
+        "kb_faq_007 Can I pay the premium monthly?"
+      ],
+      "sourceReference": "website / home page (v2026.09) — website/home.html#health-insurance-for-every-family",
+      "relevanceExplanation": "Correctly refused: out-of-domain topic: other insurance lines. Travel insurance not in KB.",
+      "answer": "I'm sorry, I don't have verified information about that, so I won't guess.",
+      "verdict": "correct",
+      "latencyMs": 122.9,
+      "answerVerdict": "correct",
+      "answerMode": "fallback"
+    },
+    {
+      "id": "V13",
+      "type": "out_of_scope",
+      "question": "Does the Gold plan cover LASIK eye surgery?",
+      "grounded": true,
+      "retrieved": {
+        "recordId": "kb_product_002",
+        "title": "Gold Plan",
+        "content": "The Gold plan offers sum insured options of ₹5 lakh and ₹10 lakh. Premium starts at ₹9,800 per year for an individual aged 18-35. It covers a single private room, maternity expenses up to ₹50,000 after a 2-year waiting period, AYUSH treatment up to the sum insured and a free annual health check-up.",
+        "category": "product"
+      },
+      "otherResults": [
+        "kb_product_005 Dravix Health Plans at a Glance",
+        "kb_product_006 Benefits Included in Every Plan"
+      ],
+      "sourceReference": "website / plans page (v2026.09) — website/plans.html#gold-plan",
+      "relevanceExplanation": "Retrieval wrongly marked grounded. LASIK not mentioned anywhere; must not guess.",
+      "answer": "I'm sorry, I don't have verified information about that, so I won't guess.",
+      "verdict": "incorrect",
+      "latencyMs": 108.7,
+      "answerVerdict": "correct",
+      "answerMode": "llm",
+      "llmLatencyMs": 643,
+      "verifier": "model reported unavailable"
+    }
+  ],
+  "note": "Held-out v2: written before the final changes (reranker + objection paraphrase rule) were finalised; run once; never used for tuning. Answers phrased by openai/gpt-oss-120b and checked by the grounding verifier."
+}

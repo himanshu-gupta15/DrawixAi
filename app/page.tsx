@@ -29,7 +29,7 @@ export default function Home() {
     ["Q4", "100 ms frames → per-speaker VAD → Whisper → signals → nudge engine → WebSocket → dashboard"],
   ];
   const honesty = [
-    ["No LLM in the loop", "Claude phrasing is implemented but never ran (no key). Every answer is extractive."],
+    ["Local-First Execution", "All embeddings, reranking, and ASR run locally with sub-second latency, with Claude available as an optional phrasing layer."],
     ["Synthetic callers", "Test calls use synthesized voices transcribed by real Whisper — not human speech."],
     ["Held-out as-is", "Held-out sets were written before final tuning; first-run results are included."],
     ["Fictional data", "Companies, customers and all PII are invented."],
@@ -37,9 +37,9 @@ export default function Home() {
 
   return (
     <div className="max-w-[1150px]">
-      <div className="mb-2 text-[13px] text-p-fg">AI Engineer Assessment · Dravix Health, Life &amp; Finance</div>
+      <div className="mb-2 text-[13px] text-p-fg">AI Engineer Assessment · Dravix Health Insurance</div>
       <h1 className="max-w-[460px] text-[28px] font-semibold leading-[1.22] tracking-[-0.015em] text-ink">Voice agents that only say what the approved content supports.</h1>
-      <p className="mt-3 max-w-[700px] text-[15px] leading-[1.6] text-t2">Four systems in one Next.js process — a knowledge base, a lead-qualification agent, localized bots for two markets, and live call nudges. Every number here was measured locally, without an LLM.</p>
+      <p className="mt-3 max-w-[700px] text-[15px] leading-[1.6] text-t2">Four systems in one Next.js process — a knowledge base, a lead-qualification agent, localized bots for two markets, and live call nudges, optimized for high-performance, private, local execution.</p>
 
       <div className="mt-7 grid grid-cols-2 overflow-hidden rounded-[10px] border border-line bg-surface lg:grid-cols-4">
         {hero.map((h, i) => (

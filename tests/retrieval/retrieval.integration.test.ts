@@ -30,4 +30,5 @@ test("LLM verifier rejects unknown citations and invented numbers", () => {
   assert.equal(verifyLlmAnswer("You have 30 days.", ["kb_faq_001"], recs), null);
   assert.match(verifyLlmAnswer("You have 45 days.", ["kb_faq_001"], recs)!, /numbers not in sources/);
   assert.match(verifyLlmAnswer("You have 30 days.", ["kb_faq_999"], recs)!, /unknown records/);
+  assert.equal(verifyLlmAnswer("At 72 you have 30 days.", ["kb_faq_001"], recs, "I am 72, what is the grace period?"), null); // caller's own number
 });

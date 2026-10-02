@@ -3,35 +3,103 @@
 One Next.js 16 (App Router) + TypeScript application. A small custom server (`server.ts`) runs Next.js and a WebSocket endpoint in the **same Node process**. Next.js route handlers can't hold a persistent WebSocket, and Q4 needs one. Postgres (Prisma) holds structured data. Qdrant holds vectors. All ML that has to run without credentials runs locally through transformers.js (ONNX on CPU): multilingual embeddings, a cross-encoder reranker, and Whisper ASR. Claude is optional and only rewrites wording; every decision is deterministic and auditable.
 
 ```mermaid
-flowchart LR
-  subgraph Browser
-    UI[Next.js pages<br/>React + Tailwind]
-    WS_ASR[Web Speech API<br/>ASR + TTS]
-    MIC[Web Audio<br/>AudioWorklet 16 kHz PCM]
+flowchart TB
+  %% Client / Browser Tier
+  subgraph CLIENT["Client Tier (Web Browser / Chrome)"]
+    direction LR
+    UI["🖥️ Next.js 16 UI<br/>(React 19 + Tailwind CSS)"]
+    MIC["🎙️ Web Audio API<br/>(AudioWorklet 16 kHz PCM)"]
+    BROWSER_VOICE["🗣️ Web Speech API<br/>(ASR en-IN/fil-PH/id-ID · TTS)"]
   end
-  subgraph "Node process (server.ts)"
-    NEXT[Next.js route handlers<br/>/api/*]
-    WSS[WebSocket /ws/insights]
-    KB[lib/kb + lib/rag<br/>ingest · retrieve · answer]
-    AG[lib/voice<br/>dialog manager + rules]
-    ML[lib/multilingual<br/>PH / ID engines]
-    RT[lib/realtime<br/>VAD · signals · nudges]
-    ONNX[(transformers.js<br/>e5-small · MiniLM reranker · Whisper)]
-    LLM[[Claude via @anthropic-ai/sdk<br/>optional]]
+
+  %% Server Tier (Unified Node Process)
+  subgraph SERVER["Unified Server Runtime (server.ts — Single Node.js Process)"]
+    direction TB
+    
+    subgraph GATEWAY["API & Protocol Gateway"]
+      REST["Next.js Route Handlers<br/>(/api/* REST Endpoints)"]
+      WS_GATEWAY["Persistent WebSocket Server<br/>(/ws/insights Streaming)"]
+    end
+
+    subgraph MODULES["Four Core Health Insurance Modules"]
+      direction LR
+
+      subgraph Q1_BOX["Q1: Voice Agent (Asha)"]
+        DM["Dialog State Machine<br/>(Underwriting Rules · Slots)"]
+        QUAL["Lead Qualification<br/>(Age, Family, Pre-existing)"]
+        ESC["Escalation & Webhooks<br/>(CRM Action Dispatcher)"]
+      end
+
+      subgraph Q2_BOX["Q2: Grounded Knowledge Engine"]
+        INGEST["Ingestion Pipeline<br/>(HTML/PDF/CSV · PII Redact · Dedupe)"]
+        HYBRID["Hybrid Search Engine<br/>(Qdrant Dense + BM25 + RRF)"]
+        GUARD["Grounding Guardrail<br/>(Thresholds · Citation Verifier)"]
+      end
+
+      subgraph Q3_BOX["Q3: Multilingual Localization"]
+        LANG_DET["Language & Register Detector<br/>(Tagalog/Taglish · Formal/Javanese)"]
+        INTENT["kNN + Cultural Intent Classifier"]
+        NATIVE_VAR["Localized Reply Generator<br/>(₱/Rp Currency · Polite Markers)"]
+      end
+
+      subgraph Q4_BOX["Q4: Real-Time Live Insights"]
+        VAD["Per-Speaker Audio Slicer & VAD"]
+        SIGNALS["Signal & Intent Detector<br/>(Disclosures · Frustration · Pricing)"]
+        NUDGE_ENG["Nudge & Deduplication Engine<br/>(10s Spacing · Alert Counters)"]
+      end
+    end
+
+    subgraph ONNX_ENGINE["Local ONNX / ML Inference Engine (transformers.js on CPU)"]
+      E5["multilingual-e5-small<br/>(384-d Dense Embeddings)"]
+      RERANK["ms-marco-MiniLM-L-6-v2<br/>(Cross-Encoder Reranker)"]
+      WHISPER["Whisper base / small<br/>(Speech-to-Text ASR)"]
+      CLAUDE[["Claude via Anthropic SDK<br/>(Optional Phrasing Layer)"]]
+    end
   end
-  PG[(PostgreSQL<br/>Prisma)]
-  QD[(Qdrant)]
-  UI --> NEXT
-  MIC --> WSS
-  WS_ASR --> UI
-  NEXT --> KB & AG & ML
-  WSS --> RT
-  AG --> KB
-  KB --> QD & PG & ONNX
-  RT --> ONNX
-  AG --> PG
-  KB -.-> LLM
-  RT -.-> LLM
+
+  %% Data Tier
+  subgraph DATA["Data & Storage Tier"]
+    PG[("🐘 PostgreSQL 16 (Prisma ORM)<br/>Documents · KB Records · CRM Actions")]
+    QD[("⚡ Qdrant Vector Database<br/>384-d Vectors · Payload Indexes")]
+  end
+
+  %% Flow Connections
+  UI <-->|HTTP / REST| REST
+  MIC -->|100ms PCM Streams| WS_GATEWAY
+  WS_GATEWAY -->|Push Nudges <500ms| UI
+  BROWSER_VOICE <-->|Speech Input / Output| UI
+
+  REST --> Q1_BOX & Q2_BOX & Q3_BOX
+  WS_GATEWAY --> Q4_BOX
+
+  %% Inter-module Dependencies
+  DM -->|Query Objections & Policies| HYBRID
+  HYBRID --> GUARD --> DM
+  QUAL --> ESC --> PG
+
+  %% ML & Data Access
+  INGEST --> E5 --> QD
+  INGEST --> PG
+  HYBRID --> QD & PG
+  HYBRID --> RERANK
+  GUARD -.-> CLAUDE
+
+  VAD --> WHISPER
+  WHISPER --> SIGNALS --> NUDGE_ENG --> WS_GATEWAY
+  LANG_DET --> E5
+
+  %% Styling
+  classDef clientStyle fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
+  classDef serverStyle fill:#0f172a,stroke:#818cf8,stroke-width:2px,color:#f8fafc;
+  classDef moduleStyle fill:#1e1e38,stroke:#a78bfa,stroke-width:1px,color:#f8fafc;
+  classDef onnxStyle fill:#14232c,stroke:#34d399,stroke-width:1.5px,color:#f8fafc;
+  classDef dataStyle fill:#2d1b2e,stroke:#f472b6,stroke-width:2px,color:#f8fafc;
+
+  class CLIENT clientStyle;
+  class SERVER serverStyle;
+  class Q1_BOX,Q2_BOX,Q3_BOX,Q4_BOX moduleStyle;
+  class ONNX_ENGINE onnxStyle;
+  class DATA dataStyle;
 ```
 
 ## Q2 – Knowledge base (built first; Q1 depends on it)

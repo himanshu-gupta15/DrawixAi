@@ -1,8 +1,8 @@
 import { env } from "@huggingface/transformers";
 import path from "node:path";
 
-// Local ONNX models (transformers.js) are cached in ./.models after the first download.
-env.cacheDir = path.join(process.cwd(), ".models");
+// Local ONNX models (transformers.js) are cached in ./.models (or /tmp/.models on Vercel).
+env.cacheDir = process.env.VERCEL ? path.join("/tmp", ".models") : path.join(process.cwd(), ".models");
 
 /** Memoise a heavy async resource on globalThis so every module graph in the process shares it. */
 export function shared<T>(key: string, create: () => Promise<T>): Promise<T> {

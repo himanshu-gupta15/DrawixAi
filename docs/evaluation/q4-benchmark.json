@@ -1,6 +1,7 @@
 {
-  "ranAt": "2026-10-01T17:21:43.062Z",
+  "ranAt": "2026-10-02T04:17:11.211Z",
   "asrModel": "Xenova/whisper-base",
+  "llm": "Groq openai/gpt-oss-20b (nudge phrasing, non-blocking; compliance nudges not paraphrased)",
   "hardware": "Apple M4 (CPU inference via onnxruntime-node)",
   "scenarios": [
     {
@@ -28,42 +29,48 @@
           "type": "cross_sell",
           "priority": "medium",
           "text": "Customer has another vehicle: suggest the multi-vehicle discount.",
+          "phrasedText": "Check if the customer qualifies for the multi‑vehicle discount and offer it.",
+          "phrasedBy": "openai/gpt-oss-20b",
+          "phrasedAtWallMs": 34879,
           "confidence": 0.85,
           "evidence": "That's fine, by the way, my wife also has a car, a Honda EI-20, and her insurer",
           "callMsAtNudge": 33840,
-          "wallMsDisplayed": 34370,
+          "wallMsDisplayed": 34422,
           "triggerLineEndMs": 35396,
-          "secondsAfterTriggerSpeechEnd": -1.03,
+          "secondsAfterTriggerSpeechEnd": -0.97,
           "beforeCallEnd": true,
           "timings": {
             "endpointMs": 0,
             "asrQueueMs": 1,
-            "asrMs": 558,
-            "signalMs": 1.2,
+            "asrMs": 613,
+            "signalMs": 1.4,
             "llmMs": null,
             "genMs": 0,
-            "serverMs": 560
+            "serverMs": 615
           }
         },
         {
           "type": "buying_signal",
           "priority": "medium",
           "text": "Buying signal: confirm the plan and move to the next step now.",
+          "phrasedText": "Confirm the plan, ask for preferred payment method, and guide them to complete the purchase.",
+          "phrasedBy": "openai/gpt-oss-20b",
+          "phrasedAtWallMs": 47762,
           "confidence": 0.8,
           "evidence": "Yes, please send it. How do I pay? Can I use UPI?",
           "callMsAtNudge": 46460,
-          "wallMsDisplayed": 47284,
+          "wallMsDisplayed": 47266,
           "triggerLineEndMs": null,
           "secondsAfterTriggerSpeechEnd": null,
           "beforeCallEnd": true,
           "timings": {
             "endpointMs": 500,
-            "asrQueueMs": 1,
-            "asrMs": 472,
+            "asrQueueMs": 0,
+            "asrMs": 461,
             "signalMs": 1.3,
             "llmMs": null,
             "genMs": 0,
-            "serverMs": 474
+            "serverMs": 463
           }
         }
       ],
@@ -87,26 +94,26 @@
           "asrQueue": {
             "n": 13,
             "p50": 1,
-            "p95": 2,
-            "max": 2
+            "p95": 1,
+            "max": 1
           },
           "asr": {
             "n": 13,
-            "p50": 468,
-            "p95": 570,
-            "max": 570
+            "p50": 461,
+            "p95": 613,
+            "max": 613
           },
           "signalExtraction": {
             "n": 13,
-            "p50": 0.6,
-            "p95": 1.3,
-            "max": 1.3
+            "p50": 0.7,
+            "p95": 1.4,
+            "max": 1.4
           },
           "llm": {
-            "n": 0,
-            "p50": null,
-            "p95": null,
-            "max": null
+            "n": 2,
+            "p50": 457.2,
+            "p95": 495.5,
+            "max": 495.5
           },
           "nudgeGeneration": {
             "n": 13,
@@ -116,30 +123,36 @@
           },
           "serverPipeline": {
             "n": 13,
-            "p50": 470,
-            "p95": 571,
-            "max": 571
+            "p50": 463,
+            "p95": 615,
+            "max": 615
           },
           "delivery": {
-            "n": 15,
-            "p50": 0.3,
-            "p95": 2.7,
-            "max": 2.7
+            "n": 17,
+            "p50": 0.4,
+            "p95": 14.3,
+            "max": 14.3
           },
           "endToEndTranscript": {
             "n": 13,
-            "p50": 470.1,
-            "p95": 574,
-            "max": 574
+            "p50": 469.3,
+            "p95": 629.3,
+            "max": 629.3
           },
           "endToEndNudge": {
             "n": 2,
-            "p50": 474.7,
-            "p95": 560.7,
-            "max": 560.7
+            "p50": 469.4,
+            "p95": 629.3,
+            "max": 629.3
+          },
+          "endToEndPhrasedNudge": {
+            "n": 2,
+            "p50": 958.9,
+            "p95": 1073.6,
+            "max": 1073.6
           }
         },
-        "llmEnabled": false
+        "llmEnabled": true
       },
       "transcript": [
         {
@@ -251,51 +264,54 @@
           500
         ],
         "asr": [
-          511,
-          570,
-          328,
-          500,
-          379,
-          506,
-          558,
-          327,
-          468,
-          472,
-          402,
-          393,
-          378
+          531,
+          537,
+          312,
+          505,
+          406,
+          505,
+          613,
+          339,
+          481,
+          461,
+          410,
+          397,
+          364
         ],
         "asrQueue": [
-          2,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
           1,
           1,
           1,
           0,
           1,
           1,
-          0,
-          1,
-          1,
-          0,
-          1,
-          1
+          0
         ],
         "signal": [
-          0.5,
-          0.6,
-          1.1,
+          0.7,
           0.4,
           1.1,
           0.4,
           1.2,
+          0.4,
+          1.4,
           1.1,
           0.4,
           1.3,
           0.4,
-          1.2,
+          1.1,
           0.3
         ],
-        "llm": [],
+        "llm": [
+          457.2,
+          495.5
+        ],
         "gen": [
           0.1,
           0,
@@ -312,55 +328,61 @@
           0
         ],
         "server": [
-          514,
-          571,
-          330,
-          502,
-          381,
-          508,
-          560,
-          328,
-          470,
-          474,
-          402,
-          395,
-          379
+          532,
+          539,
+          314,
+          506,
+          407,
+          505,
+          615,
+          341,
+          483,
+          463,
+          411,
+          399,
+          365
         ],
         "transcriptE2e": [
-          514.2,
-          574,
-          330.2,
-          504.2,
-          381.1,
-          508.3,
-          560.7,
-          328.8,
-          470.1,
-          474.7,
-          402.7,
-          395,
-          378.8
+          532.9,
+          538.9,
+          313.9,
+          506.8,
+          407.8,
+          505.9,
+          629.3,
+          341.2,
+          482.9,
+          469.3,
+          411.4,
+          399.3,
+          365.3
         ],
         "nudgeE2e": [
-          560.7,
-          474.7
+          629.3,
+          469.4
+        ],
+        "phrasedE2e": [
+          1073.6,
+          958.9
         ],
         "delivery": [
           0.4,
-          2.7,
-          0.3,
-          2.4,
-          0.3,
-          0.5,
-          0.5,
-          0.3,
-          0.3,
-          0.3,
           0.4,
           0.3,
           0.3,
+          0.4,
+          0.4,
+          14.3,
+          14.2,
+          1,
           0.3,
-          0.2
+          0.3,
+          6.7,
+          6.5,
+          0.5,
+          0.3,
+          0.4,
+          0.3
         ]
       }
     },
@@ -399,63 +421,72 @@
           "type": "compliance_disclosure",
           "priority": "high",
           "text": "Disclose the call recording before discussing price or payment.",
+          "phrasedText": null,
+          "phrasedBy": null,
+          "phrasedAtWallMs": null,
           "confidence": 0.9,
           "evidence": "Agent has not stated that the call is recorded and is already discussing price/payment.",
           "callMsAtNudge": 15800,
-          "wallMsDisplayed": 16242,
+          "wallMsDisplayed": 16234,
           "triggerLineEndMs": 16795,
-          "secondsAfterTriggerSpeechEnd": -0.55,
+          "secondsAfterTriggerSpeechEnd": -0.56,
           "beforeCallEnd": true,
           "timings": {
             "endpointMs": 0,
             "asrQueueMs": 1,
-            "asrMs": 528,
+            "asrMs": 521,
             "signalMs": 0.1,
             "llmMs": null,
             "genMs": 0,
-            "serverMs": 529
+            "serverMs": 522
           }
         },
         {
           "type": "compliance_risky_statement",
           "priority": "high",
           "text": "Correct the promise \"always approved\": claims can't be guaranteed; they follow policy terms.",
+          "phrasedText": null,
+          "phrasedBy": null,
+          "phrasedAtWallMs": null,
           "confidence": 0.92,
           "evidence": "\"always approved\" — Don't worry, sir, with us claims are always approved at this guaranteed. No questions asked.",
           "callMsAtNudge": 27040,
-          "wallMsDisplayed": 27940,
+          "wallMsDisplayed": 27903,
           "triggerLineEndMs": 26993,
-          "secondsAfterTriggerSpeechEnd": 0.95,
+          "secondsAfterTriggerSpeechEnd": 0.91,
           "beforeCallEnd": true,
           "timings": {
             "endpointMs": 500,
             "asrQueueMs": 1,
-            "asrMs": 526,
+            "asrMs": 490,
             "signalMs": 0.2,
             "llmMs": null,
             "genMs": 0,
-            "serverMs": 527
+            "serverMs": 491
           }
         },
         {
           "type": "cross_sell",
           "priority": "medium",
           "text": "Family members are uninsured: suggest adding them on a family floater.",
+          "phrasedText": "Add your parents to the family floater plan to cover them.",
+          "phrasedBy": "openai/gpt-oss-20b",
+          "phrasedAtWallMs": 40093,
           "confidence": 0.8,
           "evidence": "Okay, my parents also have no insurance right now, actually.",
           "callMsAtNudge": 38780,
-          "wallMsDisplayed": 39554,
+          "wallMsDisplayed": 39539,
           "triggerLineEndMs": 38753,
-          "secondsAfterTriggerSpeechEnd": 0.8,
+          "secondsAfterTriggerSpeechEnd": 0.79,
           "beforeCallEnd": true,
           "timings": {
             "endpointMs": 500,
             "asrQueueMs": 1,
-            "asrMs": 440,
+            "asrMs": 426,
             "signalMs": 0.1,
             "llmMs": null,
             "genMs": 0.1,
-            "serverMs": 440
+            "serverMs": 427
           }
         }
       ],
@@ -484,9 +515,9 @@
           },
           "asr": {
             "n": 12,
-            "p50": 416,
-            "p95": 528,
-            "max": 528
+            "p50": 426,
+            "p95": 521,
+            "max": 521
           },
           "signalExtraction": {
             "n": 12,
@@ -495,10 +526,10 @@
             "max": 0.9
           },
           "llm": {
-            "n": 0,
-            "p50": null,
-            "p95": null,
-            "max": null
+            "n": 1,
+            "p50": 553.9,
+            "p95": 553.9,
+            "max": 553.9
           },
           "nudgeGeneration": {
             "n": 12,
@@ -508,30 +539,36 @@
           },
           "serverPipeline": {
             "n": 12,
-            "p50": 418,
-            "p95": 529,
-            "max": 529
+            "p50": 427,
+            "p95": 522,
+            "max": 522
           },
           "delivery": {
-            "n": 15,
-            "p50": 0.3,
-            "p95": 0.4,
-            "max": 0.4
+            "n": 16,
+            "p50": 0.4,
+            "p95": 4.2,
+            "max": 4.2
           },
           "endToEndTranscript": {
             "n": 12,
-            "p50": 418.3,
-            "p95": 529.3,
-            "max": 529.3
+            "p50": 427.9,
+            "p95": 522.8,
+            "max": 522.8
           },
           "endToEndNudge": {
             "n": 3,
-            "p50": 527,
-            "p95": 529.4,
-            "max": 529.4
+            "p50": 493.6,
+            "p95": 522.8,
+            "max": 522.8
+          },
+          "endToEndPhrasedNudge": {
+            "n": 1,
+            "p50": 982,
+            "p95": 982,
+            "max": 982
           }
         },
-        "llmEnabled": false
+        "llmEnabled": true
       },
       "transcript": [
         {
@@ -635,28 +672,28 @@
           500
         ],
         "asr": [
-          424,
-          400,
-          416,
-          528,
-          328,
+          430,
+          397,
           426,
-          526,
-          369,
-          402,
-          440,
-          383,
-          424
+          521,
+          316,
+          432,
+          490,
+          380,
+          427,
+          426,
+          384,
+          423
         ],
         "asrQueue": [
           0,
           1,
           1,
           1,
-          1,
-          1,
-          1,
           0,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -671,12 +708,14 @@
           0,
           0.2,
           0,
-          0.1,
+          0.2,
           0.1,
           0,
           0.2
         ],
-        "llm": [],
+        "llm": [
+          553.9
+        ],
         "gen": [
           0,
           0,
@@ -692,52 +731,56 @@
           0
         ],
         "server": [
-          425,
-          401,
-          418,
-          529,
-          329,
-          426,
-          527,
-          370,
-          403,
-          440,
-          384,
-          425
+          431,
+          398,
+          428,
+          522,
+          316,
+          433,
+          491,
+          381,
+          428,
+          427,
+          385,
+          424
         ],
         "transcriptE2e": [
-          425.1,
-          401.1,
-          418.3,
-          529.3,
-          328.9,
-          426.8,
-          527,
-          369.8,
-          403,
-          440.8,
-          384.1,
-          425.5
+          431.2,
+          398.3,
+          428,
+          522.8,
+          318.7,
+          433.5,
+          493.6,
+          381.2,
+          427.9,
+          431.4,
+          384.9,
+          424.4
         ],
         "nudgeE2e": [
-          529.4,
-          527,
-          440.9
+          522.8,
+          493.6,
+          431.4
+        ],
+        "phrasedE2e": [
+          982
         ],
         "delivery": [
           0.4,
-          0.3,
-          0.3,
+          0.4,
+          0.4,
           0.4,
           0.2,
+          2.3,
+          0.3,
+          2.2,
+          2.1,
           0.3,
           0.3,
-          0.3,
-          0.2,
-          0.3,
-          0.3,
-          0.4,
-          0.3,
+          4.2,
+          4.1,
+          0.6,
           0.3,
           0.3
         ]
@@ -770,42 +813,48 @@
           "type": "frustration",
           "priority": "high",
           "text": "Rising frustration: acknowledge the concern and summarise what you'll do before continuing.",
+          "phrasedText": "Acknowledge frustration, recap next‑week plan, and confirm no further calls until then.",
+          "phrasedBy": "openai/gpt-oss-20b",
+          "phrasedAtWallMs": 30310,
           "confidence": 0.85,
           "evidence": "I told you already, next week, why do you keep calling me every day?",
           "callMsAtNudge": 28800,
-          "wallMsDisplayed": 29600,
+          "wallMsDisplayed": 29602,
           "triggerLineEndMs": 39922,
           "secondsAfterTriggerSpeechEnd": -10.32,
           "beforeCallEnd": true,
           "timings": {
             "endpointMs": 500,
-            "asrQueueMs": 1,
-            "asrMs": 462,
-            "signalMs": 0.5,
+            "asrQueueMs": 0,
+            "asrMs": 480,
+            "signalMs": 0.3,
             "llmMs": null,
             "genMs": 0,
-            "serverMs": 463
+            "serverMs": 481
           }
         },
         {
           "type": "payment_difficulty",
           "priority": "high",
           "text": "Customer reports payment difficulty: offer the approved EMI / grace-period option or a callback with a specialist.",
+          "phrasedText": "Offer the approved EMI or grace period, or schedule a specialist callback to help.",
+          "phrasedBy": "openai/gpt-oss-20b",
+          "phrasedAtWallMs": 51101,
           "confidence": 0.88,
           "evidence": "Look, I lost my job last month and money is tight, I am trying my best.",
           "callMsAtNudge": 49660,
-          "wallMsDisplayed": 50535,
+          "wallMsDisplayed": 50510,
           "triggerLineEndMs": 49620,
-          "secondsAfterTriggerSpeechEnd": 0.92,
+          "secondsAfterTriggerSpeechEnd": 0.89,
           "beforeCallEnd": true,
           "timings": {
             "endpointMs": 500,
             "asrQueueMs": 1,
-            "asrMs": 498,
+            "asrMs": 489,
             "signalMs": 0.2,
             "llmMs": null,
             "genMs": 0,
-            "serverMs": 499
+            "serverMs": 490
           }
         }
       ],
@@ -834,21 +883,21 @@
           },
           "asr": {
             "n": 13,
-            "p50": 451,
-            "p95": 521,
-            "max": 521
+            "p50": 432,
+            "p95": 506,
+            "max": 506
           },
           "signalExtraction": {
             "n": 13,
             "p50": 0,
-            "p95": 0.5,
-            "max": 0.5
+            "p95": 0.3,
+            "max": 0.3
           },
           "llm": {
-            "n": 0,
-            "p50": null,
-            "p95": null,
-            "max": null
+            "n": 2,
+            "p50": 590.6,
+            "p95": 707,
+            "max": 707
           },
           "nudgeGeneration": {
             "n": 13,
@@ -858,30 +907,36 @@
           },
           "serverPipeline": {
             "n": 13,
-            "p50": 452,
-            "p95": 522,
-            "max": 522
+            "p50": 433,
+            "p95": 508,
+            "max": 508
           },
           "delivery": {
-            "n": 15,
-            "p50": 0.3,
-            "p95": 0.4,
-            "max": 0.4
+            "n": 17,
+            "p50": 0.4,
+            "p95": 4.5,
+            "max": 4.5
           },
           "endToEndTranscript": {
             "n": 13,
-            "p50": 451.9,
-            "p95": 522.5,
-            "max": 522.5
+            "p50": 433.5,
+            "p95": 508.5,
+            "max": 508.5
           },
           "endToEndNudge": {
             "n": 2,
-            "p50": 463.7,
-            "p95": 499.4,
-            "max": 499.4
+            "p50": 485.6,
+            "p95": 494.2,
+            "max": 494.2
+          },
+          "endToEndPhrasedNudge": {
+            "n": 2,
+            "p50": 1081.2,
+            "p95": 1189.2,
+            "max": 1189.2
           }
         },
-        "llmEnabled": false
+        "llmEnabled": true
       },
       "transcript": [
         {
@@ -993,28 +1048,28 @@
           500
         ],
         "asr": [
-          436,
-          440,
-          311,
-          495,
-          470,
-          422,
-          462,
-          455,
-          521,
-          408,
-          498,
-          451,
-          376
+          425,
+          432,
+          299,
+          490,
+          445,
+          416,
+          480,
+          466,
+          506,
+          396,
+          489,
+          418,
+          377
         ],
         "asrQueue": [
+          1,
+          1,
+          1,
+          1,
+          1,
           0,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          0,
           1,
           1,
           1,
@@ -1029,15 +1084,18 @@
           0,
           0,
           0,
-          0.5,
+          0.3,
           0,
-          0.2,
+          0.3,
           0,
           0.2,
           0,
           0.2
         ],
-        "llm": [],
+        "llm": [
+          707,
+          590.6
+        ],
         "gen": [
           0,
           0,
@@ -1054,53 +1112,59 @@
           0
         ],
         "server": [
-          437,
-          441,
-          312,
-          496,
-          471,
-          422,
-          463,
-          456,
-          522,
-          409,
-          499,
-          452,
-          377
+          426,
+          433,
+          299,
+          491,
+          446,
+          416,
+          481,
+          467,
+          508,
+          397,
+          490,
+          418,
+          378
         ],
         "transcriptE2e": [
-          436.9,
-          440.8,
-          312.1,
-          496.2,
-          471.5,
-          422.6,
-          463.6,
-          456.4,
-          522.5,
-          409.4,
-          499.4,
-          451.9,
-          377.1
+          426,
+          433.5,
+          299.7,
+          491,
+          446.4,
+          416.8,
+          485.6,
+          467,
+          508.5,
+          397.2,
+          494.2,
+          418.5,
+          378.5
         ],
         "nudgeE2e": [
-          463.7,
-          499.4
+          485.6,
+          494.2
+        ],
+        "phrasedE2e": [
+          1189.2,
+          1081.2
         ],
         "delivery": [
           0.3,
           0.3,
-          0.3,
-          0.3,
-          0.4,
-          0.2,
           0.4,
           0.2,
           0.3,
+          0.4,
+          4.5,
+          4.4,
+          0.8,
           0.3,
-          0.2,
+          0.5,
           0.3,
-          0.2,
+          4.5,
+          4.3,
+          0.7,
           0.3,
           0.3
         ]
@@ -1145,9 +1209,9 @@
           },
           "asr": {
             "n": 11,
-            "p50": 407,
-            "p95": 536,
-            "max": 536
+            "p50": 399,
+            "p95": 518,
+            "max": 518
           },
           "signalExtraction": {
             "n": 11,
@@ -1169,30 +1233,36 @@
           },
           "serverPipeline": {
             "n": 11,
-            "p50": 408,
-            "p95": 537,
-            "max": 537
+            "p50": 400,
+            "p95": 519,
+            "max": 519
           },
           "delivery": {
             "n": 11,
             "p50": 0.3,
-            "p95": 0.4,
-            "max": 0.4
+            "p95": 2.2,
+            "max": 2.2
           },
           "endToEndTranscript": {
             "n": 11,
-            "p50": 408.5,
-            "p95": 537.7,
-            "max": 537.7
+            "p50": 400,
+            "p95": 519.6,
+            "max": 519.6
           },
           "endToEndNudge": {
             "n": 0,
             "p50": null,
             "p95": null,
             "max": null
+          },
+          "endToEndPhrasedNudge": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
           }
         },
-        "llmEnabled": false
+        "llmEnabled": true
       },
       "transcript": [
         {
@@ -1288,21 +1358,21 @@
           500
         ],
         "asr": [
-          536,
-          351,
-          392,
-          438,
-          433,
-          412,
-          407,
-          392,
-          468,
-          387,
-          358
+          518,
+          335,
+          389,
+          424,
+          413,
+          410,
+          398,
+          383,
+          464,
+          399,
+          354
         ],
         "asrQueue": [
           1,
-          0,
+          1,
           1,
           1,
           1,
@@ -1341,32 +1411,33 @@
           0
         ],
         "server": [
-          537,
-          352,
-          392,
-          439,
-          434,
-          412,
-          408,
-          392,
-          469,
-          388,
-          359
+          519,
+          336,
+          390,
+          426,
+          414,
+          411,
+          399,
+          384,
+          465,
+          400,
+          355
         ],
         "transcriptE2e": [
-          537.7,
-          352,
-          392.7,
-          439.4,
-          434.5,
-          412.7,
-          408.5,
-          392.6,
-          469.9,
-          388.1,
-          359.4
+          519.6,
+          336.4,
+          390.2,
+          426.2,
+          414.1,
+          410.9,
+          398.9,
+          384.4,
+          467.2,
+          400,
+          355.3
         ],
         "nudgeE2e": [],
+        "phrasedE2e": [],
         "delivery": [
           0.3,
           0.3,
@@ -1376,7 +1447,7 @@
           0.3,
           0.3,
           0.3,
-          0.4,
+          2.2,
           0.3,
           0.3
         ]
@@ -1390,8 +1461,8 @@
     "missed": 1,
     "nudgesBeforeCallEnd": "7/7",
     "secondsAfterTriggerSpeechEnd": {
-      "p50": -0.55,
-      "p95": 0.95
+      "p50": -0.56,
+      "p95": 0.91
     }
   },
   "pooledLatency": {
@@ -1405,25 +1476,25 @@
       "n": 49,
       "p50": 1,
       "p95": 1,
-      "max": 2
+      "max": 1
     },
     "asr": {
       "n": 49,
       "p50": 424,
-      "p95": 536,
-      "max": 570
+      "p95": 531,
+      "max": 613
     },
     "signalExtraction": {
       "n": 49,
       "p50": 0.1,
       "p95": 1.2,
-      "max": 1.3
+      "max": 1.4
     },
     "llm": {
-      "n": 0,
-      "p50": null,
-      "p95": null,
-      "max": null
+      "n": 5,
+      "p50": 553.9,
+      "p95": 707,
+      "max": 707
     },
     "nudgeGeneration": {
       "n": 49,
@@ -1433,27 +1504,33 @@
     },
     "serverPipeline": {
       "n": 49,
-      "p50": 425,
-      "p95": 537,
-      "max": 571
+      "p50": 426,
+      "p95": 532,
+      "max": 615
     },
     "delivery": {
-      "n": 56,
-      "p50": 0.3,
-      "p95": 0.5,
-      "max": 2.7
+      "n": 61,
+      "p50": 0.4,
+      "p95": 6.5,
+      "max": 14.3
     },
     "endToEndTranscript": {
       "n": 49,
-      "p50": 425.5,
-      "p95": 537.7,
-      "max": 574
+      "p50": 426,
+      "p95": 532.9,
+      "max": 629.3
     },
     "endToEndNudge": {
       "n": 7,
-      "p50": 499.4,
-      "p95": 560.7,
-      "max": 560.7
+      "p50": 493.6,
+      "p95": 629.3,
+      "max": 629.3
+    },
+    "endToEndPhrasedNudge": {
+      "n": 5,
+      "p50": 1073.6,
+      "p95": 1189.2,
+      "max": 1189.2
     }
   },
   "perScenarioLatency": [
@@ -1468,26 +1545,26 @@
       "asrQueue": {
         "n": 13,
         "p50": 1,
-        "p95": 2,
-        "max": 2
+        "p95": 1,
+        "max": 1
       },
       "asr": {
         "n": 13,
-        "p50": 468,
-        "p95": 570,
-        "max": 570
+        "p50": 461,
+        "p95": 613,
+        "max": 613
       },
       "signalExtraction": {
         "n": 13,
-        "p50": 0.6,
-        "p95": 1.3,
-        "max": 1.3
+        "p50": 0.7,
+        "p95": 1.4,
+        "max": 1.4
       },
       "llm": {
-        "n": 0,
-        "p50": null,
-        "p95": null,
-        "max": null
+        "n": 2,
+        "p50": 457.2,
+        "p95": 495.5,
+        "max": 495.5
       },
       "nudgeGeneration": {
         "n": 13,
@@ -1497,27 +1574,33 @@
       },
       "serverPipeline": {
         "n": 13,
-        "p50": 470,
-        "p95": 571,
-        "max": 571
+        "p50": 463,
+        "p95": 615,
+        "max": 615
       },
       "delivery": {
-        "n": 15,
-        "p50": 0.3,
-        "p95": 2.7,
-        "max": 2.7
+        "n": 17,
+        "p50": 0.4,
+        "p95": 14.3,
+        "max": 14.3
       },
       "endToEndTranscript": {
         "n": 13,
-        "p50": 470.1,
-        "p95": 574,
-        "max": 574
+        "p50": 469.3,
+        "p95": 629.3,
+        "max": 629.3
       },
       "endToEndNudge": {
         "n": 2,
-        "p50": 474.7,
-        "p95": 560.7,
-        "max": 560.7
+        "p50": 469.4,
+        "p95": 629.3,
+        "max": 629.3
+      },
+      "endToEndPhrasedNudge": {
+        "n": 2,
+        "p50": 958.9,
+        "p95": 1073.6,
+        "max": 1073.6
       }
     },
     {
@@ -1536,9 +1619,9 @@
       },
       "asr": {
         "n": 12,
-        "p50": 416,
-        "p95": 528,
-        "max": 528
+        "p50": 426,
+        "p95": 521,
+        "max": 521
       },
       "signalExtraction": {
         "n": 12,
@@ -1547,10 +1630,10 @@
         "max": 0.9
       },
       "llm": {
-        "n": 0,
-        "p50": null,
-        "p95": null,
-        "max": null
+        "n": 1,
+        "p50": 553.9,
+        "p95": 553.9,
+        "max": 553.9
       },
       "nudgeGeneration": {
         "n": 12,
@@ -1560,27 +1643,33 @@
       },
       "serverPipeline": {
         "n": 12,
-        "p50": 418,
-        "p95": 529,
-        "max": 529
+        "p50": 427,
+        "p95": 522,
+        "max": 522
       },
       "delivery": {
-        "n": 15,
-        "p50": 0.3,
-        "p95": 0.4,
-        "max": 0.4
+        "n": 16,
+        "p50": 0.4,
+        "p95": 4.2,
+        "max": 4.2
       },
       "endToEndTranscript": {
         "n": 12,
-        "p50": 418.3,
-        "p95": 529.3,
-        "max": 529.3
+        "p50": 427.9,
+        "p95": 522.8,
+        "max": 522.8
       },
       "endToEndNudge": {
         "n": 3,
-        "p50": 527,
-        "p95": 529.4,
-        "max": 529.4
+        "p50": 493.6,
+        "p95": 522.8,
+        "max": 522.8
+      },
+      "endToEndPhrasedNudge": {
+        "n": 1,
+        "p50": 982,
+        "p95": 982,
+        "max": 982
       }
     },
     {
@@ -1599,21 +1688,21 @@
       },
       "asr": {
         "n": 13,
-        "p50": 451,
-        "p95": 521,
-        "max": 521
+        "p50": 432,
+        "p95": 506,
+        "max": 506
       },
       "signalExtraction": {
         "n": 13,
         "p50": 0,
-        "p95": 0.5,
-        "max": 0.5
+        "p95": 0.3,
+        "max": 0.3
       },
       "llm": {
-        "n": 0,
-        "p50": null,
-        "p95": null,
-        "max": null
+        "n": 2,
+        "p50": 590.6,
+        "p95": 707,
+        "max": 707
       },
       "nudgeGeneration": {
         "n": 13,
@@ -1623,27 +1712,33 @@
       },
       "serverPipeline": {
         "n": 13,
-        "p50": 452,
-        "p95": 522,
-        "max": 522
+        "p50": 433,
+        "p95": 508,
+        "max": 508
       },
       "delivery": {
-        "n": 15,
-        "p50": 0.3,
-        "p95": 0.4,
-        "max": 0.4
+        "n": 17,
+        "p50": 0.4,
+        "p95": 4.5,
+        "max": 4.5
       },
       "endToEndTranscript": {
         "n": 13,
-        "p50": 451.9,
-        "p95": 522.5,
-        "max": 522.5
+        "p50": 433.5,
+        "p95": 508.5,
+        "max": 508.5
       },
       "endToEndNudge": {
         "n": 2,
-        "p50": 463.7,
-        "p95": 499.4,
-        "max": 499.4
+        "p50": 485.6,
+        "p95": 494.2,
+        "max": 494.2
+      },
+      "endToEndPhrasedNudge": {
+        "n": 2,
+        "p50": 1081.2,
+        "p95": 1189.2,
+        "max": 1189.2
       }
     },
     {
@@ -1662,9 +1757,9 @@
       },
       "asr": {
         "n": 11,
-        "p50": 407,
-        "p95": 536,
-        "max": 536
+        "p50": 399,
+        "p95": 518,
+        "max": 518
       },
       "signalExtraction": {
         "n": 11,
@@ -1686,23 +1781,29 @@
       },
       "serverPipeline": {
         "n": 11,
-        "p50": 408,
-        "p95": 537,
-        "max": 537
+        "p50": 400,
+        "p95": 519,
+        "max": 519
       },
       "delivery": {
         "n": 11,
         "p50": 0.3,
-        "p95": 0.4,
-        "max": 0.4
+        "p95": 2.2,
+        "max": 2.2
       },
       "endToEndTranscript": {
         "n": 11,
-        "p50": 408.5,
-        "p95": 537.7,
-        "max": 537.7
+        "p50": 400,
+        "p95": 519.6,
+        "max": 519.6
       },
       "endToEndNudge": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "endToEndPhrasedNudge": {
         "n": 0,
         "p50": null,
         "p95": null,
